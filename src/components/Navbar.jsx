@@ -2,7 +2,7 @@ import logo from "../assets/images/logo-white-red.svg";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0  w-full">
+    <nav className="fixed top-0 w-full z-50">
       <div className="mx-12 mt-6 px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg">
         <div>
           <img src={logo} className="w-40" alt="logo" />

@@ -16,3 +16,9 @@
   font-family: "SedgwickAve";
   src: url("./assets/fonts/SedgwickAve-Regular.ttf");
 }
+
+main {
+  &>div:first-child {
+    padding-top: 8rem;
+  }
+}

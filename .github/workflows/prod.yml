@@ -1,0 +1,33 @@
+name: Deploy Frontend Production
+on:
+  push:
+    branches: [master]
+jobs:
+  web-deploy:
+    name: 🎉 Deploy Production
+    runs-on: ubuntu-latest
+    env:
+      VITE_BASE_URL: https://api.tedxuniversitasbrawijaya.com
+      VITE_TRACKING_ID: UA-238469413-1
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
+      - name: 🔨 Build Project
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_URL }}
+          username: ${{ secrets.FTP_PROD_USERNAME }}
+          password: ${{ secrets.FTP_PROD_PASSWORD }}
+          local-dir: "./dist/"
+          server-dir: "./"

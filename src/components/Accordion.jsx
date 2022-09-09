@@ -4,7 +4,7 @@ import AccordionItem from "./AccordionItem";
 const faqs = [
   {
     question: "Apakah main event TEDxUniversitasBrawijaya diselenggarakan secara luring?",
-    answer: "Benar! Main event  TEDxUniversitasBrawijaya 2022 diselenggarakan secara luring di venue yang ada di dalam Universitas Brawijaya.",
+    answer: "Benar! Main event TEDxUniversitasBrawijaya 2022 diselenggarakan secara luring di venue yang ada di dalam Universitas Brawijaya.",
   },
   {
     question: "Apakah saya bisa membeli lebih dari satu tiket?",

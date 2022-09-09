@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       akira: ["AkiraExpanded", "sans-serif"],
       jakarta: ["PlusJakartaSans", "sans-serif"],
+      jakartaBold: ["PlusJakartaSansBold", "sans-serif"],
       sedgwick: ["SedgwickAve", "sans-serif"],
     },
     extend: {

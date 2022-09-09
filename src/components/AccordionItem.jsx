@@ -8,7 +8,7 @@ const AccordionItem = ({ faq, active, onToggle }) => {
 
   return (
     <li className={`${active ? "active" : ""} py-2 px-2 overflow-hidden max-w-6xl m-auto`}>
-      <button className={`bg-main-3 font-jakarta text-white text-left flex flex-wrap w-full justify-between items-center p-5 cursor-pointer border-none ${active ? "rounded-t-xl rounded-b-none" : "rounded-t-xl rounded-b-xl"} overflow-hidden transition-all duration-200`} onClick={onToggle}>
+      <button className={`bg-main-3 font-jakartaBold text-white text-left flex flex-wrap w-full justify-between items-center p-5 cursor-pointer border-none ${active ? "rounded-t-xl rounded-b-none" : "rounded-t-xl rounded-b-xl"} overflow-hidden transition-all duration-200`} onClick={onToggle}>
         {question}
         <Icon icon="akar-icons:chevron-down" className={`text-lg ${active ? "rotate-180" : ""} transition-all duration-200`} />
       </button>
@@ -21,7 +21,7 @@ const AccordionItem = ({ faq, active, onToggle }) => {
             : { height: "0px" }
         }
       >
-        <div className="bg-white p-5 whitespace-pre">{answer}</div>
+        <div className="bg-white p-5 whitespace-pre font-jakarta">{answer}</div>
       </div>
     </li>
   );

@@ -1,9 +1,19 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Faq from "./pages/faq";
 
 function App() {
   return (
-    <div className="h-screen flex justify-center items-center text-3xl">
-      COMING SOON MAIN WEB
-    </div>
+    <Router>
+      <main className="overflow-y-hidden max-h-screen">
+        <Routes>
+          <Route path="/faq" element={<Faq />} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
 

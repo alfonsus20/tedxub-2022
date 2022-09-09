@@ -4,7 +4,22 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      akira: ["AkiraExpanded", "sans-serif"],
+      jakarta: ["PlusJakartaSans", "sans-serif"],
+      sedgwick: ["SedgwickAve", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        "main-1": "#2B2B2B",
+        "main-2": "#FFFFFF",
+        "main-3": "#D04435",
+        "sec-1": "#AFE710",
+        "sec-2": "#109D72",
+        "sec-3": "#2156B0",
+        "sec-4": "#7631D0",
+      }
+    },
   },
   plugins: [],
 }

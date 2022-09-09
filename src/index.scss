@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "AkiraExpanded";
+  src: url("./assets/fonts/Akira-Expanded.otf");
+}
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("./assets/fonts/PlusJakartaSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SedgwickAve";
+  src: url("./assets/fonts/SedgwickAve-Regular.ttf");
+}

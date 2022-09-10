@@ -50,9 +50,9 @@ const Ticket = () => {
           <p className="text-sm">*max 5 tickets for once transaction</p>
           <div className="flex flex-row flex-wrap justify-center items-center mt-5 gap-5">
             <div className="flex flex-row items-center justify-between gap-10 w-40 bg-main-2 rounded-full px-5 py-2 text-main-1 font-jakartaBold">
-              <button disabled={ticket.type == activeTicket ? false : true} onClick={handleDecrementQuantity}>-</button>
+              <button disabled={ticket.type == activeTicket && ticket.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
               {quantity}
-              <button disabled={ticket.type == activeTicket ? false : true} onClick={handleIncrementQuantity}>+</button>
+              <button disabled={ticket.type == activeTicket && ticket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
             <Link to={"/ticket-form"} state={{ type: ticket.type, price: ticket.price, quota: ticket.quota, quantity: quantity }}><button disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3" : "bg-gray-500"} `}>Checkout</button></Link>
           </div>

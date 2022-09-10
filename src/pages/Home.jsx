@@ -30,17 +30,20 @@ const Home = () => {
               <p>Minggu, 2 Oktober 2022</p>
             </div>
           </div>
-          <div className="w-5/12"></div>
-          <div className="rounded-full p-4 border-2 border-[#2B2B22] w-fit text-[#2B2B22] absolute left-1/2 -translate-x-1/2 -bottom-6 animate-bounce">
+          <div className="w-5/12">ads</div>
+          <div className="rounded-full p-4 border-2 border-[#2B2B22] w-fit text-[#2B2B22] absolute left-1/2 -translate-x-1/2 -bottom-6 ">
             <Icon icon="akar-icons:arrow-down" className="text-3xl" />
           </div>
         </div>
-        <div className="mt-12">
-          <div className="flex items-center justify-center h-40 bg-red-500 rounded-[100%] rounded-b-none">
-            <h1 className="text-center text-white text-3xl">
-              #MERAYAKAN KEMBALI
-            </h1>
+        <div className="mt-12 relative h-36 overflow-hidden">
+          <div className="w-[120%] absolute left-1/2 -translate-x-1/2 h-72 rounded-[50%] overflow-hidden">
+            <video className="w-full" controls>
+              <source src="https://api.tedxuniversitasbrawijaya.com/storage/TEDxUniversitasBrawijaya%202021%20_Manifestasi%20Peradaban_%20Opening%20Titles.mp4" />
+            </video>
           </div>
+          <h1 className="text-center text-white text-3xl z-10 top-1/2 absolute left-1/2 -translate-x-1/2  -translate-y-1/2 ">
+            #MERAYAKAN <strong>KEMBALI</strong>
+          </h1>
         </div>
       </section>
     </div>

@@ -1,0 +1,131 @@
+#carousel-about {
+    img:nth-child(1) {
+        top: 0;
+        left: 0;
+        transform: rotate(-6deg);
+        z-index: 30;
+        animation: rotate 5s infinite;
+        // animation-delay: 1s;
+
+        @keyframes rotate {
+            5% {
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0;
+            }
+
+            33% {
+                top: 52px;
+                left: 50px;
+                transform: rotate(12deg);
+                z-index: 10;
+                opacity: 1;
+            }
+
+            66% {
+                top: 26px;
+                left: 28px;
+                transform: rotate(4deg);
+                z-index: 20;
+            }
+
+            100% {
+                top: 0;
+                left: 0;
+                transform: rotate(-6deg);
+                z-index: 30;
+                opacity: 1;
+            }
+        }
+    }
+
+    img:nth-child(2) {
+        top: 26px;
+        left: 28px;
+        transform: rotate(4deg);
+        z-index: 20;
+        animation: rotate2 5s infinite;
+
+        @keyframes rotate2 {
+            33% {
+                top: 0;
+                left: 0;
+                transform: rotate(-6deg);
+                z-index: 30;
+            }
+
+            34% {
+                opacity: 1;
+            }
+
+            39% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            66% {
+                top: 52px;
+                left: 50px;
+                transform: rotate(12deg);
+                z-index: 10;
+                opacity: 1;
+            }
+
+            100% {
+                top: 26px;
+                left: 28px;
+                transform: rotate(4deg);
+                z-index: 20;
+            }
+        }
+    }
+
+    img:nth-child(3) {
+        top: 52px;
+        left: 50px;
+        transform: rotate(12deg);
+        z-index: 10;
+        animation: rotate3 5s infinite;
+
+        @keyframes rotate3 {
+            33% {
+                top: 26px;
+                left: 28px;
+                transform: rotate(4deg);
+                z-index: 20;
+            }
+
+            66% {
+                top: 0;
+                left: 0;
+                transform: rotate(-6deg);
+                z-index: 30;
+            }
+
+            68% {
+                opacity: 1;
+            }
+
+            73% {
+                opacity: 0;
+            }
+
+            90% {
+                opacity: 0;
+            }
+
+            100% {
+                top: 52px;
+                left: 50px;
+                transform: rotate(12deg);
+                z-index: 10;
+                opacity: 1;
+            }
+        }
+    }
+}

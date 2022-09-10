@@ -22,8 +22,8 @@ const Navbar = () => {
     setIsComponentVisible: setIsPrevEventsDropdownVisible,
   } = useComponentVisible();
   return (
-    <nav className="fixed top-0 w-full z-50">
-      <div className="mx-12 mt-6 px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg">
+    <nav className="fixed top-0 w-full z-50 max-w-screen-2xl left-1/2 -translate-x-1/2">
+      <div className="mx-4 mt-6 px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg">
         <div>
           <img src={logo} className="w-40" alt="logo" />
         </div>

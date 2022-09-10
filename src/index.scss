@@ -22,6 +22,11 @@
   src: url("./assets/fonts/SedgwickAve-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Shrikhand";
+  src: url("./assets/fonts/Shrikhand-Regular.ttf");
+}
+
 
 html {
   @media screen and (max-width: 1280px) {
@@ -42,5 +47,10 @@ main {
 
   &>div:first-child {
     padding: 9rem 1rem 6rem;
+  }
+
+
+  #home {
+    padding: 0;
   }
 }

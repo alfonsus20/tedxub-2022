@@ -7,6 +7,7 @@ module.exports = {
       jakarta: ["PlusJakartaSans", "sans-serif"],
       jakartaBold: ["PlusJakartaSansBold", "sans-serif"],
       sedgwick: ["SedgwickAve", "sans-serif"],
+      shrikhand: ["Shrikhand", "sans-serif"],
     },
     extend: {
       colors: {

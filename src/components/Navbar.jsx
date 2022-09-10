@@ -1,6 +1,6 @@
 import logo from "../assets/images/logo-white-red.svg";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import useComponentVisible from "../hooks/useComponentVisible";
 
@@ -21,9 +21,18 @@ const Navbar = () => {
     isComponentVisible: isPrevEventsDropdownVisible,
     setIsComponentVisible: setIsPrevEventsDropdownVisible,
   } = useComponentVisible();
+
+  const { pathname } = useLocation();
+
   return (
-    <nav className="fixed top-0 w-full z-50">
-      <div className="mx-12 mt-6 px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta">
+    <nav
+      className={`${pathname === "/" ? "static" : "fixed top-0 z-50"} w-full`}
+    >
+      <div
+        className={`mx-12 ${
+          pathname === "/" ? "mt-0" : "mt-6"
+        } px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta`}
+      >
         <div>
           <img src={logo} className="w-40" alt="logo" />
         </div>

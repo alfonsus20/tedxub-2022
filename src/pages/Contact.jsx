@@ -3,33 +3,6 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import contactPhone from "../assets/images/contact-phone.svg";
 
-const contacts = [
-  {
-    div: "EVENT",
-    nama: "Jogo",
-    nomor: "081357620230",
-    from: "sec-1",
-    via: "sec-2",
-    to: "sec-3",
-  },
-  {
-    div: "PARTNERSHIP",
-    nama: "Davina Aliya",
-    nomor: "08111683318",
-    from: "sec-3",
-    via: "sec-2",
-    to: "sec-4",
-  },
-  {
-    div: "SPONSORSHIP",
-    nama: "Alvin",
-    nomor: "081358284470",
-    from: "sec-4",
-    via: "sec-2",
-    to: "sec-1",
-  },
-]
-
 const Contact = () => {
   return (
     <div className="min-h-screen w-full bg-cover bg-no-repeat" style={{ backgroundImage: `url("${background}")` }}>

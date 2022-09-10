@@ -19,7 +19,7 @@ const Contact = () => {
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],
             }}
-            transition={{ repeat: Infinity, duration: 3 }}
+            transition={{ repeat: Infinity, duration: 5 }}
             className={`testbg z-10 bg-gradient-to-r from-sec-1 via-sec-4 to-sec-3 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
           >
             <div className="bg-white p-2 text-main-1 rounded-lg text-center flex flex-col gap-2">
@@ -33,7 +33,7 @@ const Contact = () => {
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],
             }}
-            transition={{ repeat: Infinity, duration: 3 }}
+            transition={{ repeat: Infinity, duration: 5 }}
             className={`testbg z-10 bg-gradient-to-r from-sec-4 via-sec-2 to-sec-1 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
           >
             <div className="bg-white p-2 text-main-1 rounded-lg text-center flex flex-col gap-2">
@@ -47,7 +47,7 @@ const Contact = () => {
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],
             }}
-            transition={{ repeat: Infinity, duration: 3 }}
+            transition={{ repeat: Infinity, duration: 5 }}
             className={`testbg z-10 bg-gradient-to-r from-sec-2 via-sec-1 to-sec-4 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
           >
             <div className="bg-white p-2 text-main-1 rounded-lg text-center flex flex-col gap-2">

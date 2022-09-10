@@ -22,8 +22,8 @@ const Navbar = () => {
     setIsComponentVisible: setIsPrevEventsDropdownVisible,
   } = useComponentVisible();
   return (
-    <nav className="fixed top-0 w-full z-50 max-w-screen-2xl left-1/2 -translate-x-1/2">
-      <div className="mx-4 mt-6 px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg">
+    <nav className="fixed top-0 w-full z-50">
+      <div className="mx-12 mt-6 px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta">
         <div>
           <img src={logo} className="w-40" alt="logo" />
         </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/team">
+                  <Link to="/meet-the-team">
                     <p className="peer">Meet the Team</p>
                     <div className="h-[1px] mt-1 w-0 bg-white peer-hover:w-full transition-all"></div>
                   </Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
             </motion.div>
           </li>
           <li className="px-1">
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li className="relative px-1">
             <button

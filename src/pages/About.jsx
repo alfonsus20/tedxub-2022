@@ -1,6 +1,8 @@
 import background from "../assets/images/about/background.jpg";
 import CarouselAbout from "../components/Carousel/About";
 
+import ductTape from "../assets/images/about/duct-tape.png";
+
 const About = () => {
   return (
     <div
@@ -75,6 +77,7 @@ const About = () => {
               </p>
             </div>
             <div className="w-7/12 flex justify-center items-center relative">
+              <img src={ductTape} alt="tape" className="absolute -top-12 left-16 w-80 z-40" />
               <CarouselAbout />
             </div>
           </div>

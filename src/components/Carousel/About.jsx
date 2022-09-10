@@ -1,31 +1,18 @@
-import { motion } from "framer-motion";
-import { useEffect } from "react";
-
 import "../../style/components/carousel-about.scss";
 
 import carouselItem1 from "../../assets/images/about/carousel-1.jpg";
 import carouselItem2 from "../../assets/images/about/carousel-2.jpg";
 import carouselItem3 from "../../assets/images/about/carousel-3.jpg";
 
-const topPos = [52, 26, 0];
-const leftPos = [50, 28, 0];
-const rotations = [12, 4, -6];
-const zIndex = [10, 20, 30];
+
+// const topPos = [52, 26, 0];
+// const leftPos = [50, 28, 0];
+// const rotations = [12, 4, -6];
+// const zIndex = [10, 20, 30];
 
 const CarouselAbout = () => {
   return (
     <div className="relative w-[400px] h-[400px]" id="carousel-about">
-      {/* <motion.img
-        src={carouselItem1}
-        className="w-[21rem] h-[21rem] rounded-xl absolute z-40 top-[-34px] left-[-44px] rotate-[-20deg]"
-        alt="item1"
-        animate={{ y: topPos, x: leftPos, rotate: rotations, zIndex: zIndex }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeOut",
-        }}
-      /> */}
       <img
         src={carouselItem1}
         className="w-[21rem] h-[21rem] rounded-xl absolute"

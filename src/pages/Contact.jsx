@@ -19,8 +19,8 @@ const Contact = () => {
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],
             }}
-            transition={{ repeat: Infinity, duration: 5 }}
-            className={`testbg z-10 bg-gradient-to-r from-sec-1 via-sec-4 to-sec-3 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
+            transition={{ repeat: Infinity, duration: 3 }}
+            className={`z-10 bg-gradient-to-r from-sec-1 via-sec-4 to-sec-3 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
           >
             <div className="bg-white p-2 text-main-1 rounded-lg text-center flex flex-col gap-2">
               <p className="font-akira text-main-3">EVENT</p>
@@ -33,8 +33,8 @@ const Contact = () => {
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],
             }}
-            transition={{ repeat: Infinity, duration: 5 }}
-            className={`testbg z-10 bg-gradient-to-r from-sec-4 via-sec-2 to-sec-1 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
+            transition={{ repeat: Infinity, duration: 3 }}
+            className={`z-10 bg-gradient-to-r from-sec-4 via-sec-2 to-sec-1 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
           >
             <div className="bg-white p-2 text-main-1 rounded-lg text-center flex flex-col gap-2">
               <p className="font-akira text-main-3">PARTNERSHIP</p>
@@ -47,8 +47,8 @@ const Contact = () => {
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],
             }}
-            transition={{ repeat: Infinity, duration: 5 }}
-            className={`testbg z-10 bg-gradient-to-r from-sec-2 via-sec-1 to-sec-4 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
+            transition={{ repeat: Infinity, duration: 3 }}
+            className={`z-10 bg-gradient-to-r from-sec-2 via-sec-1 to-sec-4 bg-[length:300%_300%] p-2 w-80 rounded-xl`}
           >
             <div className="bg-white p-2 text-main-1 rounded-lg text-center flex flex-col gap-2">
               <p className="font-akira text-main-3">SPONSORSHIP</p>
@@ -67,7 +67,7 @@ const Contact = () => {
             <Icon icon="akar-icons:twitter-fill" className="text-lg text-white" />
             <p className="font-jakarta text-white">TEDxBrawijaya</p>
           </a>
-          <a className="px-5 py-2 rounded-full bg-main-3 flex flex-row w-fit items-center justify-center gap-1" href="mailto:webtedxub@gmail.com">
+          <a className="px-5 py-2 rounded-full bg-main-3 flex flex-row w-fit items-center justify-center gap-1" href="mailto:tedxbrawijaya@gmail.com">
             <Icon icon="akar-icons:envelope" className="text-lg text-white" />
             <p className="font-jakarta text-white">tedxbrawijaya@gmail.com</p>
           </a>

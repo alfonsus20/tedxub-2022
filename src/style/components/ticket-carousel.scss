@@ -1,0 +1,59 @@
+.carousel__container {
+  max-width: 550px;
+  margin: auto;
+}
+
+.carousel__slider {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.carousel__slider-tray{
+  display: flex;
+  gap: 1rem !important;
+}
+
+.carousel__inner-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: burlywood;
+  img{
+    width: calc(100% - 100px);
+    @media screen and (max-width: 640px){
+      width: calc(100% - 20px);
+    }
+  }
+}
+
+div[aria-selected="true"]{
+  z-index: 999;
+  img{
+    animation: slideCenter 0.3s forwards ease-in-out;
+  }
+}
+
+@keyframes slideCenter {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+div[aria-selected="false"]{
+  animation: slideFalse 0.3s forwards ease-in-out;
+  img{
+    filter: grayscale(100%);
+  }
+}
+
+@keyframes slideFalse {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

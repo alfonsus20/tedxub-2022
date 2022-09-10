@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Faqs from "./pages/Faqs";
 import Home from "./pages/Home";
 import MeetTheTeam from "./pages/MeetTheTeam";
+import Ticket from "./pages/Ticket";
 
 function App() {
   const { pathname } = useLocation();
@@ -13,16 +14,17 @@ function App() {
     <div className="relative">
       <div className={pathname === "/" ? "hidden" : ""}>
         <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/faq" element={<Faqs />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/meet-the-team" element={<MeetTheTeam />} />
+            <Route path="/ticket" element={<Ticket />} />
+          </Routes>
+        </main>
       </div>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/faq" element={<Faqs />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/meet-the-team" element={<MeetTheTeam />} />
-        </Routes>
-      </main>
     </div>
   );
 }

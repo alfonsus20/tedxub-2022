@@ -4,30 +4,33 @@ import carouselItem1 from "../../assets/images/about/carousel-1.jpg";
 import carouselItem2 from "../../assets/images/about/carousel-2.jpg";
 import carouselItem3 from "../../assets/images/about/carousel-3.jpg";
 
-
-// const topPos = [52, 26, 0];
-// const leftPos = [50, 28, 0];
-// const rotations = [12, 4, -6];
-// const zIndex = [10, 20, 30];
+import ductTape from "../../assets/images/about/duct-tape.png";
 
 const CarouselAbout = () => {
   return (
-    <div className="relative w-[400px] h-[400px]" id="carousel-about">
+    <div className="relative">
       <img
-        src={carouselItem1}
-        className="w-[21rem] h-[21rem] rounded-xl absolute"
-        alt="item1"
+        src={ductTape}
+        alt="tape"
+        className="absolute -top-[18%] -left-[12%] w-60 lg:w-72 z-40"
       />
-      <img
-        src={carouselItem2}
-        className="w-[21rem] h-[21rem] rounded-xl absolute"
-        alt="item2"
-      />
-      <img
-        src={carouselItem3}
-        className="w-[21rem] h-[21rem] rounded-xl absolute"
-        alt="item3"
-      />
+      <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px]" id="carousel-about">
+        <img
+          src={carouselItem1}
+          className="w-[85%] h-[85%] rounded-xl absolute"
+          alt="item1"
+        />
+        <img
+          src={carouselItem2}
+          className="w-[85%] h-[85%] rounded-xl absolute"
+          alt="item2"
+        />
+        <img
+          src={carouselItem3}
+          className="w-[85%] h-[85%] rounded-xl absolute"
+          alt="item3"
+        />
+      </div>
     </div>
   );
 };

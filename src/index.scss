@@ -22,6 +22,21 @@
   src: url("./assets/fonts/SedgwickAve-Regular.ttf");
 }
 
+
+html {
+  @media screen and (max-width: 1280px) {
+    font-size: 90%;
+  }
+
+  @media screen and (max-width: 992px) {
+    font-size: 85%;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 80%;
+  }
+}
+
 main {
   @apply font-jakarta;
 

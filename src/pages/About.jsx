@@ -1,7 +1,6 @@
 import background from "../assets/images/about/background.jpg";
 import CarouselAbout from "../components/Carousel/About";
 
-import ductTape from "../assets/images/about/duct-tape.png";
 
 const About = () => {
   return (
@@ -48,8 +47,8 @@ const About = () => {
           <h1 className="text-2xl font-sedgwick mb-8">
             About <span className="text-main-3">TED</span>
           </h1>
-          <div className="mb-8 flex">
-            <div className="w-1/2 text-justify">
+          <div className="mb-8 flex flex-col md:flex-row gap-y-[4rem]">
+            <div className="md:w-1/2 text-justify">
               <p className="mb-6">
                 TED is a nonprofit organization devoted to Ideas Worth
                 Spreading. Started as a four-day conference in California 30
@@ -76,8 +75,7 @@ const About = () => {
                 amplify the impact of their remarkable projects and activities.
               </p>
             </div>
-            <div className="w-1/2 flex justify-center items-center relative">
-              <img src={ductTape} alt="tape" className="absolute -top-16 left-12 w-72 z-40" />
+            <div className="md:w-1/2 flex justify-center items-center relative">
               <CarouselAbout />
             </div>
           </div>

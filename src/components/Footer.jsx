@@ -4,20 +4,20 @@ import logo from "../assets/images/logo-black-red.svg";
 
 const Footer = () => {
   return (
-    <div className="grid grid-cols-12 max-w-screen-xl mx-auto px-4 py-12 gap-x-2 gap-y-6">
+    <div className="grid grid-cols-12 max-w-screen-xl mx-auto px-4 py-12 gap-x-2 gap-y-6 font-jakarta">
       <div className="col-span-12 md:col-span-4">
         <Link to="/">
           <img src={logo} className="w-60 mb-4" alt="logo" />
         </Link>
         <p>
           © 2022 All Rights Reserved · “This independent{" "}
-          <span className="text-main-3 font-bold">TEDx</span> event is operated
-          under license from <span className="text-main-3 font-bold">TED</span>
+          <span className="text-main-3 font-jakartaBold">TEDx</span> event is operated
+          under license from <span className="text-main-3 font-jakartaBold">TED</span>
           .”
         </p>
       </div>
       <div className="col-span-6 sm:col-span-3 md:col-span-2">
-        <h4 className="font-bold mb-4">About</h4>
+        <h4 className="font-jakartaBold mb-4">About</h4>
         <ul>
           <li>
             <Link to="/about" className="hover:text-main-3">
@@ -30,7 +30,7 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link to="/faw" className="hover:text-main-3">
+            <Link to="/faq" className="hover:text-main-3">
               FAQ
             </Link>
           </li>
@@ -42,10 +42,10 @@ const Footer = () => {
         </ul>
       </div>
       <div className="col-span-6 sm:col-span-3 md:col-span-2">
-        <h4 className="font-bold mb-4">Contact</h4>
+        <h4 className="font-jakartaBold mb-4">Contact</h4>
       </div>
       <div className="col-span-6 sm:col-span-3 md:col-span-2">
-        <h4 className="font-bold mb-4">Previous Events</h4>
+        <h4 className="font-jakartaBold mb-4">Previous Events</h4>
         <ul>
           <li>
             <a

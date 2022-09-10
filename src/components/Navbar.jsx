@@ -156,9 +156,9 @@ const Navbar = () => {
             </motion.div>
           </li>
         </ul>
-        <button className="bg-main-3 px-6 py-1 rounded-lg">
+        <Link to="/ticket" className="bg-main-3 px-6 py-1 rounded-lg">
           Buy Ticket Now
-        </button>
+        </Link>
       </div>
     </nav>
   );

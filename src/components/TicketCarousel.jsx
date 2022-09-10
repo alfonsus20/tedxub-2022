@@ -26,7 +26,7 @@ const TicketLists = [
   {
     type: "Presale 2",
     price: 130000,
-    quota: 0,
+    quota: 100,
     photo: TicketPresale2,
   },
 ]

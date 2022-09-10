@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/ticket" element={<Ticket />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

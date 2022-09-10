@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -8,11 +9,22 @@ import Home from "./pages/Home";
 import MeetTheTeam from "./pages/MeetTheTeam";
 import Ticket from "./pages/Ticket";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   const { pathname } = useLocation();
 
   return (
     <div className="relative">
+      <ScrollToTop />
       <div className={pathname === "/" ? "hidden" : ""}>
         <Navbar />
       </div>

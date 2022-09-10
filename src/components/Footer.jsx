@@ -6,7 +6,9 @@ const Footer = () => {
   return (
     <div className="grid grid-cols-12 max-w-screen-xl mx-auto px-4 py-12 gap-x-2 gap-y-6">
       <div className="col-span-12 md:col-span-4">
-        <img src={logo} className="w-60 mb-4" alt="logo" />
+        <Link to="/">
+          <img src={logo} className="w-60 mb-4" alt="logo" />
+        </Link>
         <p>
           © 2022 All Rights Reserved · “This independent{" "}
           <span className="text-main-3 font-bold">TEDx</span> event is operated
@@ -75,7 +77,10 @@ const Footer = () => {
         </ul>
       </div>
       <div className="col-span-6 sm:col-span-3 md:col-span-2 flex flex-col md:items-center justify-end text-4xl">
-        <a href="https://instagram.com/tedxuniversitasbrawijaya" target="_blank">
+        <a
+          href="https://instagram.com/tedxuniversitasbrawijaya"
+          target="_blank"
+        >
           <Icon
             icon="ant-design:instagram-filled"
             className="hover:text-main-3"

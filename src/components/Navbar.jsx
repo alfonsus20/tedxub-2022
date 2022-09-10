@@ -34,7 +34,9 @@ const Navbar = () => {
         } px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta`}
       >
         <div>
-          <img src={logo} className="w-40" alt="logo" />
+          <Link to="/">
+            <img src={logo} className="w-40" alt="logo" />
+          </Link>
         </div>
         <ul className="flex justify-around gap-x-8">
           <li className="px-1">

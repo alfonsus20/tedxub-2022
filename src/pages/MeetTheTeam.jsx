@@ -1,4 +1,4 @@
-import background from "../assets/images/about-background.jpg";
+import background from "../assets/images/about/background.jpg";
 import CardMeetTheTeam from "../components/CardMeetTheTeam";
 
 const coreTeam = [

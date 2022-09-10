@@ -1,4 +1,4 @@
-import background from "../assets/images/about-background.jpg";
+import background from "../assets/images/about/background.jpg";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import contactPhone from "../assets/images/contact-phone.svg";

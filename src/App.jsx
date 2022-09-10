@@ -8,6 +8,7 @@ import Faqs from "./pages/Faqs";
 import Home from "./pages/Home";
 import MeetTheTeam from "./pages/MeetTheTeam";
 import Ticket from "./pages/Ticket";
+import TicketForm from "./pages/TicketForm";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -27,17 +28,18 @@ function App() {
       <ScrollToTop />
       <div className={pathname === "/" ? "hidden" : ""}>
         <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/faq" element={<Faqs />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/meet-the-team" element={<MeetTheTeam />} />
+            <Route path="/ticket" element={<Ticket />}></Route>
+            <Route path="/ticket-form" element={<TicketForm />} />
+          </Routes>
+        </main>
       </div>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/faq" element={<Faqs />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/meet-the-team" element={<MeetTheTeam />} />
-          <Route path="/ticket" element={<Ticket />} />
-        </Routes>
-      </main>
       <Footer />
     </div>
   );

@@ -28,7 +28,7 @@
 
 div[aria-selected="true"]{
   z-index: 999;
-  img{
+  img, .heading-container{
     animation: slideCenter 0.3s forwards ease-in-out;
   }
 }
@@ -44,8 +44,11 @@ div[aria-selected="true"]{
 
 div[aria-selected="false"]{
   animation: slideFalse 0.3s forwards ease-in-out;
+}
+
+.not-active{
   img{
-    filter: grayscale(100%);
+    filter: brightness(0.25);
   }
 }
 

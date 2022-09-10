@@ -23,7 +23,9 @@
 }
 
 main {
+  @apply font-jakarta;
+
   &>div:first-child {
-    padding: 8rem 1rem 6rem;
+    padding: 9rem 1rem 6rem;
   }
 }

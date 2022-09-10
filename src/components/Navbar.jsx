@@ -22,7 +22,7 @@ const Navbar = () => {
     setIsComponentVisible: setIsPrevEventsDropdownVisible,
   } = useComponentVisible();
   return (
-    <nav className="fixed top-0 w-full z-50 font-jakarta">
+    <nav className="fixed top-0 w-full z-50">
       <div className="mx-12 mt-6 px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg">
         <div>
           <img src={logo} className="w-40" alt="logo" />
@@ -49,10 +49,10 @@ const Navbar = () => {
             >
               <motion.div
                 animate={{
-                  backgroundPositionX: ["0%", "50%", "100%", "50%", "0%"],
+                  backgroundPosition: ["0%", "100%", "0%"],
                 }}
                 transition={{ repeat: Infinity, duration: 3 }}
-                className="h-2 bg-gradient-to-r from-[#7631D0] via-[#2156B0] to-[#AFE710] bg-[length:200%_200%]"
+                className="h-2 bg-gradient-to-r from-[#7631D0] via-[#2156B0] to-[#AFE710] bg-[length:300%_300%]"
               ></motion.div>
               <ul className="w-max pt-2 pb-6 px-4  space-y-3 text-[1rem]">
                 <li>
@@ -105,14 +105,13 @@ const Navbar = () => {
             >
               <motion.div
                 animate={{
-                  backgroundPositionX: ["0%", "50%", "100%", "50%", "0%"],
+                  backgroundPosition: ["0%", "100%", "0%"],
                 }}
                 transition={{
                   repeat: Infinity,
-                  duration: 4,
-                  ease: "easeInOut",
+                  duration: 3,
                 }}
-                className="h-2 bg-gradient-to-r from-[#7631D0] via-[#2156B0] to-[#AFE710] bg-[length:200%_200%]"
+                className="h-2 bg-gradient-to-r from-[#7631D0] via-[#2156B0] to-[#AFE710] bg-[length:300%_300%]"
               ></motion.div>
               <ul className="w-max pt-2 pb-6 px-4  space-y-3 text-[1rem]">
                 <li>

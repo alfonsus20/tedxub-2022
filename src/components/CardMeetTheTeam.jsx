@@ -2,7 +2,6 @@ import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import cardBackground from "../assets/images/meet-the-team-card-background.png";
 
-
 const CardMeetTheTeam = ({data, idx}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 

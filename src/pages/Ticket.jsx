@@ -1,5 +1,5 @@
 import ticketBackground from "../assets/images/ticket-background.jpg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../style/ticket.scss";
 import TicketCarousel from "../components/TicketCarousel";
 import { Link } from "react-router-dom";

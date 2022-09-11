@@ -26,7 +26,7 @@ export const coreTeam = {
     {
       nama: "Insky Johana Sheren Rottie",
       email: "shereninsky@gmail.com",
-      linkedin: "inskyjohana/",
+      linkedin: "inskyjohana",
       instagram: "@inskyjo",
       divisi: "Curator",
     },
@@ -74,7 +74,7 @@ export const coreTeam = {
     {
       nama: "M. Ilham Haikal Jogo Fauzi Baqy",
       email: "jogofauzi@gmail.com",
-      linkedin: "www.linkedin.com/in/jogo-fauzi-b69673201",
+      linkedin: "jogo-fauzi-b69673201",
       instagram: "@jog.o",
       divisi: "Event Manager",
     },

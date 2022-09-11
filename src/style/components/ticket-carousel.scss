@@ -20,6 +20,7 @@
   // background-color: burlywood;
   img{
     width: calc(100% - 100px);
+    margin-left: -15px;
     @media screen and (max-width: 640px){
       width: calc(100% - 20px);
     }

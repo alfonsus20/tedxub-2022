@@ -1,4 +1,20 @@
 .meettheteam{
   padding-left: 0 !important;
   padding-right: 0 !important;
+  padding-bottom: 0 !important;
+
+  .skew{
+    position: relative;
+  }
+  .skew::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    transform-origin: top left;
+    transform: skewY(-3deg);
+  }
 }

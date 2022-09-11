@@ -13,7 +13,7 @@ const SponsorPartner = () => {
             <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Sponsor</h1>
             <p className="font-sedgwick text-main-2 w-full mt-10 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">of TEDxUniversitasBrawijaya</p>
           </div>
-          <div className="flex flex-row items-center justify-center gap-20 flex-wrap m-auto z-50">
+          <div className="flex flex-row items-center justify-center gap-20 flex-wrap m-auto z-10">
             <div className="w-52 h-52 bg-gray-200">
               test
             </div>

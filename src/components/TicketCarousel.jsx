@@ -129,7 +129,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
         <Slider>
           {TicketLists.map((ticket, idx) => {
             return (
-              <Slide index={idx} onClick={() => handleSlide(idx, ticket.type, ticket.price, ticket.quota)} className={`cursor-pointer ${activeTicket == ticket.type && ticket.quota > 0 ? "active" : "not-active"}`}>
+              <Slide key={idx} index={idx} onClick={() => handleSlide(idx, ticket.type, ticket.price, ticket.quota)} className={`cursor-pointer ${activeTicket == ticket.type && ticket.quota > 0 ? "active" : "not-active"}`}>
                 <img src={ticket.photo} alt={ticket.type} />
                 <div className="heading-container z-50 absolute w-full h-full flex justify-center items-center text-center">
                   <h1 className="font-akira text-4xl text-main-2">{ticket.quota <= 0 ? "SOLD OUT" : activeTicket != ticket.type ? "Coming Soon" : ""}</h1>

@@ -22,22 +22,22 @@ const CardMeetTheTeam = ({data, idx}) => {
         <div className="border-main-1 border-b-2 p-2 flex justify-center items-center">
           <div className="w-14 h-2 bg-main-1 rounded-xl" />
         </div>
-        <div className="flex flex-col flex-1 p-4 justify-evenly items-center gap-2 break-words">
+        <div className="flex flex-col flex-1 p-4 justify-evenly items-center gap-2 break-words overflow-hidden">
           <div className="pb-2 border-main-2 border-b-2 text-main-2 text-center">
             <p className="font-jakarta">Nama</p>
             <p className="font-jakartaBold">{data.nama}</p>
           </div>
           <div className="p-2 border-main-2 border-b-2 text-main-2 text-center">
             <p className="font-jakarta">Email</p>
-            <p className="font-jakartaBold">palogatreheya@gmail.com</p>
+            <p className="font-jakartaBold">{data.email}</p>
           </div>
           <div className="p-2 border-main-2 border-b-2 text-main-2 text-center">
             <p className="font-jakarta">LinkedIn</p>
-            <p className="font-jakartaBold">palogatreheya</p>
+            <a target="_blank" href={`https://www.linkedin.com/${data.linkedin}/`} className="font-jakartaBold">{data.linkedin}</a>
           </div>
           <div className="p-2 border-main-2 border-b-2 text-main-2 text-center">
             <p className="font-jakarta">Instagram</p>
-            <p className="font-jakartaBold">@misterlogaloga</p>
+            <a target="_blank" href={`https://www.instagram.com/${data.instagram.replace('@','')}`} className="font-jakartaBold">{data.instagram}</a>
           </div>
         </div>
       </div>

@@ -28,18 +28,18 @@ function App() {
       <ScrollToTop />
       <div className={pathname === "/" ? "hidden" : ""}>
         <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/faq" element={<Faqs />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/meet-the-team" element={<MeetTheTeam />} />
-            <Route path="/ticket" element={<Ticket />} />
-            <Route path="/ticket-form" element={<TicketForm />} />
-          </Routes>
-        </main>
       </div>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/faq" element={<Faqs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/meet-the-team" element={<MeetTheTeam />} />
+          <Route path="/ticket" element={<Ticket />} />
+          <Route path="/ticket-form" element={<TicketForm />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );

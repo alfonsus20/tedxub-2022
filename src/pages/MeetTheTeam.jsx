@@ -1,5 +1,4 @@
 import background from "../assets/images/about/background.jpg";
-import CardMeetTheTeam from "../components/CardMeetTheTeam";
 import meetTheTeamPhoto0 from '../assets/images/meet-the-team-photo-0.png';
 import meetTheTeamPhoto1 from '../assets/images/meet-the-team-photo-1.png';
 import meetTheTeamPhoto2 from '../assets/images/meet-the-team-photo-2.png';

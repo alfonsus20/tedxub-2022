@@ -1,16 +1,69 @@
 import { Icon } from "@iconify/react";
+import { useEffect } from "react";
+import { useRef } from "react";
+import { useState } from "react";
 import background from "../assets/images/home/background.png";
 import Navbar from "../components/Navbar";
 
+// const VideoPlayer = () => {
+//   const containerRef = useRef(null);
+//   const [containerHeight, setContainerHeight] = useState(20);
+
+//   return (
+//     <div
+//       className="mt-12 relative overflow-hidden"
+//       ref={containerRef}
+//       style={{ height: `${containerHeight}vh` }}
+//     >
+//       <div className="w-[120%] absolute left-1/2 -translate-x-1/2 h-screen rounded-[50%] overflow-hidden">
+//         <video className="w-[85%] mx-auto" controls>
+//           <source src="https://api.tedxuniversitasbrawijaya.com/storage/TEDxUniversitasBrawijaya%202021%20_Manifestasi%20Peradaban_%20Opening%20Titles.mp4" />
+//         </video>
+//       </div>
+//       <h1 className="text-center text-white text-3xl z-10 top-1/2 absolute left-1/2 -translate-x-1/2  -translate-y-1/2 ">
+//         #MERAYAKAN <strong>KEMBALI</strong>
+//       </h1>
+//     </div>
+//   );
+// };
+
 const Home = () => {
+  const containerRef = useRef(null);
+  const [containerHeight, setContainerHeight] = useState(20);
+  const [containerOffset, setContainerOffset] = useState(0);
+  const [borderRadius, setBorderRadius] = useState(50);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const offsetTop = containerRef.current?.offsetTop;
+      setContainerOffset(offsetTop);
+
+      const scrollPosition = Math.round(window.scrollY);
+      const percentage = Math.ceil((scrollPosition / offsetTop) * 80);
+      const percentageRadius = Math.ceil((scrollPosition / offsetTop) * 50);
+
+      if (containerHeight >= 20 && containerHeight <= 100 && percentage <= 80) {
+        setContainerHeight(20 + percentage);
+      }
+
+      if (borderRadius >= 50 && borderRadius <= 100 && percentageRadius <= 50) {
+        setBorderRadius(50 - percentageRadius);
+      }
+    });
+  }, [containerHeight, borderRadius]);
+
+  useEffect(() => {
+    console.log({ amount: containerRef.current?.offsetTop });
+  }, [containerRef.current]);
+
   return (
     <div id="home">
       <section
-        className="bg-[#f0f0f0] pt-6 min-h-screen relative overflow-y-hidden bg-cover flex flex-col"
+        className="bg-[#f0f0f0] pt-6 min-h-screen relative overflow-y-hidden bg-cover bg-fixed flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
         <Navbar />
-        <div className="pt-8 px-14 mx-auto flex relative h-[65%] items-center w-full flex-1">
+        <div className="pt-8 px-14 mx-auto flex relative items-center w-full min-h-[70vh]">
           <div className="w-7/12">
             <p className="text-2xl font-bold mb-2">Welcome to</p>
             <p className="uppercase font-akira text-3xl">
@@ -31,13 +84,28 @@ const Home = () => {
             </div>
           </div>
           <div className="w-5/12">ads</div>
-          <div className="rounded-full p-4 border-2 border-[#2B2B22] w-fit text-[#2B2B22] absolute left-1/2 -translate-x-1/2 -bottom-6 ">
+          <button
+            className="rounded-full p-4 border-2 border-[#2B2B22] w-fit text-[#2B2B22] absolute left-1/2 -translate-x-1/2 bottom-2"
+            onClick={() => {
+              window.scrollTo({
+                behavior: "smooth",
+                top: containerRef.current?.offsetTop,
+              });
+            }}
+          >
             <Icon icon="akar-icons:arrow-down" className="text-3xl" />
-          </div>
+          </button>
         </div>
-        <div className="mt-12 relative h-36 overflow-hidden">
-          <div className="w-[120%] absolute left-1/2 -translate-x-1/2 h-72 rounded-[50%] overflow-hidden">
-            <video className="w-full" controls>
+        <div
+          id="video-container"
+          className="relative overflow-hidden"
+          ref={containerRef}
+          style={{ height: `${containerHeight}vh`,borderRadius: `${borderRadius}% ${borderRadius}% 0 0`}}
+        >
+          <div
+            className="w-[120%] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center"
+         >
+            <video className="w-[85%] h-full mx-auto">
               <source src="https://api.tedxuniversitasbrawijaya.com/storage/TEDxUniversitasBrawijaya%202021%20_Manifestasi%20Peradaban_%20Opening%20Titles.mp4" />
             </video>
           </div>
@@ -46,6 +114,7 @@ const Home = () => {
           </h1>
         </div>
       </section>
+      <div className="h-[3000px] bg-green-700"></div>
     </div>
   );
 };

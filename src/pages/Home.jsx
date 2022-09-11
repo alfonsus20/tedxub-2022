@@ -10,6 +10,7 @@ import background2 from "../assets/images/home/background-2.jpg";
 import leftHand from "../assets/images/home/left.png";
 import rightHand from "../assets/images/home/right.png";
 import banner from "../assets/images/home/banner.png";
+import CardSpeaker from "../components/CardSpeaker";
 
 const Home = () => {
   const containerRef = useRef(null);
@@ -97,23 +98,34 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="text-center bg-cover py-40 overflow-x-hidden"
+        className="text-center bg-cover py-40 overflow-x-hidden rounded-b-[100%_50%] relative z-20"
         style={{ backgroundImage: `url("${background2}")` }}
       >
         <div className="flex flex-col items-center mb-8 relative">
-          <img src={leftHand} alt="left" className="absolute -left-56 top-[-21rem] w-[48rem]" />
+          <img
+            src={leftHand}
+            alt="left"
+            className="absolute -left-56 top-[-21rem] w-[48rem]"
+          />
           <div className="font-sedgwick">
             <h2 className="text-8xl text-main-3">
               <span className="text-white">Me</span>rayakan
             </h2>
             <h3 className="text-8xl mt-6">kembali</h3>
           </div>
-          <div className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat" style={{ backgroundImage: `url("${banner}")` }}>
+          <div
+            className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
+            style={{ backgroundImage: `url("${banner}")` }}
+          >
             <p className="text-xl font-semibold text-white">
               Menggeledah Arus, Menilik Ruang
             </p>
           </div>
-          <img src={rightHand} alt="left" className="absolute -right-56 top-[-18rem] w-[48rem]" />
+          <img
+            src={rightHand}
+            alt="left"
+            className="absolute -right-56 top-[-18rem] w-[48rem]"
+          />
         </div>
         <p className="max-w-[70%] mx-auto font-medium">
           TEDxUniversitasBrawijaya 2022 kali ini akan membawa penonton melalui
@@ -126,6 +138,13 @@ const Home = () => {
           apa yang kita cemaskan pada masa kini, ketidakpastian akan masa depan,
           akan terjawab dengan kembali menelusuri makna masa lalu.
         </p>
+      </section>
+      <section className="bg-main-1 relative -top-48 pt-[22rem] pb-32">
+        <div className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6">
+          <CardSpeaker />
+          <CardSpeaker />
+          <CardSpeaker />
+        </div>
       </section>
     </div>
   );

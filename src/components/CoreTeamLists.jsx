@@ -1,4 +1,3 @@
-import { coreTeam } from "../utils/data";
 import CardMeetTheTeam from "./CardMeetTheTeam";
 
 const CoreTeamLists = ({type, name}) => {

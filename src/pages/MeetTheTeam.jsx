@@ -62,8 +62,7 @@ const MeetTheTeam = () => {
         </div>
         
         <div className="container m-auto px-10">
-          <h2 className="text-left font-akira text-3xl text-white max-w-6xl m-auto">CORE TEAM</h2>
-          
+          <h2 className="text-left font-akira text-4xl text-white max-w-6xl m-auto drop-shadow-lg">CORE TEAM</h2>
           <CoreTeamLists type={coreTeam.organizer} name={"ORGANIZER & CO-ORGANIZER"} />
           <CoreTeamLists type={coreTeam.curator} name={"CURATOR"} />
           <CoreTeamLists type={coreTeam.budgetManager} name={"BUDGET MANAGER"} />
@@ -74,7 +73,6 @@ const MeetTheTeam = () => {
           <CoreTeamLists type={coreTeam.designer} name={"DESIGNER "} />
           <CoreTeamLists type={coreTeam.videoProduction} name={"VIDEO PRODUCTION "} />
           <CoreTeamLists type={coreTeam.websiteManager} name={"WEBSITE MANAGER"} />
-
         </div>
 
         <div className="skew w-full m-auto relative mt-52 transform origin-bottom-left" style={{backgroundImage: `url(${meetTheTeamVolunteerBackground})`}}>
@@ -84,7 +82,7 @@ const MeetTheTeam = () => {
           </div>
 
           <div className="max-w-6xl m-auto py-40">
-            <h2 className="font-akira text-main-3 text-3xl mb-10 px-10">VOLUNTEER</h2>
+            <h2 className="font-akira text-main-3 text-4xl mb-10 px-10 drop-shadow-lg">VOLUNTEER</h2>
             <VolunteerLists typeA={volunteer.curator} nameA={"CURATOR"} typeB={volunteer.sponsorship} nameB={"SPONSORSHIP"} />
             <VolunteerLists typeA={volunteer.eventManager} nameA={"EVENT MANAGER"} typeB={volunteer.executiveProducer} nameB={"EXECUTIVE PRODUCER"} />
             <VolunteerLists typeA={volunteer.cem} nameA={"COMMUNICATION, EDITORIAL, AND MARKETING"} typeB={volunteer.designer} nameB={"Designer"} />

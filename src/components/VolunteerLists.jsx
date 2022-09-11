@@ -1,13 +1,21 @@
+import { motion } from "framer-motion";
+
 const VolunteerLists = ({typeA, nameA, typeB, nameB}) => {
   return (
     <div className="px-10">
       <div className="flex flex-row flex-wrap justify-between items-start mb-10"> 
         <div>
-          <div className="py-5 px-10 rounded-full border-main-1 border-2 w-fit mb-10">
+          <div className="py-5 px-10 rounded-full border-main-1 border-2 w-fit mb-10 hover:bg-main-1 hover:text-main-2 duration-200">
             <h3 className="font-akira">{nameA}</h3>
           </div>
           <div className="flex flex-row w-fit">
-            <div className="w-3 flex-1 bg-gradient-to-b from-sec-1 via-sec-2 to-sec-3" />
+            <motion.div
+              animate={{
+                backgroundPosition: ["0% 0%", "0% 100%", "0 0%"],
+              }}
+              transition={{ repeat: Infinity, duration: 3 }}
+              className="w-3 flex-1 bg-gradient-to-b from-sec-1 via-sec-2 to-sec-3 bg-[length:300%_300%]"
+            />
             <div className="flex flex-col gap-5">
               { typeA.map((a, idx) => {
                   return(
@@ -26,7 +34,7 @@ const VolunteerLists = ({typeA, nameA, typeB, nameB}) => {
           </div>
         </div>
         <div className="flex flex-col items-end">
-          <div className="py-5 px-10 rounded-full border-main-1 border-2 w-fit mb-10">
+          <div className="py-5 px-10 rounded-full border-main-1 border-2 w-fit mb-10 hover:bg-main-1 hover:text-main-2 duration-200">
             <h3 className="font-akira">{nameB}</h3>
           </div>
           <div className="flex flex-row">
@@ -45,7 +53,13 @@ const VolunteerLists = ({typeA, nameA, typeB, nameB}) => {
                 })
               }
             </div>
-            <div className="w-3 flex-1 bg-gradient-to-b from-sec-1 via-sec-2 to-sec-3" />
+            <motion.div
+              animate={{
+                backgroundPosition: ["0% 0%", "0% 100%", "0 0%"],
+              }}
+              transition={{ repeat: Infinity, duration: 3 }}
+              className="w-3 flex-1 bg-gradient-to-b from-sec-3 via-sec-2 to-sec-1 bg-[length:300%_300%]"
+            />
           </div>
         </div>
       </div>

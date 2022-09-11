@@ -109,7 +109,7 @@ const Home = () => {
               <source src="https://api.tedxuniversitasbrawijaya.com/storage/TEDxUniversitasBrawijaya%202021%20_Manifestasi%20Peradaban_%20Opening%20Titles.mp4" />
             </video>
           </div>
-          <h1 className="text-center text-white text-3xl z-10 top-1/2 absolute left-1/2 -translate-x-1/2  -translate-y-1/2 ">
+          <h1 className="text-center text-white text-3xl z-10 top-1/2 absolute left-1/2 -translate-x-1/2  -translate-y-1/2 pb-8 ">
             #MERAYAKAN <strong>KEMBALI</strong>
           </h1>
         </div>

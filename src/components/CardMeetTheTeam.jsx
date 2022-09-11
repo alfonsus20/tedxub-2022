@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import cardBackground from "../assets/images/meet-the-team-card-background.png";
+import coreFoto from "../assets/images/meet-the-team-core-photo.png";
 
 const CardMeetTheTeam = ({data, idx}) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -13,7 +14,9 @@ const CardMeetTheTeam = ({data, idx}) => {
         </div>
         <div className="flex flex-col flex-1 p-4 justify-evenly items-center gap-2">
           <p className="font-akira text-main-2 text-center">{data.nama}</p>
-          <div className="bg-main-2 border-main-1 border-2 w-40 h-40"></div>
+          <div className="bg-main-2 border-main-1 border-2 w-40 h-40 object-center overflow-hidden">
+            <img className="w-fit hover:scale-110 duration-200 m-auto" src={coreFoto} alt="" />
+          </div>
           <p className="font-sedgwick text-main-1 text-center">{data.divisi}</p>
         </div>
       </div>
@@ -33,11 +36,11 @@ const CardMeetTheTeam = ({data, idx}) => {
           </div>
           <div className="p-2 border-main-2 border-b-2 text-main-2 text-center">
             <p className="font-jakarta">LinkedIn</p>
-            <a target="_blank" href={`https://www.linkedin.com/${data.linkedin}/`} className="font-jakartaBold">{data.linkedin}</a>
+            <a target="_blank" href={`https://www.linkedin.com/in/${data.linkedin}/`} className="font-jakartaBold hover:text-main-3 duration-150">{data.linkedin}</a>
           </div>
           <div className="p-2 border-main-2 border-b-2 text-main-2 text-center">
             <p className="font-jakarta">Instagram</p>
-            <a target="_blank" href={`https://www.instagram.com/${data.instagram.replace('@','')}`} className="font-jakartaBold">{data.instagram}</a>
+            <a target="_blank" href={`https://www.instagram.com/${data.instagram.replace('@','')}`} className="font-jakartaBold hover:text-main-3 duration-150">{data.instagram}</a>
           </div>
         </div>
       </div>

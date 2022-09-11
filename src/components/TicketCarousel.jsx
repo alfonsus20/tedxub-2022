@@ -1,14 +1,17 @@
 import {
   CarouselProvider,
+  CarouselContext,
   Slider,
   Slide,
+  ButtonBack,
+  ButtonNext
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "../style/components/ticket-carousel.scss";
 import TicketEarlyBird from "../assets/images/ticket-early-bird.png";
 import TicketPresale1 from "../assets/images/ticket-presale-1.png";
 import TicketPresale2 from "../assets/images/ticket-presale-2.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const TicketLists = [
   {
@@ -31,17 +34,35 @@ const TicketLists = [
   },
 ]
 
-const TicketCarousel = ({activeTicket, setTicket}) => {
+const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
+  
+  const [currentSlide, setCurrentSlide] = useState(1); 
+  
+  function CarouselWithContext() {
+    const carouselContext = useContext(CarouselContext);
 
-  const [currentSlide, setCurrentSlide] = useState(1);
+    // const [currentSlideContext, setCurrentSlideContext] = useState(
+    //   carouselContext.state.currentSlide
+    // );
+
+    useEffect(() => {
+      function onChange() {
+        // setCurrentSlideContext(carouselContext.state.currentSlide);
+        setCurrentSlide(carouselContext.state.currentSlide)
+      }
+  
+      carouselContext.subscribe(onChange);
+      return () => carouselContext.unsubscribe(onChange);
+    }, [carouselContext]);
+  }
 
   const handleSlide = (index, type, price, quota) => {
-    setCurrentSlide(index);
-    setTicket({
-      type: type,
-      price: price,
-      quota: quota,
-    });
+    // setCurrentSlide(index);
+    // setSelectedTicket({
+    //   type: type,
+    //   price: price,
+    //   quota: quota,
+    // });
   }
 
   useEffect(() => {
@@ -61,13 +82,48 @@ const TicketCarousel = ({activeTicket, setTicket}) => {
     };
   }, []);
 
+  useEffect(() => {
+    switch (currentSlide) {
+      case 0:
+        setSelectedTicket({
+          type: "Early Bird + TED Kit",
+          price: 105000,
+          quota: 0,
+        });
+        break;
+      case 1:
+        setSelectedTicket({
+          type: "Presale 1",
+          price: 120000,
+          quota: 100,
+        });
+        break;
+      case 2:
+        setSelectedTicket({
+          type: "Presale 2",
+          price: 130000,
+          quota: 100,
+        });
+        break;
+      default:
+        setSelectedTicket({
+          type: "Presale 1",
+          price: 120000,
+          quota: 100,
+        });
+        break;
+    };
+  }, [currentSlide])
+  
+
   return (
-    <div>
+    <div className="text-main-2">
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={35}
         totalSlides={3}
         visibleSlides={1}
+        dragStep={1}
         currentSlide={currentSlide}
       >
         <Slider>
@@ -82,6 +138,7 @@ const TicketCarousel = ({activeTicket, setTicket}) => {
             );
           })}
         </Slider>
+        <CarouselWithContext />
       </CarouselProvider>
     </div>
   );

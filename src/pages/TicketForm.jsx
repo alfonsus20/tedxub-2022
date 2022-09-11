@@ -2,11 +2,14 @@ import { useFormik } from "formik";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ticketBackground from "../assets/images/ticket-background.jpg";
+import PaymentSuccessModal from "../components/PaymentSuccessModal";
+import useDisclosure from "../hooks/useDisclosure";
 
 
 const TicketForm = () => {
 
   const { state } = useLocation();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   
   const formik = useFormik({
     initialValues: {
@@ -27,10 +30,20 @@ const TicketForm = () => {
 
   useEffect(() => {
     console.log(state.quantity)
-  }, [])
+  }, []);
+
+  const handleOpenModal = () => {
+    onOpen();
+  };
+
+  const handleCloseModal = () => {
+    onClose();
+  };
   
   return (
-    <div className="ticket-container bg-cover bg-no-repeat min-h-screen" style={{backgroundImage: `url(${ticketBackground})`}}>
+    <div className="relative ticket-container bg-cover bg-no-repeat min-h-screen" style={{backgroundImage: `url(${ticketBackground})`}}>
+      {/* <PaymentSuccess /> */}
+      <PaymentSuccessModal isOpen={isOpen} onClose={handleCloseModal} />
       <div className="m-auto z-10">
         <div className="heading text-center py-12 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>
@@ -245,10 +258,12 @@ const TicketForm = () => {
             
             <div className="font-jakartaBold flex flex-row justify-center items-center mt-5 gap-3">
               <Link to="/ticket"><button type="button" className="px-10 py-2 bg-main-2 text-main-1 rounded-full">Cancel</button></Link>
-              <button className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Pay</button>
+              <button type="button" onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Pay</button>
             </div>
           </div>
         </form>
+      </div>
+      <div>
       </div>
     </div>
   );

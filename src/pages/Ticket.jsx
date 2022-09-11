@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Ticket = () => {
 
   // Panggil API untuk initiate default ticket yang active
-  const [ticket, setTicket] = useState(
+  const [selectedTicket, setSelectedTicket] = useState(
     {
       type: "Presale 1",
       price: 120000,
@@ -41,22 +41,22 @@ const Ticket = () => {
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Tickets</h1>
         </div>
         <div className="w-full">
-        <TicketCarousel activeTicket={activeTicket} setTicket={setTicket} />
+        <TicketCarousel activeTicket={activeTicket} setSelectedTicket={setSelectedTicket} />
         </div>
 
         <div className="flex flex-col font-jakarta text-center text-main-2 gap-2">
-          <p className="text-xl">{ticket?.type}</p>
-          <p className="font-jakartaBold text-4xl">{ticket?.price}</p>
+          <p className="text-xl">{selectedTicket?.type}</p>
+          <p className="font-jakartaBold text-4xl">{selectedTicket?.price}</p>
           <p className="text-sm">*max 5 tickets for once transaction</p>
           <div className="flex flex-row flex-wrap justify-center items-center mt-5 gap-5">
             <div className="flex flex-row items-center justify-between gap-10 w-40 bg-main-2 rounded-full px-5 py-2 text-main-1 font-jakartaBold">
-              <button disabled={ticket.type == activeTicket && ticket.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
+              <button disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
               {quantity}
-              <button disabled={ticket.type == activeTicket && ticket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
+              <button disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
-            <Link to={"/ticket-form"} state={{ type: ticket.type, price: ticket.price, quota: ticket.quota, quantity: quantity }}><button disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3" : "bg-gray-500"} `}>Checkout</button></Link>
+            <Link to={"/ticket-form"} state={{ type: selectedTicket.type, price: selectedTicket.price, quota: selectedTicket.quota, quantity: quantity }}><button disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3" : "bg-gray-500"} `}>Checkout</button></Link>
           </div>
-          { quantity > 0 && <p className="mt-5">{quantity} x Rp {ticket?.price} = Rp {quantity * ticket?.price}</p>}
+          { quantity > 0 && <p className="mt-5">{quantity} x Rp {selectedTicket?.price} = Rp {quantity * selectedTicket?.price}</p>}
         </div>
 
       </div>

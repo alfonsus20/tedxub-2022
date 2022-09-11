@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Faqs from "./pages/Faqs";
 import Home from "./pages/Home";
 import MeetTheTeam from "./pages/MeetTheTeam";
+import SponsorPartner from "./pages/SponsorPartner";
 import Ticket from "./pages/Ticket";
 import TicketForm from "./pages/TicketForm";
 

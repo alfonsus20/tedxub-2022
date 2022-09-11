@@ -17,22 +17,28 @@ const Home = () => {
   const [containerHeight, setContainerHeight] = useState(20);
   const [borderRadius, setBorderRadius] = useState(50);
 
+  const handleScroll = () => {
+    const offsetTop = containerRef.current?.offsetTop;
+    const scrollPosition = Math.round(window.scrollY);
+    const percentage = Math.ceil((scrollPosition / offsetTop) * 80);
+    const percentageRadius = Math.ceil((scrollPosition / offsetTop) * 50);
+
+    if (containerHeight >= 20 && containerHeight <= 100 && percentage <= 80) {
+      setContainerHeight(20 + percentage);
+    }
+
+    if (borderRadius >= 50 && borderRadius <= 100 && percentageRadius <= 50) {
+      setBorderRadius(50 - percentageRadius);
+    }
+  };
+
   useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const offsetTop = containerRef.current?.offsetTop;
-      const scrollPosition = Math.round(window.scrollY);
-      const percentage = Math.ceil((scrollPosition / offsetTop) * 80);
-      const percentageRadius = Math.ceil((scrollPosition / offsetTop) * 50);
+    document.addEventListener("scroll", handleScroll);
 
-      if (containerHeight >= 20 && containerHeight <= 100 && percentage <= 80) {
-        setContainerHeight(20 + percentage);
-      }
-
-      if (borderRadius >= 50 && borderRadius <= 100 && percentageRadius <= 50) {
-        setBorderRadius(50 - percentageRadius);
-      }
-    });
-  }, [containerHeight, borderRadius]);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     console.log({ amount: containerRef.current?.offsetTop });

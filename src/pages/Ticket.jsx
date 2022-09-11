@@ -1,5 +1,5 @@
 import ticketBackground from "../assets/images/ticket-background.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../style/ticket.scss";
 import TicketCarousel from "../components/TicketCarousel";
 import { Link } from "react-router-dom";
@@ -32,6 +32,10 @@ const Ticket = () => {
     }
     setQuantity(quantity-1);
   };  
+
+  useEffect(() => {
+    setQuantity(0);
+  }, [selectedTicket])
 
   return (
     <div className="ticket-container bg-cover bg-no-repeat min-h-screen" style={{backgroundImage: `url(${ticketBackground})`}}>

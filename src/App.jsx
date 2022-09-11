@@ -39,6 +39,7 @@ function App() {
           <Route path="/meet-the-team" element={<MeetTheTeam />} />
           <Route path="/ticket" element={<Ticket />} />
           <Route path="/ticket-form" element={<TicketForm />} />
+          <Route path="/sponsor-partner" element={<SponsorPartner />} />
         </Routes>
       </main>
       <Footer />

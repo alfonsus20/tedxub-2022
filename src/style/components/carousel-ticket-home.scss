@@ -1,0 +1,28 @@
+#carousel-ticket-home {
+    position: relative;
+    overflow: hidden;
+    // height: 44rem;
+
+    img {
+        width: 43rem;
+        transition: all;
+    }
+
+    .image-0 {
+        top: 0;
+        right: 0;
+        transform: translate(20%, 0);
+    }
+
+    .image-1 {
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 0;
+    }
+
+    .image-2 {
+        bottom: 0;
+        right: 0;
+        transform: translate(20%, 0);
+    }
+}

@@ -27,6 +27,8 @@
   src: url("./assets/fonts/Shrikhand-Regular.ttf");
 }
 
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 html {
   @media screen and (max-width: 1280px) {
@@ -53,4 +55,8 @@ main {
   #home {
     padding: 0;
   }
+}
+
+.slick-track,.slick-list {
+  overflow: hidden!important;
 }

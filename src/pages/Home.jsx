@@ -10,7 +10,9 @@ import background2 from "../assets/images/home/background-2.jpg";
 import leftHand from "../assets/images/home/left.png";
 import rightHand from "../assets/images/home/right.png";
 import banner from "../assets/images/home/banner.png";
+import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
 import CardSpeaker from "../components/CardSpeaker";
+import CarouselTicketHome from "../components/CarouselTicketHome";
 
 const Home = () => {
   const containerRef = useRef(null);
@@ -145,11 +147,29 @@ const Home = () => {
           akan terjawab dengan kembali menelusuri makna masa lalu.
         </p>
       </section>
-      <section className="bg-main-1 relative -top-48 pt-[22rem] pb-32">
+      <section className="bg-main-1 relative -mt-48 pt-[22rem] pb-32">
         <div className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6">
           <CardSpeaker />
           <CardSpeaker />
           <CardSpeaker />
+        </div>
+      </section>
+      <section
+        className="bg-cover flex"
+        style={{ backgroundImage: `url("${bgSectionTicket}")` }}
+      >
+        <div className="w-[40%] flex justify-center py-40">
+          <div className="max-w-xs">
+            <h3 className="text-white uppercase font-akira text-5xl mb-12">
+              grab your tickets now!
+            </h3>
+            <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full">
+              Buy Tickets
+            </button>
+          </div>
+        </div>
+        <div className="w-[60%] max-h-[40rem] flex items-center overflow-y-hidden">
+          <CarouselTicketHome />
         </div>
       </section>
     </div>

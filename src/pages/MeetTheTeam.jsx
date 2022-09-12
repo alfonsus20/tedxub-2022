@@ -1,10 +1,10 @@
 import background from "../assets/images/about/background.jpg";
-import meetTheTeamPhoto0 from '../assets/images/meet-the-team-photo-0.png';
-import meetTheTeamPhoto1 from '../assets/images/meet-the-team-photo-1.png';
-import meetTheTeamPhoto2 from '../assets/images/meet-the-team-photo-2.png';
-import meetTheTeamPhoto3 from '../assets/images/meet-the-team-photo-3.png';
-import meetTheTeamPhoto4 from '../assets/images/meet-the-team-photo-4.png';
-import meetTheTeamPhoto5 from '../assets/images/meet-the-team-photo-5.png';
+// import meetTheTeamPhoto0 from '../assets/images/meet-the-team-photo-0.png';
+import meetTheTeamPhoto0 from '../assets/images/meet-the-team-photo-1.png';
+import meetTheTeamPhoto1 from '../assets/images/meet-the-team-photo-2.png';
+import meetTheTeamPhoto2 from '../assets/images/meet-the-team-photo-3.png';
+import meetTheTeamPhoto3 from '../assets/images/meet-the-team-photo-4.png';
+import meetTheTeamPhoto4 from '../assets/images/meet-the-team-photo-5.png';
 import meetTheTeamVolunteerBackground from '../assets/images/meet-the-team-volunteer-background.jpg';
 import xSticker from '../assets/images/meet-the-team-x.png';
 import circleSticker from '../assets/images/meet-the-team-circle.png';
@@ -16,28 +16,36 @@ import { coreTeam, volunteer } from "../utils/data";
 import VolunteerLists from "../components/VolunteerLists";
 import CoreTeamLists from "../components/CoreTeamLists";
 
-const filmPhotosLists = [
-  meetTheTeamPhoto1,
-  meetTheTeamPhoto2,
-  meetTheTeamPhoto3,
-  meetTheTeamPhoto4,
-  meetTheTeamPhoto5,
-];
+// const filmPhotosLists = [
+//   meetTheTeamPhoto0,
+//   meetTheTeamPhoto1,
+//   meetTheTeamPhoto2,
+//   meetTheTeamPhoto3,
+//   meetTheTeamPhoto4,
+// ];
 
 const MeetTheTeam = () => {
-  const [filmPhotos, setFilmPhotos] = useState(0);
+  // const [filmPhotos, setFilmPhotos] = useState(0);
+  const [currentFilmPhoto, setcurrentFilmPhoto] = useState(0);
   
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     if (filmPhotos === filmPhotosLists.length - 1) {
+  //       setFilmPhotos(0);
+  //     } else {
+  //       setFilmPhotos(filmPhotos + 1);
+  //     }
+  //   }, 4000)
+  
+  //   return () => clearInterval(intervalId);
+  // }, [filmPhotos]);
+
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (filmPhotos === filmPhotosLists.length - 1) {
-        setFilmPhotos(0);
-      } else {
-        setFilmPhotos(filmPhotos + 1);
-      }
-    }, 4000)
+    setInterval(() => {
+      setcurrentFilmPhoto(prev => (prev+1)%5);
+    }, 2000)
+  }, [])
   
-    return () => clearInterval(intervalId);
-  }, [filmPhotos]);
   return (
     <div className="meettheteam min-h-screen w-full bg-center px-0" style={{ backgroundImage: `url("${background}")` }}>
       <div className="m-auto z-10">
@@ -46,14 +54,19 @@ const MeetTheTeam = () => {
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Meet The Team</h1>
         </div>
         <div className="pb-10 relative w-full">
-          <img className="filmPhoto-bg w-full left-0" src={meetTheTeamPhoto0} alt="Background" />
+          {/* <img className="absolute filmPhoto-bg w-full left-0" src={meetTheTeamPhoto0} alt="Background" /> */}
+          <img className={`filmPhoto-bg w-full left-0 ${currentFilmPhoto == 0 ? "block" : "hidden"}`} src={meetTheTeamPhoto0} alt="Background" />
+          <img className={`filmPhoto-bg w-full left-0 ${currentFilmPhoto == 1 ? "block" : "hidden"}`} src={meetTheTeamPhoto1} alt="Background" />
+          <img className={`filmPhoto-bg w-full left-0 ${currentFilmPhoto == 2 ? "block" : "hidden"}`} src={meetTheTeamPhoto2} alt="Background" />
+          <img className={`filmPhoto-bg w-full left-0 ${currentFilmPhoto == 3 ? "block" : "hidden"}`} src={meetTheTeamPhoto3} alt="Background" />
+          <img className={`filmPhoto-bg w-full left-0 ${currentFilmPhoto == 4 ? "block" : "hidden"}`} src={meetTheTeamPhoto4} alt="Background" />
           {/* <AnimatePresence>
             <motion.div
               key={filmPhotos}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
-                default: { duration: .5 }
+                default: { duration: 4 }
               }}
             >
               <img src={filmPhotosLists[filmPhotos]} className="filmPhoto w-full left-0" alt="Photo 1" /> 

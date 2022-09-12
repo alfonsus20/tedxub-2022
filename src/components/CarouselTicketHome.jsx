@@ -23,6 +23,8 @@ const CarouselTicketHome = () => {
     vertical: true,
     autoplay: true,
     autoplaySpeed: 1000,
+    pauseOnHover: false,
+    draggable: false,
     beforeChange: (_, next) => {
       setActiveSlide(next);
     },
@@ -33,10 +35,10 @@ const CarouselTicketHome = () => {
       {[...new Array(6).keys()].map((_, idx) => (
         <div>
           <img
-            src={arrOfImg[idx % 2]}
-            className={cn("transition duration-1000", {
-              "scale-[100%]": idx  === (activeSlide + 1) % 6,
-              "scale-[90%]": idx  !== (activeSlide + 1) % 6,
+            src={arrOfImg[idx % 3]}
+            className={cn("transition duration-1000 ml-auto transform", {
+              "scale-[100%] translate-x-[15%]": idx === (activeSlide + 1) % 6,
+              "scale-[90%] translate-x-[20%]": idx !== (activeSlide + 1) % 6,
             })}
           />
         </div>

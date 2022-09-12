@@ -22,6 +22,9 @@ module.exports = {
       backgroundSize: {
         "300%": "300%",
       },
+      blur: {
+        xs: "2px",
+      },
     },
   },
   plugins: [],

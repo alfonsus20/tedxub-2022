@@ -31,7 +31,7 @@ const Navbar = () => {
       <div
         className={`mx-12 ${
           pathname === "/" ? "mt-0" : "mt-6"
-        } px-12 py-6 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta`}
+        } px-12 py-5 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta`}
       >
         <div>
           <Link to="/">

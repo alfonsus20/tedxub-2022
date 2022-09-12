@@ -38,7 +38,7 @@ const CarouselTicketHome = () => {
             src={arrOfImg[idx % 3]}
             className={cn("transition duration-1000 ml-auto transform", {
               "scale-[100%] translate-x-[15%]": idx === (activeSlide + 1) % 6,
-              "scale-[90%] translate-x-[20%]": idx !== (activeSlide + 1) % 6,
+              "scale-[90%] translate-x-[20%] blur-xs": idx !== (activeSlide + 1) % 6,
             })}
           />
         </div>

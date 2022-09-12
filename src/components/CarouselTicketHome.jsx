@@ -8,7 +8,7 @@ import ticket3 from "../assets/images/home/ticket-3.png";
 
 import "../style/components/carousel-ticket-home.scss";
 
-const arrOfImg = [ticket1, ticket2, ticket3];
+const arrOfImg = [ticket3, ticket2, ticket1];
 
 const CarouselTicketHome = () => {
   const [activeSlide, setActiveSlide] = useState(0);

@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${pathname === "/" ? "static" : "fixed top-0"} z-50 w-full`}
+      className={`${pathname === "/" ? "static" : "fixed top-0"} z-30 w-full`}
     >
       <div
         className={`mx-12 ${

@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ticketBackground from "../assets/images/ticket-background.jpg";
+import OyCashier from "../components/OyCashier";
 import PaymentSuccessModal from "../components/PaymentSuccessModal";
 import useDisclosure from "../hooks/useDisclosure";
 
@@ -9,7 +10,7 @@ import useDisclosure from "../hooks/useDisclosure";
 const TicketForm = () => {
 
   const { state } = useLocation();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, isOpenCashier, onOpen, onOpenCashier, onClose, onCloseCashier } = useDisclosure();
   
   const formik = useFormik({
     initialValues: {
@@ -36,14 +37,23 @@ const TicketForm = () => {
     onOpen();
   };
 
+  const handleOpenOyCashier = () => {
+    onOpenCashier();
+  };
+
   const handleCloseModal = () => {
     onClose();
+  };
+
+  const handleCloseOyCashier = () => {
+    onCloseCashier();
   };
   
   return (
     <div className="relative ticket-container bg-cover bg-no-repeat min-h-screen" style={{backgroundImage: `url(${ticketBackground})`}}>
       {/* <PaymentSuccess /> */}
       <PaymentSuccessModal isOpen={isOpen} onClose={handleCloseModal} />
+      <OyCashier isOpenCashier={isOpenCashier} onCloseCashier={handleCloseOyCashier} />
       <div className="m-auto z-10">
         <div className="heading text-center py-12 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>
@@ -51,7 +61,7 @@ const TicketForm = () => {
         </div>
 
         <form onSubmit={formik.handleSubmit}>
-          <div className="container max-w-6xl gap-5 m-auto text-main-2 text-left flex flex-col font-jakarta">
+          <div className="container max-w-6xl gap-5 m-auto text-main-2 text-left flex flex-col font-jakarta px-10">
 
             <div className="flex flex-col px-10">
               <h2 className="font-jakartaBold text-3xl">Data Tiket Pemesan</h2>
@@ -256,9 +266,10 @@ const TicketForm = () => {
               </div>
             </div>
             
-            <div className="font-jakartaBold flex flex-row justify-center items-center mt-5 gap-3">
+            <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
               <Link to="/ticket"><button type="button" className="px-10 py-2 bg-main-2 text-main-1 rounded-full">Cancel</button></Link>
               <button type="button" onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Pay</button>
+              <button type="button" onClick={handleOpenOyCashier} className="px-10 py-2 bg-blue-500 text-main-2 rounded-full">Open Oy!</button>
             </div>
           </div>
         </form>

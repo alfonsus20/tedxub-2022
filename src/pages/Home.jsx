@@ -1,7 +1,4 @@
 import { Icon } from "@iconify/react";
-import { useEffect } from "react";
-import { useRef } from "react";
-import { useState } from "react";
 import Navbar from "../components/Navbar";
 
 import background from "../assets/images/home/background.png";
@@ -13,39 +10,9 @@ import banner from "../assets/images/home/banner.png";
 import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
 import CardSpeaker from "../components/CardSpeaker";
 import CarouselTicketHome from "../components/CarouselTicketHome";
+import VideoContainer from "../components/VideoContainer";
 
 const Home = () => {
-  const containerRef = useRef(null);
-  const [containerHeight, setContainerHeight] = useState(20);
-  const [borderRadius, setBorderRadius] = useState(50);
-
-  const handleScroll = () => {
-    const offsetTop = containerRef.current?.offsetTop;
-    const scrollPosition = Math.round(window.scrollY);
-    const percentage = Math.ceil((scrollPosition / offsetTop) * 80);
-    const percentageRadius = Math.ceil((scrollPosition / offsetTop) * 50);
-
-    if (containerHeight >= 20 && containerHeight <= 100 && percentage <= 80) {
-      setContainerHeight(20 + percentage);
-    }
-
-    if (borderRadius >= 50 && borderRadius <= 100 && percentageRadius <= 50) {
-      setBorderRadius(50 - percentageRadius);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log({ amount: containerRef.current?.offsetTop });
-  }, [containerRef.current]);
-
   return (
     <div id="home">
       <section
@@ -77,33 +44,15 @@ const Home = () => {
           <button
             className="rounded-full p-4 border-2 border-[#2B2B22] w-fit text-[#2B2B22] absolute left-1/2 -translate-x-1/2 bottom-2"
             onClick={() => {
-              window.scrollTo({
-                behavior: "smooth",
-                top: containerRef.current?.offsetTop,
-              });
+              document
+                .getElementById("video-container")
+                .scrollIntoView({ behavior: "smooth" });
             }}
           >
             <Icon icon="akar-icons:arrow-down" className="text-3xl" />
           </button>
         </div>
-        <div
-          id="video-container"
-          className="relative overflow-hidden"
-          ref={containerRef}
-          style={{
-            height: `${containerHeight}vh`,
-            borderRadius: `${borderRadius}% ${borderRadius}% 0 0`,
-          }}
-        >
-          <div className="w-[120%] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center">
-            <video className="w-[85%] h-full mx-auto" autoPlay muted loop>
-              <source src="https://api.tedxuniversitasbrawijaya.com/storage/video.mp4" />
-            </video>
-          </div>
-          <h1 className="text-center text-white text-3xl z-10 top-1/2 absolute left-1/2 -translate-x-1/2  -translate-y-1/2 pb-8 ">
-            #MERAYAKAN <strong>KEMBALI</strong>
-          </h1>
-        </div>
+        <VideoContainer />
       </section>
       <section
         className="text-center bg-cover py-40 overflow-x-hidden rounded-b-[100%_50%] relative z-20"

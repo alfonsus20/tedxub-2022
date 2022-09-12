@@ -29,7 +29,9 @@ const OyCashier = ({onCloseCashier, isOpenCashier}) => {
           exit={{ opacity: 0 }}
           className={`z-50 relative border-main-2 ${isOpenCashier ? "visible opacity-100" : "invisible opacity-0"}`}
         >
-          <iframe className="relative z-50 overflow-y-hidden h-screen py-10" style={{maxHeight: "900px"}} src="https://pay-stg.oyindonesia.com/4fb837ee-ecd7-44df-b080-40a825cec093" frameBorder="0"></iframe>
+          <div className="h-screen py-10">
+            <iframe className="relative z-50 h-full rounded-xl" style={{maxHeight: "900px"}} src="https://pay-stg.oyindonesia.com/4fb837ee-ecd7-44df-b080-40a825cec093" frameBorder="0"></iframe>
+          </div>
         </motion.div>
       </motion.div>
     )}

@@ -14,7 +14,7 @@ import CarouselTicketHome from "../components/CarouselTicketHome";
 import VideoContainer from "../components/VideoContainer";
 
 import { motion } from "framer-motion";
-
+import { useRef } from "react";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -27,6 +27,8 @@ const speakerContainerVariants = {
 };
 
 const Home = () => {
+  const refTheme = useRef(null);
+
   return (
     <div id="home">
       <section
@@ -69,36 +71,70 @@ const Home = () => {
         <VideoContainer />
       </section>
       <section
-        className="text-center bg-cover py-40 overflow-x-hidden rounded-b-[100%_50%] relative z-20"
+        ref={refTheme}
+        className="text-center bg-cover py-40 overflow-hidden rounded-b-[100%_50%] relative z-20"
         style={{ backgroundImage: `url("${background2}")` }}
       >
         <div className="flex flex-col items-center mb-8 relative">
-          <img
+          <motion.img
             src={leftHand}
             alt="left"
-            className="absolute -left-56 top-[-21rem] w-[48rem]"
+            className="absolute w-[40rem]"
+            initial={{ rotate: -20, top: "-24rem", left: "-20rem", opacity: 0 }}
+            whileInView={{
+              rotate: 0,
+              top: "-8rem",
+              left: "-14rem",
+              opacity: 1,
+              transition: { stiffness: 0, duration: 1 },
+            }}
           />
-          <div className="font-sedgwick">
-            <h2 className="text-8xl text-main-3">
-              <span className="text-white">Me</span>rayakan
-            </h2>
-            <h3 className="text-8xl mt-6">kembali</h3>
-          </div>
-          <div
-            className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
-            style={{ backgroundImage: `url("${banner}")` }}
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              transition: { stiffness: 0, duration: 1 },
+            }}
           >
-            <p className="text-xl font-semibold text-white">
-              Menggeledah Arus, Menilik Ruang
-            </p>
-          </div>
-          <img
+            <div className="font-sedgwick">
+              <h2 className="text-8xl text-main-3">
+                <span className="text-white">Me</span>rayakan
+              </h2>
+              <h3 className="text-8xl mt-6">kembali</h3>
+            </div>
+            <div
+              className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
+              style={{ backgroundImage: `url("${banner}")` }}
+            >
+              <p className="text-xl font-semibold text-white">
+                Menggeledah Arus, Menilik Ruang
+              </p>
+            </div>
+          </motion.div>
+          <motion.img
             src={rightHand}
             alt="left"
-            className="absolute -right-56 top-[-18rem] w-[48rem]"
+            className="absolute w-[40rem]"
+            initial={{ rotate: -20, top: "-6rem", right: "-16rem", opacity: 0 }}
+            whileInView={{
+              rotate: 0,
+              top: "-8rem",
+              right: "-14rem",
+              opacity: 1,
+              transition: { stiffness: 0, duration: 1 },
+            }}
           />
         </div>
-        <p className="max-w-[70%] mx-auto font-medium">
+        <motion.p
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: { stiffness: 0, duration: 1 },
+          }}
+          className="max-w-[70%] mx-auto font-medium"
+        >
           TEDxUniversitasBrawijaya 2022 kali ini akan membawa penonton melalui
           perjalanan istirahat dari kejenuhan dan kompleksitas yang telah
           terbentuk dengan kembali menjelajahi makna nilai kearifan lokal
@@ -108,7 +144,7 @@ const Home = () => {
           nilai dasar tiap-tiap individu dan sekitarnya yang telah ada. Karena
           apa yang kita cemaskan pada masa kini, ketidakpastian akan masa depan,
           akan terjawab dengan kembali menelusuri makna masa lalu.
-        </p>
+        </motion.p>
       </section>
       <section
         className="bg-main-1 relative -mt-48 pt-[22rem] pb-32 bg-cover bg-fixed bg-no-repeat bg-center"
@@ -117,7 +153,6 @@ const Home = () => {
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true}}
           variants={speakerContainerVariants}
           className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6"
         >

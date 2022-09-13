@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 
 import background from "../assets/images/home/background.png";
 import background2 from "../assets/images/home/background-2.jpg";
+import backgroundSpeaker from "../assets/images/home/background-speaker.png";
 
 import leftHand from "../assets/images/home/left.png";
 import rightHand from "../assets/images/home/right.png";
@@ -11,6 +12,19 @@ import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
 import CardSpeaker from "../components/CardSpeaker";
 import CarouselTicketHome from "../components/CarouselTicketHome";
 import VideoContainer from "../components/VideoContainer";
+
+import { motion } from "framer-motion";
+
+
+const speakerContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
 
 const Home = () => {
   return (
@@ -96,12 +110,21 @@ const Home = () => {
           akan terjawab dengan kembali menelusuri makna masa lalu.
         </p>
       </section>
-      <section className="bg-main-1 relative -mt-48 pt-[22rem] pb-32">
-        <div className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6">
+      <section
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-32 bg-cover bg-fixed bg-no-repeat bg-center"
+        style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
+      >
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true}}
+          variants={speakerContainerVariants}
+          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6"
+        >
           <CardSpeaker />
           <CardSpeaker />
           <CardSpeaker />
-        </div>
+        </motion.div>
       </section>
       <section
         className="bg-cover flex"

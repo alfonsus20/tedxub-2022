@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import background from "../assets/images/home/background.png";
 import background2 from "../assets/images/home/background-2.jpg";
 import backgroundSpeaker from "../assets/images/home/background-speaker.png";
+import line from "../assets/images/home/line.png";
 
 import leftHand from "../assets/images/home/left.png";
 import rightHand from "../assets/images/home/right.png";
@@ -31,7 +32,7 @@ const Home = () => {
   const refTheme = useRef(null);
 
   return (
-    <div id="home">
+    <div id="home" className="overflow-x-hidden">
       <section
         className="bg-[#f0f0f0] pt-6 min-h-screen relative overflow-y-hidden bg-cover bg-fixed flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
@@ -148,7 +149,7 @@ const Home = () => {
         </motion.p>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[22rem] pb-32 bg-cover bg-fixed bg-no-repeat bg-center"
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-32 bg-cover bg-fixed bg-no-repeat bg-center z-10"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div
@@ -161,12 +162,23 @@ const Home = () => {
           <CardSpeaker />
           <CardSpeaker />
         </motion.div>
+        <img
+          src={line}
+          className="absolute max-w-none w-[110%] h-[27%] bottom-[-16%] left-[-5%] rotate-1"
+          alt="line"
+        />
+        <img
+          src={line}
+          className="absolute max-w-none w-[110%] h-[27%] bottom-[-16%] left-[-5%]"
+          style={{ transform: "rotateY(180deg) rotate(1deg)" }}
+          alt="line"
+        />
       </section>
       <section
-        className="bg-cover flex"
+        className="bg-cover flex overflow-x-hidden relative items-center"
         style={{ backgroundImage: `url("${bgSectionTicket}")` }}
       >
-        <div className="w-[40%] flex justify-center py-40">
+        <div className="w-[40%] flex justify-center py-20">
           <div className="max-w-xs">
             <h3 className="text-white uppercase font-akira text-5xl mb-12">
               grab your tickets now!
@@ -178,11 +190,12 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[60%] max-h-[40rem] flex items-center overflow-y-hidden">
+        <div className="w-[60%] max-h-[44rem] flex items-center overflow-y-hidden">
           <CarouselTicketHome />
         </div>
       </section>
     </div>
   );
 };
+
 export default Home;

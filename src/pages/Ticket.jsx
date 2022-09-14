@@ -2,22 +2,42 @@ import ticketBackground from "../assets/images/ticket-background.jpg";
 import { useEffect, useState } from "react";
 import "../style/ticket.scss";
 import TicketCarousel from "../components/TicketCarousel";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Alert from "../components/Alert";
+import useDisclosure from "../hooks/useDisclosure";
 
 const Ticket = () => {
+  let navigate = useNavigate();
+  
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   // Panggil API untuk initiate default ticket yang active
   const [selectedTicket, setSelectedTicket] = useState(
     {
       type: "Presale 1",
       price: 120000,
-      quota: 100
+      quota: 2
     }
   );
   const [quantity, setQuantity] = useState(0);
   
   // Panggil API untuk initiate default ticket yang active
   const [activeTicket, setactiveTicket] = useState('Presale 1')
+  const [alertStatus, setAlertStatus] = useState('');
+
+  const handleOpenAlert = () => {
+    onOpen();
+    const timeoutAlert = setTimeout(() => {
+      onClose();
+    }, 3000);
+    return () => {
+      clearTimeout(timeoutAlert)
+    }
+  };
+
+  const handleCloseAlert = () => {
+    onClose();
+  };
 
   const handleIncrementQuantity = () => {
     if(quantity == 5){
@@ -33,10 +53,27 @@ const Ticket = () => {
     setQuantity(quantity-1);
   };  
 
+  const handleCheckout = () => {
+    // handleCloseNavbar();
+    if(quantity <= selectedTicket.quota){
+      return navigate("/ticket-form", { state: { type: selectedTicket.type, price: selectedTicket.price, quota: selectedTicket.quota, quantity: quantity } });
+    } else {
+      handleOpenAlert();
+    }
+  };
+
   useEffect(() => {
     setQuantity(0);
-  }, [selectedTicket])
+  }, [selectedTicket]);
 
+  useEffect(() => {
+    if(selectedTicket.quota > 0 && quantity > selectedTicket.quota){
+      setAlertStatus(`Maaf, tiket tersisa ${selectedTicket.quota} lagi.`);
+    } else if (selectedTicket.quota <= 0){
+      setAlertStatus('Maaf, tiket sudah habis.');
+    }
+  }, [quantity])
+  
   return (
     <div className="ticket-container bg-cover bg-no-repeat min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
       <div className="m-auto z-10">
@@ -58,11 +95,11 @@ const Ticket = () => {
               {quantity}
               <button disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
-            <Link to={"/ticket-form"} state={{ type: selectedTicket.type, price: selectedTicket.price, quota: selectedTicket.quota, quantity: quantity }}><button disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3" : "bg-gray-500"} `}>Checkout</button></Link>
+            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3" : "bg-gray-500"} `}>Checkout</button>
           </div>
           { quantity > 0 && <p className="mt-5">{quantity} x Rp {selectedTicket?.price} = Rp {quantity * selectedTicket?.price}</p>}
         </div>
-
+        <Alert alertStatus={alertStatus} isOpenAlert={isOpen} onCloseAlert={handleCloseAlert} />
       </div>
     </div>
   );

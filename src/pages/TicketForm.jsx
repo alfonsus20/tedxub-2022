@@ -8,6 +8,7 @@ import PaymentSuccessModal from "../components/PaymentSuccessModal";
 import useDisclosure from "../hooks/useDisclosure";
 import * as Yup from 'yup';
 import { fakultas } from "../utils/data";
+import "../style/ticket-form.scss";
 
 const TicketForm = () => {
 
@@ -93,7 +94,11 @@ const TicketForm = () => {
                       .email('Invalid email')
                       .required('Required'),
                     nomorTelp: Yup.string()
-                      .matches(/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/, "Phone number is not valid")
+                      // .min(8, "Dimulai dari angka 8")
+                      .matches(/^(\+62)8/, "Start with +62")
+                      .matches(/^[0-9+]*$/, 'Invalid Phone Number')
+                      .min(10, "Too short")
+                      .max(15, "Too long")
                       .required('Required'),
                     asalInstansi: Yup.string()
                       .required('Required'),

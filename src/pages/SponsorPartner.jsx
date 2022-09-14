@@ -32,8 +32,8 @@ const SponsorPartner = () => {
           </div>
         </div>
 
-        <div className="flex flex-col flex-wrap justify-center items-start m-auto max-w-6xl">
-          <div className="heading text-left py-20 relative">
+        <div className="flex flex-col flex-wrap justify-center items-center m-auto max-w-6xl">
+          <div className="heading text-center py-20 relative">
             <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 z-0 h-24">Partner</h1>
             <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Partner</h1>
             <p className="font-sedgwick text-main-2 w-full mt-10 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">of TEDxUniversitasBrawijaya</p>
@@ -60,11 +60,11 @@ const SponsorPartner = () => {
           </div>
         </div>
 
-        <div className="flex flex-col flex-wrap justify-center items-end m-auto max-w-6xl">
-          <div className="heading text-right py-20 relative">
-            <h1 className="font-sedgwick text-7xl text-main-3 opacity-75 z-0 h-20">Community Partner</h1>
-            <h1 className="font-akira text-white text-right text-4xl w-full absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Community Partner</h1>
-            <p className="font-sedgwick text-main-2 text-right w-full mt-10 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">of TEDxUniversitasBrawijaya</p>
+        <div className="flex flex-col flex-wrap justify-center items-center m-auto max-w-6xl">
+          <div className="heading text-center py-20 relative">
+            <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 z-0 h-24">Community Partner</h1>
+            <h1 className="font-akira text-white text-4xl w-full absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Community Partner</h1>
+            <p className="font-sedgwick text-main-2 w-full mt-10 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">of TEDxUniversitasBrawijaya</p>
           </div>
           <div className="flex flex-row items-center justify-center gap-20 flex-wrap m-auto">
             <div className="w-52 h-52 bg-gray-200">

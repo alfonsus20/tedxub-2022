@@ -85,7 +85,7 @@ const Ticket = () => {
         <TicketCarousel activeTicket={activeTicket} setSelectedTicket={setSelectedTicket} />
         </div>
 
-        <div className="flex flex-col font-jakarta text-center text-main-2 gap-2">
+        <div className="flex flex-col font-jakarta text-center text-main-2 gap-2 mt-10">
           <p className="text-xl">{selectedTicket?.type}</p>
           <p className="font-jakartaBold text-4xl">Rp {selectedTicket?.price}</p>
           <p className="text-sm">*max 5 tickets for once transaction</p>

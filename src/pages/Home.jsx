@@ -13,10 +13,13 @@ import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
 import CardSpeaker from "../components/CardSpeaker";
 import CarouselTicketHome from "../components/CarouselTicketHome";
 import VideoContainer from "../components/VideoContainer";
+import speaker from "../assets/images/home/speaker.jpg";
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import ModalSpeaker from "../components/ModalSpeaker";
+import { useState } from "react";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -30,6 +33,7 @@ const speakerContainerVariants = {
 
 const Home = () => {
   const refTheme = useRef(null);
+  const [selectedSpeaker, setSelectedSpeaker] = useState(null);
 
   return (
     <div id="home" className="overflow-x-hidden">
@@ -158,9 +162,12 @@ const Home = () => {
           variants={speakerContainerVariants}
           className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6"
         >
-          <CardSpeaker />
-          <CardSpeaker />
-          <CardSpeaker />
+          {["Najwa Shihab", "Coki Pardede", "Jerome Polin"].map((data, idx) => (
+            <CardSpeaker
+              key={idx}
+              onClick={() => setSelectedSpeaker({ nama: data, image: speaker })}
+            />
+          ))}
         </motion.div>
         <img
           src={line}
@@ -194,6 +201,11 @@ const Home = () => {
           <CarouselTicketHome />
         </div>
       </section>
+      <ModalSpeaker
+        isOpen={!!selectedSpeaker}
+        data={selectedSpeaker}
+        onClose={() => setSelectedSpeaker(null)}
+      />
     </div>
   );
 };

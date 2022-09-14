@@ -15,6 +15,7 @@ import VideoContainer from "../components/VideoContainer";
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -170,9 +171,11 @@ const Home = () => {
             <h3 className="text-white uppercase font-akira text-5xl mb-12">
               grab your tickets now!
             </h3>
-            <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full">
-              Buy Tickets
-            </button>
+            <Link to="/ticket">
+              <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full">
+                Buy Ticket
+              </button>
+            </Link>
           </div>
         </div>
         <div className="w-[60%] max-h-[40rem] flex items-center overflow-y-hidden">

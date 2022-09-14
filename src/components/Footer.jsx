@@ -18,14 +18,14 @@ const Footer = () => {
       </div>
       <div className="w-[10%] pt-6">
         <h4 className="font-jakartaBold mb-4">About</h4>
-        <ul>
+        <ul className="space-y-1">
           <li>
             <Link to="/about" className="hover:text-main-3">
               About TED
             </Link>
           </li>
           <li>
-            <Link to="/team" className="hover:text-main-3">
+            <Link to="/meet-the-team" className="hover:text-main-3">
               Meet The Team
             </Link>
           </li>
@@ -46,7 +46,7 @@ const Footer = () => {
       </div>
       <div className="w-[10%] pt-6">
         <h4 className="font-jakartaBold mb-4">Previous Events</h4>
-        <ul>
+        <ul className="space-y-1">
           <li>
             <a
               href="https://sorakria.tedxuniversitasbrawijaya.com"
@@ -83,9 +83,11 @@ const Footer = () => {
           <p className="mb-6">
             Graha Widyaloka Universitas Brawijaya, Malang Minggu, 2 Oktober 2022
           </p>
-          <button className="bg-main-3 py-2 px-8 rounded-md text-white">
-            Buy Ticket
-          </button>
+          <Link to="/ticket">
+            <button className="bg-main-3 py-2 px-8 rounded-md text-white">
+              Buy Ticket
+            </button>
+          </Link>
         </div>
       </div>
     </div>

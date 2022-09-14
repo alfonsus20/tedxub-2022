@@ -22,11 +22,11 @@ const CardSpeaker = () => {
   return (
     <motion.div
       variants={variant}
-      className="bg-white col-span-4 max-w-xs mx-auto rounded-xl relative group"
+      className="col-span-4 max-w-xs mx-auto  relative group"
     >
       <div className="h-56 w-5 bg-white absolute -top-56 left-1/2 -translate-x-1/2 z-10"></div>
       <div className="h-5 w-12 absolute -top-5 left-1/2 -translate-x-1/2 bg-white rounded-t-full"></div>
-      <div className="relative overflow-hidden cursor-pointer">
+      <div className="relative overflow-hidden cursor-pointer rounded-xl bg-white">
         <img
           src={speaker1}
           alt="speaker"

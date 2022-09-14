@@ -149,7 +149,7 @@ const Home = () => {
         </motion.p>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[22rem] pb-32 bg-cover bg-fixed bg-no-repeat bg-center z-10"
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div
@@ -164,12 +164,12 @@ const Home = () => {
         </motion.div>
         <img
           src={line}
-          className="absolute max-w-none w-[110%] h-[27%] bottom-[-16%] left-[-5%] rotate-1"
+          className="absolute max-w-none w-[110%] h-[27%] bottom-[-10%] left-[-5%] rotate-1"
           alt="line"
         />
         <img
           src={line}
-          className="absolute max-w-none w-[110%] h-[27%] bottom-[-16%] left-[-5%]"
+          className="absolute max-w-none w-[110%] h-[27%] bottom-[-10%] left-[-5%]"
           style={{ transform: "rotateY(180deg) rotate(1deg)" }}
           alt="line"
         />

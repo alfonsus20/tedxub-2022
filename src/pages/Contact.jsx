@@ -5,7 +5,7 @@ import contactPhone from "../assets/images/contact-phone.svg";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen w-full bg-cover bg-no-repeat" style={{ backgroundImage: `url("${background}")` }}>
+    <div className="min-h-screen w-full bg-cover bg-no-repeat bg-[#353535]" style={{ backgroundImage: `url("${background}")` }}>
       <img src={contactPhone} className="hidden lg:block absolute top-1/2 left-20 w-56 z-0" alt="Phone" />
       <img src={contactPhone} className="hidden lg:block absolute top-48 right-32 w-32 rotate-12 z-0" alt="Phone" />
       <div className="container m-auto z-10">

@@ -5,7 +5,7 @@ import CarouselAbout from "../components/Carousel/About";
 const About = () => {
   return (
     <div
-      className={"bg-[#353535] px-4 text-white bg-cover bg-no-repeat"}
+      className="bg-[#353535] px-4 text-white bg-cover bg-no-repeat"
       style={{ backgroundImage: `url("${background}")` }}
     >
       <div className="max-w-screen-xl mx-auto space-y-12">

@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Faqs from "./pages/Faqs";
 import Home from "./pages/Home";
 import MeetTheTeam from "./pages/MeetTheTeam";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import SponsorPartner from "./pages/SponsorPartner";
 import Ticket from "./pages/Ticket";
 import TicketForm from "./pages/TicketForm";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/ticket" element={<Ticket />} />
           <Route path="/ticket-form" element={<TicketForm />} />
           <Route path="/sponsor-partner" element={<SponsorPartner />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
         </Routes>
       </main>
       <Footer />

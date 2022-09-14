@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, FieldArray, Form, Formik, getIn, setIn, useFormik, useFormikContext } from "formik";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import ticketBackground from "../assets/images/ticket-background.jpg";
 import OyCashier from "../components/OyCashier";
 import PaymentSuccessModal from "../components/PaymentSuccessModal";
@@ -27,7 +27,8 @@ const TicketForm = () => {
 
 
   const handleOpenModal = () => {
-    onOpen();
+    // onOpen();
+    return navigate("/payment-success");
   };
 
   const handleOpenOyCashier = () => {
@@ -106,7 +107,8 @@ const TicketForm = () => {
                 {...buy, id: nanoid()}
               );
             })
-            alert(JSON.stringify(values, null, 2));
+            window.location.replace('https://dev.xen.to/sp-vjoXD');
+            // alert(JSON.stringify(values, null, 2));
             console.log(JSON.stringify(values, null, 2))
             }}
           >
@@ -329,7 +331,7 @@ const TicketForm = () => {
                                 </div>
                               }
                             </div>
-                          </div>
+                          </div>  
                         </div>
                       );
                     })}
@@ -347,6 +349,7 @@ const TicketForm = () => {
                 <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
                   <Link to="/ticket"><button type="button" className="px-10 py-2 bg-main-2 text-main-1 rounded-full">Cancel</button></Link>
                   <button className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Pay</button>
+                  <button type="button" onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Success</button>
                   <button type="button" onClick={handleOpenOyCashier} className="px-10 py-2 bg-blue-500 text-main-2 rounded-full">Open Oy!</button>
                 </div>
               </div>

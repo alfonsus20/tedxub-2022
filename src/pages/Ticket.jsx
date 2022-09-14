@@ -38,7 +38,7 @@ const Ticket = () => {
   }, [selectedTicket])
 
   return (
-    <div className="ticket-container bg-cover bg-no-repeat min-h-screen" style={{backgroundImage: `url(${ticketBackground})`}}>
+    <div className="ticket-container bg-cover bg-no-repeat min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
       <div className="m-auto z-10">
         <div className="heading text-center py-12 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>

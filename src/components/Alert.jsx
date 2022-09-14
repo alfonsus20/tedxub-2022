@@ -7,7 +7,7 @@ const Alert = ({ alertStatus, isOpenAlert, onCloseAlert }) => {
     <AnimatePresence>
       { isOpenAlert && (
         <motion.div 
-          className={`z-30 flex items-end justify-start fixed top-0 bottom-0 left-0 right-0 shadow-lg p-10 transition-modal ease-in-out transform`}
+          className={`z-30 flex items-end justify-start fixed w-fit h-fit bottom-0 left-0 right-0 shadow-lg p-10 transition-modal ease-in-out transform`}
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}

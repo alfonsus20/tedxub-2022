@@ -7,6 +7,7 @@ import OyCashier from "../components/OyCashier";
 import PaymentSuccessModal from "../components/PaymentSuccessModal";
 import useDisclosure from "../hooks/useDisclosure";
 import * as Yup from 'yup';
+import { fakultas } from "../utils/data";
 
 const TicketForm = () => {
 
@@ -69,6 +70,7 @@ const TicketForm = () => {
             buyer: 
               new Array(state?.quantity).fill({
                 id: '',
+                partner_tx_id: '',
                 nama: '',
                 email: '',
                 nomorTelp: '',
@@ -104,10 +106,10 @@ const TicketForm = () => {
           onSubmit={ values => {
             values.buyer = values.buyer.map((buy) => {
               return(
-                {...buy, id: nanoid()}
+                {...buy, id: nanoid(), partner_tx_id: nanoid()}
               );
             })
-            window.location.replace('https://dev.xen.to/sp-vjoXD');
+            // window.location.replace('https://dev.xen.to/sp-vjoXD');
             // alert(JSON.stringify(values, null, 2));
             console.log(JSON.stringify(values, null, 2))
             }}
@@ -159,7 +161,7 @@ const TicketForm = () => {
                     <div className="flex flex-col flex-1 gap-3">
                       <div>
                         <p>Asal Instansi</p>
-                        <div className="flex flex-row flex-wrap gap-3">
+                        {/* <div className="flex flex-row flex-wrap gap-3"> */}
                           <Field
                             component="select"
                             id="asalInstansi"
@@ -179,7 +181,7 @@ const TicketForm = () => {
                           </Field> 
                           {/* <Field type="button" id="asalInstansi" name="buyer.0.asalInstansi" value={"Universitas Brawijaya"} className="p-2 bg-main-2 rounded-lg text-main-1">Universitas Brawijaya</Fie> */}
                           {/* <Field type="button" id="asalInstansi" name="buyer.0.asalInstansi" value={"Lainnya"} className="p-2 bg-main-2 rounded-lg text-main-1">Lainnya</Field> */}
-                        </div>
+                        {/* </div> */}
                         <ErrorMessage className="text-main-3" component="div" name="buyer.0.asalInstansi" />
                       </div>
                       { values.buyer[0]?.asalInstansi == "Universitas Brawijaya" ?
@@ -195,20 +197,20 @@ const TicketForm = () => {
                             <option disabled value="">
                               Pilih Fakultas
                             </option>
-                            <option value="FILKOM" >
-                              FILKOM
-                            </option>
-                            <option value="FIA">
-                              FIA
-                            </option>
-                            <option value="FEB">
-                              FEB
-                            </option>
+                            {
+                              fakultas.map((fak, idx) => {
+                                return (
+                                  <option value={fak} key={idx} >
+                                    {fak}
+                                  </option>
+                                );
+                              })
+                            }
                           </Field>   
                           <ErrorMessage className="text-main-3" component="div" name="buyer.0.namaInstansi" />
                         </div>
                         :
-                        <div>
+                        <div className={`${values.buyer[0]?.asalInstansi ? "visible opacity-100" : "invisible opacity-0"}`}>
                           <p>Nama Instansi</p>
                           <Field
                             id="namaInstansi"
@@ -270,7 +272,7 @@ const TicketForm = () => {
                             <div className="flex flex-col flex-1 gap-3">
                               <div>
                                 <p>Asal Instansi</p>
-                                <div className="flex flex-row flex-wrap gap-3">
+                                {/* <div className="flex flex-col flex-wrap gap-3"> */}
                                   <Field
                                     component="select"
                                     id="asalInstansi"
@@ -288,10 +290,10 @@ const TicketForm = () => {
                                       Lainnya
                                     </option>
                                   </Field>  
-                                  <ErrorMessage className="text-main-3" component="div" name={`buyer.${i+1}.asalIntansi`} />
+                                  <ErrorMessage className="text-main-3" component="div" name={`buyer.${i+1}.asalInstansi`} />
                                   {/* <button type="button" id="asalInstansi" name={`buyer.${i+1}.asalInstansi`} value={"Universitas Brawijaya"} className="p-2 bg-main-2 rounded-lg text-main-1">Universitas Brawijaya</button>
                                   <button type="button" id="asalInstansi" name={`buyer.${i+1}.asalInstansi`} value={"Lainnya"} className="p-2 bg-main-2 rounded-lg text-main-1">Lainnya</button> */}
-                                </div>
+                                {/* </div> */}
                               </div>
                               { values.buyer[i+1]?.asalInstansi == "Universitas Brawijaya" ?
                                 <div>
@@ -306,20 +308,20 @@ const TicketForm = () => {
                                     <option disabled value="">
                                       Pilih Fakultas
                                     </option>
-                                    <option value="FILKOM" >
-                                      FILKOM
-                                    </option>
-                                    <option value="FIA">
-                                      FIA
-                                    </option>
-                                    <option value="FEB">
-                                      FEB
-                                    </option>
+                                    {
+                                      fakultas.map((fak, idx) => {
+                                        return (
+                                          <option value={fak} key={idx} >
+                                            {fak}
+                                          </option>
+                                        );
+                                      })
+                                    }
                                   </Field>   
                                   <ErrorMessage className="text-main-3" component="div" name={`buyer.${i+1}.namaInstansi`} />
                                 </div>
                                 :
-                                <div>
+                                <div className={`${values.buyer[0]?.asalInstansi ? "visible opacity-100" : "invisible opacity-0"}`}>
                                   <p>Nama Instansi</p>
                                   <Field
                                     id="namaInstansi"

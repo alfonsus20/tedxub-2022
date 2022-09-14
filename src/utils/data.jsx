@@ -1,3 +1,22 @@
+export const fakultas = [
+  "FAPET",
+  "FEB",
+  "FH",
+  "FIB",
+  "FIA",
+  "FILKOM",
+  "FISIP",
+  "FK",
+  "FKG",
+  "FKH",
+  "FMIPA",
+  "FP",
+  "FPIK",
+  "FT",
+  "FTP",
+  "VOKASI",
+]
+
 export const coreTeam = {
   organizer: [
     {

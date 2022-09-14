@@ -87,7 +87,7 @@ const Ticket = () => {
 
         <div className="flex flex-col font-jakarta text-center text-main-2 gap-2">
           <p className="text-xl">{selectedTicket?.type}</p>
-          <p className="font-jakartaBold text-4xl">{selectedTicket?.price}</p>
+          <p className="font-jakartaBold text-4xl">Rp {selectedTicket?.price}</p>
           <p className="text-sm">*max 5 tickets for once transaction</p>
           <div className="flex flex-row flex-wrap justify-center items-center mt-5 gap-5">
             <div className="flex flex-row items-center justify-between gap-10 w-40 bg-main-2 rounded-full px-5 py-2 text-main-1 font-jakartaBold">
@@ -95,7 +95,7 @@ const Ticket = () => {
               {quantity}
               <button disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
-            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3" : "bg-gray-500"} `}>Checkout</button>
+            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500"} `}>Checkout</button>
           </div>
           { quantity > 0 && <p className="mt-5">{quantity} x Rp {selectedTicket?.price} = Rp {quantity * selectedTicket?.price}</p>}
         </div>

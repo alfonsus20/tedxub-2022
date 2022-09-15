@@ -25,6 +25,7 @@ export const coreTeam = {
       linkedin: "palogatreheya",
       instagram: "@misterlogaloga",
       divisi: "Organizer",
+      foto: "Paloga.jpg",
     },
     {
       nama: "Aurora Rivera Maulidina",
@@ -32,6 +33,7 @@ export const coreTeam = {
       linkedin: "aurora-rivera-maulidina-1967a0190",
       instagram: "@rivera.au",
       divisi: "Co-Organizer",
+      foto: "AuroraRivera.jpeg",
     },
   ],
   curator: [
@@ -41,6 +43,7 @@ export const coreTeam = {
       linkedin: "",
       instagram: "@gadisamaulidiah",
       divisi: "Curator",
+      foto: "gadisamaulidiah.jpeg",
     },
     {
       nama: "Insky Johana Sheren Rottie",
@@ -48,6 +51,7 @@ export const coreTeam = {
       linkedin: "inskyjohana",
       instagram: "@inskyjo",
       divisi: "Curator",
+      foto: "InskyJohanaSherenRottie.jpeg",
     },
     {
       nama: "Rafly Al Mahdy",
@@ -55,6 +59,7 @@ export const coreTeam = {
       linkedin: "rafly-mahdy",
       instagram: "@102rafly",
       divisi: "Curator",
+      foto: "InskyJohanaSherenRottie.jpeg",
     },
   ],
   budgetManager: [
@@ -64,6 +69,7 @@ export const coreTeam = {
       linkedin: "hamzahabduljabbar",
       instagram: "@hamzahoods",
       divisi: "Budget Manager",
+      foto: "Hamzah.jpeg",
     },
     {
       nama: "Sophia Aviana Adiningtyas",
@@ -71,6 +77,7 @@ export const coreTeam = {
       linkedin: "",
       instagram: "@Sophiaaviana",
       divisi: "Budget Manager",
+      foto: "SophiaAvianaAdiningtyas.jpeg",
     },
   ],
   sponsorship: [
@@ -80,6 +87,7 @@ export const coreTeam = {
       linkedin: "",
       instagram: "@nadiaafp",
       divisi: "Sponsorship",
+      foto: "NadiyahFarakh.jpeg",
     },
     {
       nama: "Alvin Ilham Hanafi",
@@ -87,6 +95,7 @@ export const coreTeam = {
       linkedin: "alvinilhamhanafi",
       instagram: "@alvinhnfi",
       divisi: "Sponsorship",
+      foto: "AlvinIlhamHanafi.jpg",
     },
   ],
   eventManager: [
@@ -96,6 +105,7 @@ export const coreTeam = {
       linkedin: "jogo-fauzi-b69673201",
       instagram: "@jog.o",
       divisi: "Event Manager",
+      foto: "MIlhamHaikalJogoFauziBaqy.jpeg",
     },
     {
       nama: "Nabita Sadira Putri Ichwani",
@@ -103,6 +113,7 @@ export const coreTeam = {
       linkedin: "nabita-sadira-a5b4761b3",
       instagram: "@bitasadira",
       divisi: "Event Manager",
+      foto: "NabitaSadira.jpeg",
     },
   ],
   executiveProducer: [
@@ -112,6 +123,7 @@ export const coreTeam = {
       linkedin: "cindy-nursanthyasto",
       instagram: "@cindypn15",
       divisi: "Executive Producer",
+      foto: "CindyNursanthyasto.jpeg",
     },
     {
       nama: "Siti Almira Shakilla",
@@ -119,6 +131,7 @@ export const coreTeam = {
       linkedin: "",
       instagram: "@kkomurolla",
       divisi: "Executive Producer",
+      foto: "AlmiraShakilla.png",
     },
   ],
   cem: [
@@ -128,6 +141,7 @@ export const coreTeam = {
       linkedin: "sekarheksagaratanjung",
       instagram: "@sekarheksagara",
       divisi: "CEM",
+      foto: "SekarHeksagara.jpg",
     },
     {
       nama: "Davina Alya Shakira",
@@ -135,6 +149,7 @@ export const coreTeam = {
       linkedin: "",
       instagram: "@davinaalya",
       divisi: "CEM",
+      foto: "DavinaShakira.png",
     },
   ],
   designer: [
@@ -144,6 +159,7 @@ export const coreTeam = {
       linkedin: "",
       instagram: "@g.gana_",
       divisi: "Designer",
+      foto: "GanaBintang.jpeg",
     },
     {
       nama: "Ilham Firdaus",
@@ -151,6 +167,7 @@ export const coreTeam = {
       linkedin: "",
       instagram: "@ilham_frds",
       divisi: "Designer",
+      foto: "IlhamFirdaus.jpg",
     },
   ],
   videoProduction: [
@@ -160,6 +177,7 @@ export const coreTeam = {
       linkedin: "adanizata",
       instagram: "@adanizata_",
       divisi: "Video Production",
+      foto: "AdaniZataYumni.jpg",
     },
     {
       nama: "Egananda Kurniawan",
@@ -167,6 +185,7 @@ export const coreTeam = {
       linkedin: "egananda",
       instagram: "@egananda_k",
       divisi: "Video Production",
+      foto: "EganandaKurniawan.png",
     },
   ],
   websiteManager: [
@@ -176,6 +195,7 @@ export const coreTeam = {
       linkedin: "muhammad-arga",
       instagram: "@argafrl",
       divisi: "Website Manager",
+      foto: "MuhammadArga.jpg",
     },
     {
       nama: "Randy Christian Saputra",
@@ -183,6 +203,7 @@ export const coreTeam = {
       linkedin: "randyptr",
       instagram: "@randychrist_",
       divisi: "Website Manager",
+      foto: "RandyChristianSaputra.png",
     },
   ]
 }

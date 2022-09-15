@@ -52,22 +52,29 @@ const MeetTheTeam = () => {
           </h1>
         </div>
         <div className="pb-10 relative w-full overflow-y-hidden">
-          <div className="aspect-video overflow-y-hidden relative">
-            <AnimatePresence initial={false}>
-              <motion.img
-                className={`filmPhoto-bg w-full h-full object-cover absolute left-0 right-0 top-0 bottom-0`}
-                src={filmPhotosLists[currentFilmPhotoIndex]}
-                alt="Background"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 1 },
-                }}
-                exit={{ opacity: 0, transition: { duration: 1 } }}
-                key={currentFilmPhotoIndex}
-              />
-            </AnimatePresence>
-          </div>
+          <AnimatePresence>
+            <motion.div 
+                initial={{ scale:0, rotate: 10, opacity: 0 }}
+                animate={{ scale:1, rotate: 0, opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ ease: "easeOut", duration: .5 }}
+                className="aspect-video overflow-y-hidden relative">
+              <AnimatePresence initial={false}>
+                <motion.img
+                  className={`filmPhoto-bg w-full h-full object-cover absolute left-0 right-0 top-0 bottom-0`}
+                  src={filmPhotosLists[currentFilmPhotoIndex]}
+                  alt="Background"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 1 },
+                  }}
+                  exit={{ opacity: 0, transition: { duration: 1 } }}
+                  key={currentFilmPhotoIndex}
+                />
+              </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
         </div>
         <div className="container m-auto lg:px-10">
           <h2 className="text-left font-akira text-4xl text-white max-w-6xl m-auto drop-shadow-lg">

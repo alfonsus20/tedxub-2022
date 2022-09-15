@@ -1,0 +1,6 @@
+.core-team{
+  filter: grayscale(1);
+  &:hover{
+    filter: grayscale(0);
+  }
+}

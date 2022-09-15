@@ -53,7 +53,7 @@ const TicketForm = () => {
   
   
   return (
-    <div className="relative ticket-container bg-contain min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+    <div className="relative ticket-container min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
       {/* <PaymentSuccess /> */}
       <PaymentSuccessModal isOpen={isOpen} onClose={handleCloseModal} />
       <OyCashier isOpenCashier={isOpenCashier} onCloseCashier={handleCloseOyCashier} />

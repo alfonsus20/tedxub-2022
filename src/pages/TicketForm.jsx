@@ -212,7 +212,7 @@ const TicketForm = () => {
                           <ErrorMessage className="text-main-3" component="div" name="buyer.0.namaInstansi" />
                         </div>
                         :
-                        <div className={`${values.buyer[0]?.asalInstansi ? "visible opacity-100" : "invisible opacity-0"}`}>
+                        <div className={`${values.buyer[0]?.asalInstansi ? "block" : "hidden"}`}>
                           <p>Nama Instansi</p>
                           <Field
                             id="namaInstansi"
@@ -323,7 +323,7 @@ const TicketForm = () => {
                                   <ErrorMessage className="text-main-3" component="div" name={`buyer.${i+1}.namaInstansi`} />
                                 </div>
                                 :
-                                <div className={`${values.buyer[i+1]?.asalInstansi ? "visible opacity-100" : "invisible opacity-0"}`}>
+                                <div className={`${values.buyer[i+1]?.asalInstansi ? "block" : "hidden"}`}>
                                   <p>Nama Instansi</p>
                                   <Field
                                     id="namaInstansi"

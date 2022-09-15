@@ -76,16 +76,16 @@ const MeetTheTeam = () => {
         
         <div className="container m-auto px-10">
           <h2 className="text-left font-akira text-4xl text-white max-w-6xl m-auto drop-shadow-lg">CORE TEAM</h2>
-          <CoreTeamLists type={coreTeam.organizer} name={"ORGANIZER & CO-ORGANIZER"} />
-          <CoreTeamLists type={coreTeam.curator} name={"CURATOR"} />
-          <CoreTeamLists type={coreTeam.budgetManager} name={"BUDGET MANAGER"} />
-          <CoreTeamLists type={coreTeam.sponsorship} name={"SPONSORSHIP "} />
-          <CoreTeamLists type={coreTeam.eventManager} name={"EVENT MANAGER"} />
-          <CoreTeamLists type={coreTeam.executiveProducer} name={"EXECUTIVE PRODUCER"} />
-          <CoreTeamLists type={coreTeam.cem} name={"COMMUNICATION, EDITORIAL, AND MARKETING"} />
-          <CoreTeamLists type={coreTeam.designer} name={"DESIGNER "} />
-          <CoreTeamLists type={coreTeam.videoProduction} name={"VIDEO PRODUCTION "} />
-          <CoreTeamLists type={coreTeam.websiteManager} name={"WEBSITE MANAGER"} />
+          <CoreTeamLists type={coreTeam.organizer} name={"ORGANIZER & CO-ORGANIZER"} initial="ORGANIZER" />
+          <CoreTeamLists type={coreTeam.curator} name={"CURATOR"} initial="CUR" />
+          <CoreTeamLists type={coreTeam.budgetManager} name={"BUDGET MANAGER"} initial="BM" />
+          <CoreTeamLists type={coreTeam.sponsorship} name={"SPONSORSHIP "} initial="S" />
+          <CoreTeamLists type={coreTeam.eventManager} name={"EVENT MANAGER"} initial="EM" />
+          <CoreTeamLists type={coreTeam.executiveProducer} name={"EXECUTIVE PRODUCER"} initial="EP" />
+          <CoreTeamLists type={coreTeam.cem} name={"COMMUNICATION, EDITORIAL, AND MARKETING"} initial="CEM" />
+          <CoreTeamLists type={coreTeam.designer} name={"DESIGNER "} initial="D" />
+          <CoreTeamLists type={coreTeam.videoProduction} name={"VIDEO PRODUCTION "} initial="VP" />
+          <CoreTeamLists type={coreTeam.websiteManager} name={"WEBSITE MANAGER"} initial="W" />
         </div>
 
         <div className="skew w-full m-auto relative mt-52 transform origin-bottom-left" style={{backgroundImage: `url(${meetTheTeamVolunteerBackground})`}}>

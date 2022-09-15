@@ -15,6 +15,8 @@ import CardSpeaker from "../components/CardSpeaker";
 import CarouselTicketHome from "../components/CarouselTicketHome";
 import VideoContainer from "../components/VideoContainer";
 import speaker from "../assets/images/home/speaker.jpg";
+import xAtas from "../assets/images/home/x_atas.png";
+import xBawah from "../assets/images/home/x_bawah.png";
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -44,6 +46,8 @@ const Home = () => {
       >
         <Navbar />
         <div className="pt-8 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
+          <img src={xAtas} alt="top" className="absolute top-[-8%] left-[5%] w-[15%]" />
+          <img src={xBawah} alt="bottom" className="absolute bottom-[-20%] right-[10%] w-[18%] z-10" />
           <div className="text-center flex flex-col items-center">
             <div className="text-white font-akira mb-6 relative">
               <h1 className="font-sedgwick text-7xl text-main-3 opacity-75 absolute -translate-x-1/2 left-1/2 whitespace-nowrap -rotate-[2deg] -top-2">

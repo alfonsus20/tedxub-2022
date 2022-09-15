@@ -28,9 +28,13 @@ const MeetTheTeam = () => {
   const [currentFilmPhotoIndex, setcurrentPhotoIndex] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setcurrentPhotoIndex((prev) => (prev + 1) % 5);
     }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

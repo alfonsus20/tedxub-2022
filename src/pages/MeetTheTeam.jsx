@@ -69,7 +69,7 @@ const MeetTheTeam = () => {
             </AnimatePresence>
           </div>
         </div>
-        <div className="container m-auto px-10">
+        <div className="container m-auto lg:px-10">
           <h2 className="text-left font-akira text-4xl text-white max-w-6xl m-auto drop-shadow-lg">
             CORE TEAM
           </h2>

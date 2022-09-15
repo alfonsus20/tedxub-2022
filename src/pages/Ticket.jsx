@@ -2,7 +2,7 @@ import ticketBackground from "../assets/images/ticket-background.jpg";
 import { useEffect, useState } from "react";
 import "../style/ticket.scss";
 import TicketCarousel from "../components/TicketCarousel";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
 import useDisclosure from "../hooks/useDisclosure";
 
@@ -90,10 +90,10 @@ const Ticket = () => {
           <p className="font-jakartaBold text-4xl">Rp {selectedTicket?.price}</p>
           <p className="text-sm">*max 5 tickets for once transaction</p>
           <div className="flex flex-row flex-wrap justify-center items-center mt-5 gap-5">
-            <div className="flex flex-row items-center justify-between gap-10 w-40 bg-main-2 rounded-full px-5 py-2 text-main-1 font-jakartaBold">
-              <button disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
+            <div className="flex flex-row items-center justify-between w-40 bg-main-2 rounded-full px-5 py-2 text-main-1 font-jakartaBold">
+              <button className="px-2" disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
               {quantity}
-              <button disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
+              <button className="px-2" disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
             <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500"} `}>Checkout</button>
           </div>

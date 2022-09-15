@@ -10,6 +10,7 @@ import leftHand from "../assets/images/home/left.png";
 import rightHand from "../assets/images/home/right.png";
 import banner from "../assets/images/home/banner.png";
 import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
+import eventTime from "../assets/images/home/event_time.png";
 import CardSpeaker from "../components/CardSpeaker";
 import CarouselTicketHome from "../components/CarouselTicketHome";
 import VideoContainer from "../components/VideoContainer";
@@ -38,33 +39,25 @@ const Home = () => {
   return (
     <div id="home" className="overflow-x-hidden">
       <section
-        className="bg-[#f0f0f0] pt-6 min-h-screen relative overflow-y-hidden bg-cover bg-fixed flex flex-col"
+        className="bg-[#353535] pt-6 min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
         <Navbar />
-        <div className="pt-8 px-14 mx-auto flex relative items-center w-full min-h-[70vh]">
-          <div className="w-7/12">
-            <p className="text-2xl font-bold mb-2">Welcome to</p>
-            <p className="uppercase font-akira text-3xl">
-              <span className="text-main-3">TEDX</span>Universitas Brawijaya
-            </p>
-            <h1 className="text-7xl font-sedgwick text-main-3 my-6">
-              Merayakan Kembali:
-            </h1>
-            <h2 className="text-2xl font-bold text-[#2B2B2B] mb-2">
-              Menggeledah arus, menilik ruang
-            </h2>
-            <p className="text-6xl font-bold font-shrikhand text-[#2B2B2B] mb-4">
-              2022
-            </p>
-            <div className="text-lg font-semibold">
-              <p>Graha WidyaLoka Universitas Brawijaya, Malang</p>
-              <p>Minggu, 2 Oktober 2022</p>
+        <div className="pt-8 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
+          <div className="text-center flex flex-col items-center">
+            <div className="text-white font-akira mb-6 relative">
+              <h1 className="font-sedgwick text-7xl text-main-3 opacity-75 absolute -translate-x-1/2 left-1/2 whitespace-nowrap -rotate-[2deg] -top-2">
+                Merayakan Kembali
+              </h1>
+              <div className="z-10 relative">
+                <h1 className="text-6xl">Merayakan Kembali</h1>
+                <h2>Menggeledah arus, menilik ruang</h2>
+              </div>
             </div>
+            <img src={eventTime} alt="time" className="w-[23rem]" />
           </div>
-          <div className="w-5/12">ads</div>
           <button
-            className="rounded-full p-4 border-2 border-[#2B2B22] w-fit text-[#2B2B22] absolute left-1/2 -translate-x-1/2 bottom-2"
+            className="rounded-full p-4 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4"
             onClick={() => {
               document
                 .getElementById("video-container")

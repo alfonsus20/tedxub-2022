@@ -46,30 +46,77 @@ const Home = () => {
       >
         <Navbar />
         <div className="pt-8 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
-          <img src={xAtas} alt="top" className="absolute top-[-8%] left-[5%] w-[15%]" />
-          <img src={xBawah} alt="bottom" className="absolute bottom-[-20%] right-[10%] w-[18%] z-10" />
+          <img
+            src={xAtas}
+            alt="top"
+            className="absolute top-[-8%] left-[5%] w-[15%]"
+          />
+          <img
+            src={xBawah}
+            alt="bottom"
+            className="absolute bottom-[-20%] right-[10%] w-[18%] z-10"
+          />
           <div className="text-center flex flex-col items-center">
             <div className="text-white font-akira mb-6 relative">
-              <h1 className="font-sedgwick text-7xl text-main-3 opacity-75 absolute -translate-x-1/2 left-1/2 whitespace-nowrap -rotate-[2deg] -top-2">
-                Merayakan Kembali
-              </h1>
-              <div className="z-10 relative">
-                <h1 className="text-6xl">Merayakan Kembali</h1>
-                <h2>Menggeledah arus, menilik ruang</h2>
+              <div className="z-10 relative overflow-y-hidden">
+                <motion.h1
+                  initial={{ y: -100 }}
+                  animate={{
+                    y: 0,
+                    transition: { stiffness: 0, duration: 1 },
+                  }}
+                  className="text-6xl"
+                >
+                  Merayakan Kembali
+                </motion.h1>
+                <div className="overflow-y-hidden">
+                  <motion.h2
+                    initial={{ y: -100 }}
+                    animate={{
+                      y: 0,
+                      transition: { stiffness: 0, duration: 1, delay: 1 },
+                    }}
+                  >
+                    Menggeledah arus, menilik ruang
+                  </motion.h2>
+                </div>
               </div>
+              <motion.h1
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 1, delay: 3 } }}
+                className="font-sedgwick text-7xl text-main-3 opacity-75 absolute -translate-x-1/2 left-1/2 whitespace-nowrap -rotate-[2deg] -top-2"
+              >
+                Merayakan Kembali
+              </motion.h1>
             </div>
-            <img src={eventTime} alt="time" className="w-[23rem]" />
+            <div className="overflow-y-hidden">
+              <motion.img
+                initial={{ y: -100 }}
+                animate={{
+                  y: 0,
+                  transition: { stiffness: 0, duration: 1, delay: 2 },
+                }}
+                src={eventTime}
+                alt="time"
+                className="w-[23rem]"
+              />
+            </div>
           </div>
-          <button
+          <motion.button
             className="rounded-full p-4 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4"
             onClick={() => {
               document
                 .getElementById("video-container")
                 .scrollIntoView({ behavior: "smooth" });
             }}
+            initial={{ bottom: "2.5rem" }}
+            animate={{
+              bottom: "1rem",
+              transition: { yoyo: Infinity, duration: 0.7 },
+            }}
           >
             <Icon icon="akar-icons:arrow-down" className="text-3xl" />
-          </button>
+          </motion.button>
         </div>
         <VideoContainer />
       </section>

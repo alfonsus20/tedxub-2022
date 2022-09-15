@@ -3,7 +3,7 @@ import Accordion from "../components/Accordion";
 
 const Faqs = () => {
   return (
-    <div className="w-full min-h-screen bg-cover bg-no-repeat" style={{backgroundImage: `url(${FaqBackground})`}}>
+    <div className="w-full min-h-screen" style={{backgroundImage: `url(${FaqBackground})`}}>
       <div className="container m-auto">
         <div className="heading text-center py-12 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-20">FAQ</h1>

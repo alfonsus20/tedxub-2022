@@ -56,7 +56,7 @@ const TicketForm = () => {
   
   
   return (
-    <div className="relative ticket-container bg-cover bg-no-repeat min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+    <div className="relative ticket-container bg-contain min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
       {/* <PaymentSuccess /> */}
       <PaymentSuccessModal isOpen={isOpen} onClose={handleCloseModal} />
       <OyCashier isOpenCashier={isOpenCashier} onCloseCashier={handleCloseOyCashier} />
@@ -95,7 +95,7 @@ const TicketForm = () => {
                       .required('Required'),
                     nomorTelp: Yup.string()
                       // .min(8, "Dimulai dari angka 8")
-                      .matches(/^(\+62)8/, "Start with +62")
+                      .matches(/^(\+62)8/, "Please start with +62")
                       .matches(/^[0-9+]*$/, 'Invalid Phone Number')
                       .min(10, "Too short")
                       .max(15, "Too long")
@@ -130,8 +130,8 @@ const TicketForm = () => {
 
                 <div className="bg-main-1 rounded-xl w-full p-10">
                   <h2 className="font-jakartaBold text-3xl mb-5">Tiket 1</h2>
-                  <div className="flex flex-row flex-wrap gap-5">
-                    <div className="flex flex-col w-1/2 gap-3">
+                  <div className="flex flex-col lg:flex-row flex-wrap gap-5">
+                    <div className="flex flex-col w-full lg:w-1/2 gap-3">
                       <div>
                         <p>Nama</p>
                         <Field
@@ -357,7 +357,7 @@ const TicketForm = () => {
                   <Link to="/ticket"><button type="button" className="px-10 py-2 bg-main-2 text-main-1 rounded-full">Cancel</button></Link>
                   <button className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Pay</button>
                   <button type="button" onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Success</button>
-                  <button type="button" onClick={handleOpenOyCashier} className="px-10 py-2 bg-blue-500 text-main-2 rounded-full">Open Oy!</button>
+                  {/* <button type="button" onClick={handleOpenOyCashier} className="px-10 py-2 bg-blue-500 text-main-2 rounded-full">Open Oy!</button> */}
                 </div>
               </div>
             </Form>

@@ -46,10 +46,7 @@ const TicketForm = () => {
   };
 
   useEffect(() => {
-    if(state){
-      console.log("ada")
-    } else {
-      console.log("tidak ada")
+    if(!state){
       return navigate("/ticket");
     }
   }, [])
@@ -123,13 +120,13 @@ const TicketForm = () => {
             <Form>
               <SetInitialFormik />
               <div className="container max-w-6xl gap-5 m-auto text-main-2 text-left flex flex-col font-jakarta px-10">
-                <div className="flex flex-col px-10">
+                <div className="flex flex-col px-10 text-center lg:text-left">
                   <h2 className="font-jakartaBold text-3xl">Data Tiket Pemesan</h2>
                   <p>*Pemesan akan dikirimkan bukti pembayaran melalui email</p>
                 </div>
 
                 <div className="bg-main-1 rounded-xl w-full p-10">
-                  <h2 className="font-jakartaBold text-3xl mb-5">Tiket 1</h2>
+                  <h2 className="font-jakartaBold text-3xl mb-5 text-center lg:text-left">Tiket 1</h2>
                   <div className="flex flex-col lg:flex-row flex-wrap gap-5">
                     <div className="flex flex-col w-full lg:w-1/2 gap-3">
                       <div>
@@ -172,7 +169,7 @@ const TicketForm = () => {
                             id="asalInstansi"
                             name="buyer.0.asalInstansi"
                             style={{ display: "block" }}
-                            className="p-2 bg-main-2 rounded-lg w-full text-main-1"
+                            className="p-2 bg-main-2 rounded-lg w-full text-main-1 h-10"
                           >
                             <option disabled value="" label="Pilih Asal Instansi">
                               Pilih Asal Instansi
@@ -197,7 +194,7 @@ const TicketForm = () => {
                             id="namaInstansi"
                             name="buyer.0.namaInstansi"
                             style={{ display: "block" }}
-                            className="p-2 bg-main-2 rounded-lg w-full text-main-1"
+                            className="p-2 bg-main-2 rounded-lg w-full text-main-1 h-10"
                           >
                             <option disabled value="">
                               Pilih Fakultas
@@ -233,16 +230,16 @@ const TicketForm = () => {
                 { state?.quantity > 1 &&
                   <div className="gap-5 flex flex-col">
 
-                    <div className="flex flex-col px-10">
+                    <div className="flex flex-col px-10 text-center lg:text-left">
                       <h2 className="font-jakartaBold text-3xl">Data Tiket Lainnya</h2>
                     </div>
                     
                     { Array.from({ length: state?.quantity - 1 }, (_, i) => {
                       return(
                         <div className="bg-main-1 rounded-xl w-full p-10" key={i}>
-                          <h2 className="font-jakartaBold text-3xl mb-5">Tiket {i+2}</h2>
-                          <div className="flex flex-row flex-wrap gap-5">
-                            <div className="flex flex-col w-1/2 gap-3">
+                          <h2 className="font-jakartaBold text-3xl mb-5 text-center lg:text-left">Tiket {i+2}</h2>
+                          <div className="flex flex-col lg:flex-row flex-wrap gap-5">
+                            <div className="flex flex-col w-full lg:w-1/2 gap-3">
                               <div>
                                 <p>Nama</p>
                                 <Field
@@ -283,7 +280,7 @@ const TicketForm = () => {
                                     id="asalInstansi"
                                     name={`buyer.${i+1}.asalInstansi`}
                                     style={{ display: "block" }}
-                                    className="p-2 bg-main-2 rounded-lg w-full text-main-1"
+                                    className="p-2 bg-main-2 rounded-lg w-full text-main-1 h-10"
                                   >
                                     <option disabled value="" label="Pilih Asal Instansi">
                                       Pilih Asal Instansi
@@ -308,7 +305,7 @@ const TicketForm = () => {
                                     id="namaInstansi"
                                     name={`buyer.${i+1}.namaInstansi`}
                                     style={{ display: "block" }}
-                                    className="p-2 bg-main-2 rounded-lg w-full text-main-1"
+                                    className="p-2 bg-main-2 rounded-lg w-full text-main-1 h-10"
                                   >
                                     <option disabled value="">
                                       Pilih Fakultas
@@ -344,12 +341,12 @@ const TicketForm = () => {
                     })}
                   </div>
                 }
-                <div className="flex flex-row flex-wrap font-jakartaBold rounded-lg overflow-hidden">
-                  <div className="bg-main-2 p-5 flex-1 flex items-center">
+                <div className="flex flex-col lg:flex-row flex-wrap font-jakartaBold rounded-lg overflow-hidden">
+                  <div className="bg-main-2 p-2 lg:p-5 flex-1 flex justify-center lg:justify-start items-center">
                     <p className="text-main-1">{state?.quantity} {state?.quantity > 1 ? "pcs" : "pc"} {state?.type}</p>
                   </div>
-                  <div className="bg-main-3 p-5 flex items-center">
-                    <p className="text-main-2">Rp {state?.quantity * state?.price}</p>
+                  <div className="bg-main-3 p-2 lg:p-5 flex justify-center lg:justify-start items-center">
+                    <p className="text-main-2 text-xl lg:text-base">Rp {state?.quantity * state?.price}</p>
                   </div>
                 </div>
                 

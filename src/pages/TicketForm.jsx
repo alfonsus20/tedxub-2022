@@ -68,7 +68,7 @@ const TicketForm = () => {
             buyer: 
               new Array(state?.quantity).fill({
                 id: '',
-                partner_tx_id: '',
+                partner_tx_id: nanoid(),
                 nama: '',
                 email: '',
                 nomorTelp: '',
@@ -108,7 +108,8 @@ const TicketForm = () => {
           onSubmit={ values => {
             values.buyer = values.buyer.map((buy) => {
               return(
-                {...buy, id: nanoid(), partner_tx_id: nanoid()}
+                {...buy, id: nanoid()}
+                // {...buy, id: nanoid(), partner_tx_id: nanoid()}
               );
             })
             // window.location.replace('https://dev.xen.to/sp-vjoXD');

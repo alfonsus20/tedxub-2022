@@ -54,9 +54,14 @@ main {
 
   #home {
     padding: 0;
+
+    * {
+      transition: height, min-height 0.5s ease-in-out;
+    }
   }
 }
 
-.slick-track,.slick-list {
-  overflow: hidden!important;
+.slick-track,
+.slick-list {
+  overflow: hidden !important;
 }

@@ -122,79 +122,96 @@ const Home = () => {
       </section>
       <section
         ref={refTheme}
-        className="text-center bg-cover py-40 overflow-hidden rounded-b-[100%_50%] relative z-20"
-        style={{ backgroundImage: `url("${background2}")` }}
+        className="text-center relative z-20 flex justify-center items-center flex-col"
       >
-        <div className="flex flex-col items-center mb-8 relative">
-          <motion.img
-            src={leftHand}
-            alt="left"
-            className="absolute w-[40rem]"
-            initial={{ rotate: -20, top: "-24rem", left: "-20rem", opacity: 0 }}
-            whileInView={{
-              rotate: 0,
-              top: "-8rem",
-              left: "-14rem",
-              opacity: 1,
-              transition: { stiffness: 0, duration: 1 },
-            }}
-          />
-          <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-              transition: { stiffness: 0, duration: 1 },
-            }}
-          >
-            <div className="font-sedgwick">
-              <h2 className="text-8xl text-main-3">
-                <span className="text-white">Me</span>rayakan
-              </h2>
-              <h3 className="text-8xl mt-6">kembali</h3>
-            </div>
-            <div
-              className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
-              style={{ backgroundImage: `url("${banner}")` }}
-            >
-              <p className="text-xl font-semibold text-white">
-                Menggeledah Arus, Menilik Ruang
-              </p>
-            </div>
-          </motion.div>
-          <motion.img
-            src={rightHand}
-            alt="left"
-            className="absolute w-[40rem]"
-            initial={{ rotate: -20, top: "-6rem", right: "-16rem", opacity: 0 }}
-            whileInView={{
-              rotate: 0,
-              top: "-8rem",
-              right: "-14rem",
-              opacity: 1,
-              transition: { stiffness: 0, duration: 1 },
-            }}
-          />
-        </div>
-        <motion.p
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-            transition: { stiffness: 0, duration: 1 },
-          }}
-          className="max-w-[70%] mx-auto font-medium"
+        <div
+          className="rounded-b-[50%] bg-cover bg-blue-400 w-[150%]  py-40 flex items-center justify-center"
+          style={{ backgroundImage: `url("${background2}")` }}
         >
-          TEDxUniversitasBrawijaya 2022 kali ini akan membawa penonton melalui
-          perjalanan istirahat dari kejenuhan dan kompleksitas yang telah
-          terbentuk dengan kembali menjelajahi makna nilai kearifan lokal
-          sebagai ruang untuk kembali pada akar, mengambil bekal dalam menjalani
-          era modernitas saat ini. Penelusuran ini sebagai pengingat kepada kita
-          tentang menghayati, mencerna, dan berkesadaran secara total tentang
-          nilai dasar tiap-tiap individu dan sekitarnya yang telah ada. Karena
-          apa yang kita cemaskan pada masa kini, ketidakpastian akan masa depan,
-          akan terjawab dengan kembali menelusuri makna masa lalu.
-        </motion.p>
+          <div className="w-[67%]">
+            <div className="flex flex-col items-center mb-8 relative">
+              <motion.img
+                src={leftHand}
+                alt="left"
+                className="absolute w-[40rem]"
+                initial={{
+                  rotate: -20,
+                  top: "-24rem",
+                  left: "-20rem",
+                  opacity: 0,
+                }}
+                whileInView={{
+                  rotate: 0,
+                  top: "-8rem",
+                  left: "-14rem",
+                  opacity: 1,
+                  transition: { stiffness: 0, duration: 1 },
+                }}
+              />
+              <motion.div
+                initial={{ y: -100, opacity: 0 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { stiffness: 0, duration: 1 },
+                }}
+              >
+                <div className="font-sedgwick">
+                  <h2 className="text-8xl text-main-3">
+                    <span className="text-white">Me</span>rayakan
+                  </h2>
+                  <h3 className="text-8xl mt-6">kembali</h3>
+                </div>
+                <div
+                  className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
+                  style={{ backgroundImage: `url("${banner}")` }}
+                >
+                  <p className="text-xl font-semibold text-white">
+                    Menggeledah Arus, Menilik Ruang
+                  </p>
+                </div>
+              </motion.div>
+              <motion.img
+                src={rightHand}
+                alt="left"
+                className="absolute w-[40rem]"
+                initial={{
+                  rotate: -20,
+                  top: "-6rem",
+                  right: "-16rem",
+                  opacity: 0,
+                }}
+                whileInView={{
+                  rotate: 0,
+                  top: "-8rem",
+                  right: "-14rem",
+                  opacity: 1,
+                  transition: { stiffness: 0, duration: 1 },
+                }}
+              />
+            </div>
+            <motion.p
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: { stiffness: 0, duration: 1 },
+              }}
+              className="max-w-[70%] mx-auto font-medium"
+            >
+              TEDxUniversitasBrawijaya 2022 kali ini akan membawa penonton
+              melalui perjalanan istirahat dari kejenuhan dan kompleksitas yang
+              telah terbentuk dengan kembali menjelajahi makna nilai kearifan
+              lokal sebagai ruang untuk kembali pada akar, mengambil bekal dalam
+              menjalani era modernitas saat ini. Penelusuran ini sebagai
+              pengingat kepada kita tentang menghayati, mencerna, dan
+              berkesadaran secara total tentang nilai dasar tiap-tiap individu
+              dan sekitarnya yang telah ada. Karena apa yang kita cemaskan pada
+              masa kini, ketidakpastian akan masa depan, akan terjawab dengan
+              kembali menelusuri makna masa lalu.
+            </motion.p>
+          </div>
+        </div>
       </section>
       <section
         className="bg-main-1 relative -mt-48 pt-[22rem] pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10"

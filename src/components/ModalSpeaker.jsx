@@ -31,12 +31,15 @@ const ModalSpeaker = ({ onClose, isOpen = true, data = {} }) => {
                 className="absolute top-4 text-4xl right-6 cursor-pointer"
                 onClick={onClose}
               />
-              <div className="w-[40%]">
-                <img
-                  src={data.image}
-                  alt="speaker"
-                  className="w-full h-full object-cover rounded-l-[3rem] rounded-r-[50%_90%]"
-                />
+              <div className="w-[40%] overflow-hidden items-center justify-center flex rounded-l-[3rem]">
+                <div className="w-[150%] h-[120%] overflow-hidden rounded-r-[50%] items-center justify-center flex">
+                  {/* <div className="bg-blue-400 w-full h-[84%]"></div> */}
+                  <img
+                    src={data.image}
+                    alt="speaker"
+                    className="w-full h-[84%] object-cover"
+                  />
+                </div>
               </div>
               <div className="w-[60%] pl-10 pr-16 py-12">
                 <h3 className="font-bold text-3xl mb">{data.nama}</h3>

@@ -43,7 +43,7 @@ const VideoContainer = () => {
       }}
     >
       <div
-        className="w-[160%] h-full absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center bg-green-700"
+        className="w-[160%] h-full absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center"
         style={{ borderRadius: `${borderRadius}%` }}
       >
         <video

@@ -103,7 +103,7 @@ const Home = () => {
             </div>
           </div>
           <motion.button
-            className="rounded-full p-4 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4"
+            className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4"
             onClick={() => {
               document
                 .getElementById("video-container")

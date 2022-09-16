@@ -36,17 +36,27 @@ const VideoContainer = () => {
   return (
     <div
       id="video-container"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden aspect-video max-h-screen"
       ref={containerRef}
       style={{
-        height: `${containerHeight}vh`,
-        borderRadius: `${borderRadius}% ${borderRadius}% 0 0`,
+        height: `${containerHeight}%`,
       }}
     >
-      <div className="w-[120%] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center">
-        <video className="w-[85%] h-full mx-auto" autoPlay muted loop>
+      <div
+        className="w-[160%] h-full absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center bg-green-700"
+        style={{ borderRadius: `${borderRadius}%` }}
+      >
+        <video
+          className="w-[67%] h-full mx-auto object-cover object-center"
+          autoPlay
+          muted
+          loop
+        >
           <source src="https://api.tedxuniversitasbrawijaya.com/storage/video_compressed.mp4" />
         </video>
+        {/* <div className="bg-blue-500 w-[67%] h-full">
+          <h1 className="text-white text-2xl">asdasdsa</h1>
+        </div> */}
       </div>
     </div>
   );

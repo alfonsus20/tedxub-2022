@@ -11,16 +11,20 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import SponsorPartner from "./pages/SponsorPartner";
 import Ticket from "./pages/Ticket";
 import TicketForm from "./pages/TicketForm";
+import ReactGA from "react-ga";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, [pathname]);
 
   return null;
 };
+
+ReactGA.initialize(import.meta.env.VITE_TRACKING_ID);
 
 function App() {
   const { pathname } = useLocation();

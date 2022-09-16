@@ -136,7 +136,7 @@ const Home = () => {
                 className="absolute w-[40rem]"
                 initial={{
                   rotate: -20,
-                  top: "-24rem",
+                  top: "-6rem",
                   left: "-20rem",
                   opacity: 0,
                 }}
@@ -221,7 +221,7 @@ const Home = () => {
           initial="hidden"
           whileInView="show"
           variants={speakerContainerVariants}
-          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6"
+          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6 mb-12"
         >
           {["Najwa Shihab", "Coki Pardede", "Jerome Polin"].map((data, idx) => (
             <CardSpeaker
@@ -241,6 +241,7 @@ const Home = () => {
           style={{ transform: "rotateY(180deg) rotate(1deg)" }}
           alt="line"
         />
+        <p className="text-white text-center text-5xl font-bold">Speakers</p>
       </section>
       <section
         className="bg-cover flex overflow-x-hidden relative items-center"

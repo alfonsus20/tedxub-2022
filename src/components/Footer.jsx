@@ -4,7 +4,7 @@ import logo from "../assets/images/logo-black-red.svg";
 const Footer = () => {
   return (
     <div className="flex grid-cols-12 max-w-screen-xl mx-auto px-4 pt-6 pb-10 font-jakarta text-sm">
-      <div className="w-[40%] pt-6">
+      <div className="w-[34%] pt-6">
         <Link to="/">
           <img src={logo} className="w-60 mb-4" alt="logo" />
         </Link>
@@ -16,7 +16,7 @@ const Footer = () => {
           .”
         </p>
       </div>
-      <div className="w-[10%] pt-6">
+      <div className="w-[12%] pt-6">
         <h4 className="font-jakartaBold mb-4">About</h4>
         <ul className="space-y-1">
           <li>
@@ -41,10 +41,27 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="w-[10%] pt-6">
-        <h4 className="font-jakartaBold mb-4">Contact</h4>
+      <div className="w-[12%] pt-6">
+        <h4 className="font-jakartaBold mb-4">Contact</h4>{" "}
+        <ul className="space-y-1">
+          <li>
+            <Link to="/about" className="hover:text-main-3">
+              Email
+            </Link>
+          </li>
+          <li>
+            <Link to="/meet-the-team" className="hover:text-main-3">
+              Instagram
+            </Link>
+          </li>
+          <li>
+            <Link to="/faq" className="hover:text-main-3">
+              Twitter
+            </Link>
+          </li>
+        </ul>
       </div>
-      <div className="w-[10%] pt-6">
+      <div className="w-[12%] pt-6">
         <h4 className="font-jakartaBold mb-4">Previous Events</h4>
         <ul className="space-y-1">
           <li>

@@ -30,7 +30,7 @@ const CardSpeaker = ({ onClick, index }) => {
     >
       <div
         className={cn(
-          "w-5 bg-white absolute md:-top-56 left-1/2 -translate-x-1/2 z-10",
+          "w-5 bg-white absolute md:-top-56 left-1/2 md:h-56 -translate-x-1/2 z-10",
           { "h-[600px] -top-[600px]": index === 2, "h-56 -top-56": index !== 2 }
         )}
       ></div>

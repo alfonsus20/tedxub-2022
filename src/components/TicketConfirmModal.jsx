@@ -46,7 +46,7 @@ const TicketConfirmModal = ({ onClose, isOpen }) => {
       </motion.div>
     )}
   </AnimatePresence>,
-  document.getElementById("payment-success-modal-container")
+  document.getElementById("ticket-confirm-modal-container")
   );
 };
 export default TicketConfirmModal;

@@ -37,7 +37,7 @@ const OyCashier = ({onCloseCashier, isOpenCashier}) => {
       </motion.div>
     )}
   </AnimatePresence>,
-  document.getElementById("oy-cashier-container")
+  document.getElementById("depreciated-cashier-container")
   );
 }
  

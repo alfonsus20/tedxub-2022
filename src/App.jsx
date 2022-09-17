@@ -14,6 +14,7 @@ import Ticket from "./pages/Ticket";
 import TicketForm from "./pages/TicketForm";
 import ReactGA from "react-ga";
 import TicketConfirm from "./pages/TicketConfirm";
+import PaymentFailed from "./pages/PaymentFailed";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -49,6 +50,7 @@ function App() {
           <Route path="/ticket-confirm" element={<TicketConfirm />} />
           <Route path="/sponsor-partner" element={<SponsorPartner />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
+          <Route path="/payment-failed" element={<PaymentFailed />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -8,8 +8,7 @@ const TicketConfirmModal = ({ onClose, isOpen }) => {
   let navigate = useNavigate();
 
   const handleRedirect = () => {
-    onClose();
-    // return navigate("/ticket");
+    return window.location.replace('https://dev.xen.to/sp-vjoXD');
   }
 
   return createPortal(
@@ -40,7 +39,7 @@ const TicketConfirmModal = ({ onClose, isOpen }) => {
             <p className="font-jakarta text-sm text-left">By clicking ‘Yes, I’m Sure’, it means that you are sure that the data you have entered is correct</p>
             <div className="flex flex-row gap-5">
               <button onClick={onClose} className="bg-main-2 text-main-1 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back</button>
-              <button onClick={onClose} className="bg-main-3 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Yes, I'm Sure</button>
+              <button onClick={handleRedirect} className="bg-main-3 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Yes, I'm Sure</button>
             </div>
           </div>
         </motion.div>

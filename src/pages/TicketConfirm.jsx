@@ -50,7 +50,7 @@ const TicketConfirm = () => {
 
         <div className="flex flex-col max-w-6xl m-auto gap-2 px-10 mb-10">
           <h2 className="font-jakartaBold text-main-3 text-2xl md:text-3xl">Order Data</h2>
-          <div className="bg-main-2 w-full rounded-xl flex flex-col md:flex-row p-0 md:p-5 gap-0 md:gap-2">
+          <div className="bg-main-2 w-full rounded-xl flex flex-col md:flex-row p-0 md:p-5 gap-0 md:gap-2 overflow-hidden">
             <div className="bg-main-1 h-36 bg-cover bg-no-repeat bg-top block md:hidden" style={{backgroundImage: `url(${ticketDataMobile})`}} />
             <img className="hidden md:block w-36 h-36" src={ticketData} alt="Ticket" />
             <div className="font-jakarta flex flex-col gap-2 justify-center p-5 md:p-0">
@@ -97,7 +97,7 @@ const TicketConfirm = () => {
                 return (
                   <Slide index={idx}>
                     <div className="bg-main-2 w-full rounded-xl flex flex-col">
-                      <div className="text-main-3 text-center p-5 font-jakartaBold border-gray-500 border-b-2">
+                      <div className="text-main-3 text-center p-5 font-jakartaBold border-gray-500 border-b-[1px]">
                         <p className="text-xl">Ticket {idx+1}</p>
                       </div>
                       <div className="flex flex-col md:flex-row p-5 justify-between">
@@ -132,7 +132,7 @@ const TicketConfirm = () => {
               })}
             </Slider>
             <div className="text-white flex gap-5 justify-center">
-              {state?.buyer.map((buy, idx) => {
+              { state.buyer.length > 1 && state?.buyer.map((buy, idx) => {
                 return (
                   <Dot slide={idx} key={idx}>
                     o
@@ -146,11 +146,11 @@ const TicketConfirm = () => {
         <div className="flex flex-col max-w-6xl m-auto gap-2 px-10">
           <h2 className="font-jakartaBold text-main-3 text-2xl md:text-3xl">Buyer Information</h2>
           <div className="bg-main-2 w-full rounded-xl flex flex-col">
-            <div className="flex flex-row justify-between text-main-1 text-center p-5 font-jakarta border-gray-500 border-b-2">
+            <div className="flex flex-row justify-between text-main-1 text-center p-5 font-jakarta border-gray-500 border-b-[1px]">
               <p>{state?.ticketType}</p>
               <p>{state?.quantity}</p>
             </div>
-            <div className="flex flex-row justify-between text-main-1 text-center p-5 font-jakarta border-gray-500 border-b-2">
+            <div className="flex flex-row justify-between text-main-1 text-center p-5 font-jakarta border-gray-500 border-b-[1px]">
               <p>Ticket Price</p>
               <p><span className="font-jakartaBold">Rp {state?.amount}</span> x {state?.quantity}</p>
             </div>
@@ -162,8 +162,8 @@ const TicketConfirm = () => {
         </div>
 
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
-          <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 rounded-full">Cancel</button>
-          <button onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Pay Now</button>
+          <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button>
+          <button onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 hover:bg-sec-5 hover:text-main-2 duration-200 rounded-full">Pay Now</button>
         </div>
 
       </div>

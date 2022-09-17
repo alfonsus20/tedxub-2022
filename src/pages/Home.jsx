@@ -104,7 +104,11 @@ const Home = () => {
             onClick={() => {
               document
                 .getElementById("video-container")
-                .scrollIntoView({ behavior: "smooth" });
+                .scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                  inline: "start",
+                });
             }}
             initial={{ bottom: "2.5rem" }}
             animate={{
@@ -236,7 +240,9 @@ const Home = () => {
           style={{ transform: "rotateY(180deg) rotate(1deg)" }}
           alt="line"
         />
-        <p className="text-white text-center text-4xl md:text-5xl font-bold">Speakers</p>
+        <p className="text-white text-center text-4xl md:text-5xl font-bold">
+          Speakers
+        </p>
       </section>
       <section
         className="bg-cover flex flex-col-reverse md:flex-row overflow-x-hidden relative items-center pt-24 md:pt-0"

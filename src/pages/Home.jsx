@@ -44,7 +44,7 @@ const Home = () => {
         className="bg-[#353535] pt-6 min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="pt-8 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
           <img
             src={xAtas}
@@ -214,18 +214,19 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[22rem] pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10"
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div
           initial="hidden"
           whileInView="show"
           variants={speakerContainerVariants}
-          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-6 mb-12"
+          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-x-12 gap-y-[4rem] sm:gap-x-6 mb-12"
         >
           {["Najwa Shihab", "Coki Pardede", "Jerome Polin"].map((data, idx) => (
             <CardSpeaker
               key={idx}
+              index={idx}
               onClick={() => setSelectedSpeaker({ nama: data, image: speaker })}
             />
           ))}

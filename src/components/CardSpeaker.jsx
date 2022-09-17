@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import photoBG from "../assets/images/home/photo-bg.png";
 import speaker1 from "../assets/images/home/speaker-1.png";
 
+import cn from "classnames";
+
 const variant = {
   hidden: {
     y: -100,
@@ -18,13 +20,20 @@ const variant = {
   },
 };
 
-const CardSpeaker = ({ onClick }) => {
+const CardSpeaker = ({ onClick, index }) => {
   return (
     <motion.div
       variants={variant}
-      className="col-span-4 max-w-xs mx-auto  relative group"
+      className={cn("col-span-6 sm:col-span-4 max-w-xs mx-auto relative group", {
+        "col-start-4 col-end-10": index === 2,
+      })}
     >
-      <div className="h-56 w-5 bg-white absolute -top-56 left-1/2 -translate-x-1/2 z-10"></div>
+      <div
+        className={cn(
+          "w-5 bg-white absolute md:-top-56 left-1/2 -translate-x-1/2 z-10",
+          { "h-[600px] -top-[600px]": index === 2, "h-56 -top-56": index !== 2 }
+        )}
+      ></div>
       <div className="h-5 w-12 absolute -top-5 left-1/2 -translate-x-1/2 bg-white rounded-t-full"></div>
       <div
         className="relative overflow-hidden cursor-pointer rounded-xl bg-white"

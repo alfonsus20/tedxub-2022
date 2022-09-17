@@ -117,7 +117,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
   return (
     <div className="text-main-2 carousel-wrapper">
       <CarouselProvider
-      touchEnabled={false}
+        touchEnabled={false}
         dragEnabled={false}
         naturalSlideWidth={100}
         naturalSlideHeight={35}

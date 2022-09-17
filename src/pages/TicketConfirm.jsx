@@ -91,16 +91,18 @@ const TicketConfirm = () => {
             totalSlides={state?.quantity}
             visibleSlides={1}
             className="carousel-container"
+            touchEnabled={state?.quantity > 1 ? true : false}
+            dragEnabled={state?.quantity > 1 ? true : false}
           >
             <Slider>
               {state?.buyer.map((buy, idx) => {
                 return (
-                  <Slide index={idx}>
+                  <Slide index={idx} key={idx}>
                     <div className="bg-main-2 w-full rounded-xl flex flex-col">
                       <div className="text-main-3 text-center p-5 font-jakartaBold border-gray-500 border-b-[1px]">
                         <p className="text-xl">Ticket {idx+1}</p>
                       </div>
-                      <div className="flex flex-col md:flex-row p-5 justify-between">
+                      <div className="flex flex-col gap-2 md:flex-row p-5 justify-between break-words">
                         <div className="flex flex-col gap-2 flex-grow">
                           <div className="flex flex-col font-jakarta">
                             <p className="text-sm text-gray-500">Nama</p>

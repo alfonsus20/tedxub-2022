@@ -138,7 +138,7 @@ const Navbar = () => {
         } z-[90] w-full`}
       >
         <div
-          className={`mx-4 lg:mx-12 ${
+          className={`mx-2 lg:mx-12 ${
             pathname === "/" ? "mt-0" : "mt-6"
           } px-12 py-5 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta`}
         >

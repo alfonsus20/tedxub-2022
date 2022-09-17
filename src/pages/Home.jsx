@@ -209,7 +209,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[22rem] pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div
@@ -237,15 +237,15 @@ const Home = () => {
           style={{ transform: "rotateY(180deg) rotate(1deg)" }}
           alt="line"
         />
-        <p className="text-white text-center text-5xl font-bold">Speakers</p>
+        <p className="text-white text-center text-4xl md:text-5xl font-bold">Speakers</p>
       </section>
       <section
-        className="bg-cover flex flex-col-reverse md:flex-row overflow-x-hidden relative items-center pt-40 md:pt-0"
+        className="bg-cover flex flex-col-reverse md:flex-row overflow-x-hidden relative items-center pt-24 md:pt-0"
         style={{ backgroundImage: `url("${bgSectionTicket}")` }}
       >
-        <div className="w-full md:w-[40%] flex justify-center pt-24 pb-20 md:py-20">
+        <div className="w-full md:w-[40%] flex justify-center pt-20 pb-20 md:py-20 px-4">
           <div className="md:max-w-xs text-center md:text-left">
-            <h3 className="text-white uppercase font-akira text-5xl mb-12">
+            <h3 className="text-white uppercase font-akira text-4xl md:text-5xl mb-6 md:mb-12">
               grab your tickets now!
             </h3>
             <Link to="/ticket">

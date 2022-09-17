@@ -1,31 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import background from "../assets/images/about/background.jpg";
-import ticketSuccess from "../assets/images/payment-success-background.png";
-import check from "../assets/images/payment-success-check.svg";
-import useDisclosure from "../hooks/useDisclosure";
+import location from "../assets/images/payment-success-location.png";
+import Illustration from "../assets/images/payment-success-illustration.png";
+import "../style/payment-success.scss";
 
 const PaymentSuccess = () => {
-  const { isOpen, isOpenCashier, onOpen, onOpenCashier, onClose, onCloseCashier } = useDisclosure();
 
   let navigate = useNavigate();
 
   const handleRedirect = () => {
-    onClose();
-    return navigate("/ticket");
+    return navigate("/");
   }
   
   return (
-    <div className="min-h-screen w-full bg-cover bg-no-repeat bg-[#353535] flex justify-center items-center" style={{ backgroundImage: `url("${background}")` }}>
-      <div className={`z-50 relative bg-main-1 rounded-xl border-main-2 border-2 w-96 h-96`}>
-        <img className="absolute bottom-0 -z-50" src={ticketSuccess} alt="" />
-        <div className="flex flex-col justify-between items-center h-full p-10 text-main-2 text-center">
-          <div className="flex flex-col justify-center items-center">
-            <img className="w-14 mb-3" src={check} alt="Check" />
-            <h1 className="font-akira">PAYMENT SUCCESSFUL</h1>
-            <p className="font-jakarta text-sm">See you on the stage</p>
-          </div>
-          <button onClick={handleRedirect} className="bg-main-3 drop-shadow-lg px-12 py-2 font-jakartaBold rounded-full">Ok</button>
+    <div className="payment-success min-h-screen w-full bg-cover bg-no-repeat bg-[#353535] flex flex-row flex-wrap gap-10 justify-around items-stretch" style={{ backgroundImage: `url("${background}")` }}>
+      <div className="flex flex-col justify-center px-10 gap-5">
+        <div className="flex flex-col gap-2">
+          <h1 className="font-akira text-main-2 text-4xl">PAYMENT SUCCESSFUL</h1>
+          <p className="font-sedgwick text-main-3 text-2xl">See you on the venue!</p>
         </div>
+        <img className="w-128" src={location} alt="Location" />
+        <div className="flex justify-center mt-5">
+          <button onClick={handleRedirect} className="bg-main-3 text-main-2 w-52 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back To Home</button>
+        </div>
+      </div>
+      <div className="px-0 md:px-10 flex justify-end items-end">
+        <img className="check h-fit" src={Illustration} alt="Success" />
       </div>
     </div>
   );

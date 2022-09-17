@@ -1,0 +1,9 @@
+.payment-success{
+  padding-bottom: 0 !important;
+  .check{
+    height: 80vh;
+    @media screen and (max-width: 768px){
+      height: auto;
+    }
+  }
+}

@@ -40,7 +40,7 @@ const Home = () => {
     <div id="home" className="overflow-x-hidden">
       <section
         className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
-        // style={{ backgroundImage: `url("${background}")` }}
+        style={{ backgroundImage: `url("${background}")` }}
       >
         <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
           <img
@@ -120,7 +120,7 @@ const Home = () => {
       <section className="text-center flex justify-center items-center flex-col">
         <div
           className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:   flex items-center justify-center relative z-20"
-          style={{ backgroundImage: `url("${background2}")` }}
+          // style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[50%] md:w-[67%]">
             <div className="flex flex-col items-center mb-8 relative">

@@ -131,11 +131,11 @@ const Home = () => {
               <motion.img
                 src={leftHand}
                 alt="left"
-                className="absolute w-[60%] sm:w-[30rem] lg:w-[40rem]"
+                className="absolute w-[70%] xs:w-[60%] sm:w-[30rem] lg:w-[40rem]"
                 initial={{
                   rotate: -20,
                   top: "-8rem",
-                  left: "-20rem",
+                  left: "-16rem",
                   opacity: 0,
                 }}
                 whileInView={{
@@ -154,11 +154,11 @@ const Home = () => {
                   transition: { stiffness: 0, duration: 1 },
                 }}
               >
-                <div className="font-sedgwick relative">
-                  <h2 className="text-7xl sm:text-8xl text-main-3">
+                <div className="text-6xl xs:text-7xl sm:text-8xl font-sedgwick relative">
+                  <h2 className="text-main-3">
                     <span className="text-white">Me</span>rayakan
                   </h2>
-                  <h3 className="text-7xl sm:text-8xl mt-6">kembali</h3>
+                  <h3 className="mt-6">kembali</h3>
                 </div>
                 <div
                   className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
@@ -172,7 +172,7 @@ const Home = () => {
               <motion.img
                 src={rightHand}
                 alt="left"
-                className="absolute w-[60%] sm:w-[30rem] lg:w-[40rem]"
+                className="absolute w-[70%] xs:w-[60%] sm:w-[30rem] lg:w-[40rem]"
                 initial={{
                   rotate: -20,
                   top: "-6rem",

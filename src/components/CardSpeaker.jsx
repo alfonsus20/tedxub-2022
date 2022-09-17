@@ -31,8 +31,8 @@ const CardSpeaker = ({ onClick, index }) => {
         }
       )}
     >
-      <div className="w-5 bg-white absolute left-1/2 h-[600px] -top-[600px] -translate-x-1/2 z-10"></div>
-      <div className="h-5 w-12 absolute -top-5 left-1/2 -translate-x-1/2 bg-white rounded-t-full"></div>
+      <div className="w-2 xs:w-4 bg-white absolute left-1/2 h-[600px] -top-[600px] -translate-x-1/2 z-10"></div>
+      <div className="h-3 xs:h-5 w-6 xs:w-10 absolute -top-2 xs:-top-5 left-1/2 -translate-x-1/2 bg-white rounded-t-full"></div>
       <div
         className="relative overflow-hidden cursor-pointer rounded-xl bg-white"
         onClick={onClick}

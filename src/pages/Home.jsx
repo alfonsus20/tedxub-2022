@@ -123,10 +123,10 @@ const Home = () => {
         className="text-center flex justify-center items-center flex-col"
       >
         <div
-          className="rounded-b-[50%] bg-cover bg-blue-400 w-[150%] py-32 md:py-40 flex items-center justify-center relative z-20"
+          className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:py-40 flex items-center justify-center relative z-20"
           style={{ backgroundImage: `url("${background2}")` }}
         >
-          <div className="w-[67%]">
+          <div className="w-[50%] md:w-[67%]">
             <div className="flex flex-col items-center mb-8 relative">
               <motion.img
                 src={leftHand}
@@ -195,7 +195,7 @@ const Home = () => {
                 opacity: 1,
                 transition: { stiffness: 0, duration: 1 },
               }}
-              className="max-w-[70%] mx-auto font-medium"
+              className="max-w-[90%] xs:max-w-[70%] mx-auto font-medium"
             >
               TEDxUniversitasBrawijaya 2022 kali ini akan membawa penonton
               melalui perjalanan istirahat dari kejenuhan dan kompleksitas yang
@@ -231,12 +231,12 @@ const Home = () => {
         </motion.div>
         <img
           src={line}
-          className="absolute max-w-none w-[110%] h-[27%] bottom-[-10%] left-[-5%] rotate-1"
+          className="absolute max-w-none w-[110%] h-[12%] md:h-[27%] bottom-[-5%] md:bottom-[-10%] left-[-5%] rotate-1"
           alt="line"
         />
         <img
           src={line}
-          className="absolute max-w-none w-[110%] h-[27%] bottom-[-10%] left-[-5%]"
+          className="absolute max-w-none w-[110%] h-[12%] md:h-[27%] bottom-[-5%] md:bottom-[-10%] left-[-5%]"
           style={{ transform: "rotateY(180deg) rotate(1deg)" }}
           alt="line"
         />

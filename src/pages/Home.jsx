@@ -22,6 +22,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ModalSpeaker from "../components/ModalSpeaker";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -35,6 +36,15 @@ const speakerContainerVariants = {
 
 const Home = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+
+  useEffect(() => {
+    const imagesPreload = [background, background2, backgroundSpeaker];
+    imagesPreload.forEach((image) => {
+      const newImage = new Image();
+      newImage.src = image;
+      window[image] = newImage;
+    });
+  }, []);
 
   return (
     <div id="home" className="overflow-x-hidden">
@@ -120,7 +130,7 @@ const Home = () => {
       <section className="text-center flex justify-center items-center flex-col">
         <div
           className="rounded-b-[50%] bg-cover bg-[#E8E8E8] w-[200%] md:w-[150%] pt-32 pb-24 flex items-center justify-center relative z-20"
-          // style={{ backgroundImage: `url("${background2}")` }}
+          style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[50%] md:w-[67%]">
             <div className="flex flex-col items-center mb-8 relative">

@@ -108,9 +108,6 @@ const Home = () => {
               let newScrollY =
                 window.pageYOffset + el.getBoundingClientRect().top;
 
-              // adjust to behave like { block: "center" }
-              newScrollY =
-                newScrollY - document.documentElement.clientHeight / 2;
 
               window.scrollTo({ top: newScrollY, behavior: "smooth" });
             }}

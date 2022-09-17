@@ -244,11 +244,11 @@ const Home = () => {
         <p className="text-white text-center text-5xl font-bold">Speakers</p>
       </section>
       <section
-        className="bg-cover flex overflow-x-hidden relative items-center"
+        className="bg-cover flex flex-col-reverse md:flex-row overflow-x-hidden relative items-center pt-40 md:pt-0"
         style={{ backgroundImage: `url("${bgSectionTicket}")` }}
       >
-        <div className="w-[40%] flex justify-center py-20">
-          <div className="max-w-xs">
+        <div className="w-full md:w-[40%] flex justify-center pt-24 pb-20 md:py-20">
+          <div className="md:max-w-xs text-center md:text-left">
             <h3 className="text-white uppercase font-akira text-5xl mb-12">
               grab your tickets now!
             </h3>
@@ -259,7 +259,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[60%] max-h-[44rem] flex items-center overflow-y-hidden">
+        <div className="w-full md:w-[60%] md:max-h-[44rem] flex items-center overflow-y-hidden scale-[2] md:scale-[1]">
           <CarouselTicketHome />
         </div>
       </section>

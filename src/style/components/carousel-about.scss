@@ -29,7 +29,7 @@
     img:nth-child(1) {
         @include first();
         animation: rotate 8s infinite;
-        animation-delay: 2s;
+        animation-delay: 1s;
 
         @keyframes rotate {
             3% {
@@ -69,7 +69,7 @@
     img:nth-child(2) {
         @include second();
         animation: rotate2 8s infinite;
-        animation-delay: 2s;
+        animation-delay: 1s;
 
         @keyframes rotate2 {
             33% {
@@ -109,7 +109,7 @@
     img:nth-child(3) {
         @include third();
         animation: rotate3 8s infinite;
-        animation-delay: 2s;
+        animation-delay: 1s;
 
         @keyframes rotate3 {
             33% {

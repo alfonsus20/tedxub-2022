@@ -1,5 +1,5 @@
 import background from "../assets/images/about/background.jpg";
-import CarouselAbout from "../components/Carousel/About";
+import CarouselAbout from "../components/CarouselAbout";
 
 
 const About = () => {

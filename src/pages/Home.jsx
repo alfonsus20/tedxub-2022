@@ -19,7 +19,6 @@ import xAtas from "../assets/images/home/x_atas.png";
 import xBawah from "../assets/images/home/x_bawah.png";
 
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import ModalSpeaker from "../components/ModalSpeaker";
 import { useState } from "react";
@@ -43,7 +42,7 @@ const Home = () => {
         className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
-        <div className="pt-8 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
+        <div className="py-32 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
           <img
             src={xAtas}
             alt="top"
@@ -63,7 +62,7 @@ const Home = () => {
                     y: 0,
                     transition: { stiffness: 0, duration: 1 },
                   }}
-                  className="text-6xl"
+                  className="text-4xl xs:text-5xl sm:text-6xl"
                 >
                   Merayakan Kembali
                 </motion.h1>
@@ -82,7 +81,7 @@ const Home = () => {
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { duration: 1, delay: 3 } }}
-                className="font-sedgwick text-7xl text-main-3 opacity-75 absolute -translate-x-1/2 left-1/2 whitespace-nowrap -rotate-[2deg] -top-2"
+                className="font-sedgwick text-4xl xs:text-6xl sm:text-7xl text-main-3 opacity-75 absolute -translate-x-1/2 left-1/2 whitespace-nowrap -rotate-[2deg] top-4 sm:-top-2"
               >
                 Merayakan Kembali
               </motion.h1>
@@ -96,7 +95,7 @@ const Home = () => {
                 }}
                 src={eventTime}
                 alt="time"
-                className="w-[23rem]"
+                className="w-64 xs:w-[23rem]"
               />
             </div>
           </div>

@@ -126,6 +126,7 @@ const Navbar = () => {
         <div>
           <Link
             to="/ticket"
+            onClick={closeNavbarMobile}
             className="bg-main-3 px-6 py-2 rounded-lg text-white"
           >
             Buy Ticket Now

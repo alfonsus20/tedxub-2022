@@ -44,7 +44,7 @@ const Home = () => {
         className="bg-[#353535] pt-6 min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
-        {/* <Navbar /> */}
+        <Navbar />
         <div className="pt-8 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
           <img
             src={xAtas}
@@ -221,7 +221,7 @@ const Home = () => {
           initial="hidden"
           whileInView="show"
           variants={speakerContainerVariants}
-          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-x-12 gap-y-[4rem] sm:gap-x-6 mb-12"
+          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-y-[4rem] sm:gap-x-6 mb-12"
         >
           {["Najwa Shihab", "Coki Pardede", "Jerome Polin"].map((data, idx) => (
             <CardSpeaker

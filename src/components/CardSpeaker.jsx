@@ -24,7 +24,7 @@ const CardSpeaker = ({ onClick, index }) => {
   return (
     <motion.div
       variants={variant}
-      className={cn("col-span-6 sm:col-span-4 max-w-xs mx-auto relative group", {
+      className={cn("col-span-6 sm:col-span-4 max-w-xs mx-auto relative group px-6 sm:px-0", {
         "col-start-4 col-end-10": index === 2,
       })}
     >

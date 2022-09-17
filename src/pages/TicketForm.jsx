@@ -1,10 +1,8 @@
-import { ErrorMessage, Field, FieldArray, Form, Formik, getIn, setIn, useFormik, useFormikContext } from "formik";
+import { ErrorMessage, Field, Form, Formik, useFormikContext } from "formik";
 import { nanoid } from "nanoid";
-import { useEffect, useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import ticketBackground from "../assets/images/ticket-background.jpg";
-import OyCashier from "../components/OyCashier";
-import PaymentSuccessModal from "../components/PaymentSuccessModal";
 import useDisclosure from "../hooks/useDisclosure";
 import * as Yup from 'yup';
 import { fakultas } from "../utils/data";
@@ -13,7 +11,6 @@ import "../style/ticket-form.scss";
 const TicketForm = () => {
 
   const { state } = useLocation();
-  const { isOpen, isOpenCashier, onOpen, onOpenCashier, onClose, onCloseCashier } = useDisclosure();
   let navigate = useNavigate();
 
   const SetInitialFormik = () =>{
@@ -24,39 +21,16 @@ const TicketForm = () => {
         values.buyer.length = state?.quantity;
       }
     }, [])
-  }
-  
-
-
-  const handleOpenModal = () => {
-    // onOpen();
-    return navigate("/payment-success");
-  };
-
-  const handleOpenOyCashier = () => {
-    onOpenCashier();
-  };
-
-  const handleCloseModal = () => {
-    onClose();
-  };
-
-  const handleCloseOyCashier = () => {
-    onCloseCashier();
   };
 
   useEffect(() => {
     if(!state){
       return navigate("/ticket");
     }
-  }, [])
-  
+  }, []);
   
   return (
     <div className="relative ticket-container min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
-      {/* <PaymentSuccess /> */}
-      <PaymentSuccessModal isOpen={isOpen} onClose={handleCloseModal} />
-      <OyCashier isOpenCashier={isOpenCashier} onCloseCashier={handleCloseOyCashier} />
       <div className="m-auto z-10">
         <div className="heading text-center py-12 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>
@@ -68,7 +42,7 @@ const TicketForm = () => {
             buyer: 
               new Array(state?.quantity).fill({
                 id: '',
-                partner_tx_id: nanoid(),
+                external_id: nanoid(),
                 nama: '',
                 email: '',
                 nomorTelp: '',
@@ -109,12 +83,12 @@ const TicketForm = () => {
             values.buyer = values.buyer.map((buy) => {
               return(
                 {...buy, id: nanoid()}
-                // {...buy, id: nanoid(), partner_tx_id: nanoid()}
               );
             })
             // window.location.replace('https://dev.xen.to/sp-vjoXD');
             // alert(JSON.stringify(values, null, 2));
-            console.log(JSON.stringify(values, null, 2))
+            return navigate("/ticket-confirm", { state: { buyer: values.buyer, ticketType: values.ticketType, amount: values.amount, quantity: values.quantity } });
+            // console.log(JSON.stringify(values, null, 2))
             }}
           >
           {({values}) => (
@@ -353,8 +327,8 @@ const TicketForm = () => {
                 
                 <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
                   <Link to="/ticket"><button type="button" className="px-10 py-2 bg-main-2 text-main-1 rounded-full">Cancel</button></Link>
-                  <button className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Pay</button>
-                  <button type="button" onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Success</button>
+                  {/* <button type="button" onClick={handleConfirmTicket} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Checkout</button> */}
+                  <button type="submit" className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Checkout</button>
                   {/* <button type="button" onClick={handleOpenOyCashier} className="px-10 py-2 bg-blue-500 text-main-2 rounded-full">Open Oy!</button> */}
                 </div>
               </div>

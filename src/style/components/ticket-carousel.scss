@@ -1,71 +1,73 @@
-.carousel__container {
-  max-width: 550px;
-  margin: auto;
-}
-
-.carousel__slide-focus-ring{
-  display: none;
-}
-
-.carousel__slider {
-  padding-left: 25%;
-  padding-right: 25%;
-  @media screen and (max-width: 640px){
-    padding-left: 15%;
-    padding-right: 15%;
+.carousel-wrapper{
+  .carousel__container {
+    max-width: 550px;
+    margin: auto;
   }
-}
-
-.carousel__slider-tray{
-  display: flex;
-  gap: 1rem !important;
-}
-
-.carousel__inner-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // background-color: burlywood;
-  img{
-    width: calc(100% - 100px);
-    margin-left: -15px;
+  
+  .carousel__slide-focus-ring{
+    display: none;
+  }
+  
+  .carousel__slider {
+    padding-left: 25%;
+    padding-right: 25%;
     @media screen and (max-width: 640px){
-      width: calc(100% - 20px);
+      padding-left: 15%;
+      padding-right: 15%;
     }
   }
-}
-
-div[aria-selected="true"]{
-  z-index: 999;
-  img, .heading-container{
-    animation: slideCenter 0.3s forwards ease-in-out;
+  
+  .carousel__slider-tray{
+    display: flex;
+    gap: 1rem !important;
   }
-}
-
-@keyframes slideCenter {
-  0% {
-    transform: scale(1);
+  
+  .carousel__inner-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: burlywood;
+    img{
+      width: calc(100% - 100px);
+      margin-left: -15px;
+      @media screen and (max-width: 640px){
+        width: calc(100% - 20px);
+      }
+    }
   }
-  100% {
-    transform: scale(1.2);
+  
+  div[aria-selected="true"]{
+    z-index: 999;
+    img, .heading-container{
+      animation: slideCenter 0.3s forwards ease-in-out;
+    }
   }
-}
-
-div[aria-selected="false"]{
-  animation: slideFalse 0.3s forwards ease-in-out;
-}
-
-.not-active{
-  img{
-    filter: brightness(0.25);
+  
+  @keyframes slideCenter {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
   }
-}
-
-@keyframes slideFalse {
-  0% {
-    transform: scale(1.2);
+  
+  div[aria-selected="false"]{
+    animation: slideFalse 0.3s forwards ease-in-out;
   }
-  100% {
-    transform: scale(1);
+  
+  .not-active{
+    img{
+      filter: brightness(0.25);
+    }
+  }
+  
+  @keyframes slideFalse {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 }

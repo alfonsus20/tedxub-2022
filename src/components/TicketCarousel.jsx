@@ -115,7 +115,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
   
 
   return (
-    <div className="text-main-2">
+    <div className="text-main-2 carousel-wrapper">
       <CarouselProvider
       touchEnabled={false}
         dragEnabled={false}

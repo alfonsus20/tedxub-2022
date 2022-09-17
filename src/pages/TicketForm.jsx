@@ -326,9 +326,9 @@ const TicketForm = () => {
                 </div>
                 
                 <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
-                  <Link to="/ticket"><button type="button" className="px-10 py-2 bg-main-2 text-main-1 rounded-full">Cancel</button></Link>
+                  <Link to="/ticket"><button type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button></Link>
                   {/* <button type="button" onClick={handleConfirmTicket} className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Checkout</button> */}
-                  <button type="submit" className="px-10 py-2 bg-main-3 text-main-2 rounded-full">Checkout</button>
+                  <button type="submit" className="px-10 py-2 bg-main-3 text-main-2 hover:bg-sec-5 hover:text-main-2 duration-200 rounded-full">Checkout</button>
                   {/* <button type="button" onClick={handleOpenOyCashier} className="px-10 py-2 bg-blue-500 text-main-2 rounded-full">Open Oy!</button> */}
                 </div>
               </div>

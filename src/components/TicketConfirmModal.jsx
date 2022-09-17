@@ -16,7 +16,7 @@ const TicketConfirmModal = ({ onClose, isOpen }) => {
     {isOpen && (
       <motion.div
         className={cn(
-          "z-30 flex items-center justify-center fixed top-0 bottom-0 left-0 right-0 shadow-lg"
+          "z-30 flex items-center justify-center fixed top-0 bottom-0 left-0 right-0 shadow-lg px-10"
         )}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -38,8 +38,8 @@ const TicketConfirmModal = ({ onClose, isOpen }) => {
             </div>
             <p className="font-jakarta text-sm text-left">By clicking ‘Yes, I’m Sure’, it means that you are sure that the data you have entered is correct</p>
             <div className="flex flex-row gap-5">
-              <button onClick={onClose} className="bg-main-2 text-main-1 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back</button>
-              <button onClick={handleRedirect} className="bg-main-3 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Yes, I'm Sure</button>
+              <button onClick={onClose} className="bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back</button>
+              <button onClick={handleRedirect} className="bg-main-3 hover:bg-sec-5 hover:text-main-2 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Yes, I'm Sure</button>
             </div>
           </div>
         </motion.div>

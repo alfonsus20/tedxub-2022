@@ -21,13 +21,21 @@ const CarouselTicketHome = () => {
     nextArrow: <></>,
     prevArrow: <></>,
     vertical: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1000,
     pauseOnHover: false,
     draggable: false,
     beforeChange: (_, next) => {
       setActiveSlide(next);
     },
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          vertical: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -36,9 +44,11 @@ const CarouselTicketHome = () => {
         <div>
           <img
             src={arrOfImg[idx % 3]}
-            className={cn("transition duration-1000 ml-auto transform", {
-              "scale-[100%] translate-x-[1%]": idx === (activeSlide + 1) % 6,
-              "scale-[90%] translate-x-[18%] blur-xs": idx !== (activeSlide + 1) % 6,
+            className={cn("transition duration-1000 md:ml-auto transform", {
+              "scale-[100%] md:translate-x-[1%]":
+                idx === (activeSlide + 1) % 6,
+              "scale-[90%] md:translate-x-[18%] blur-xs":
+                idx !== (activeSlide + 1) % 6,
             })}
           />
         </div>

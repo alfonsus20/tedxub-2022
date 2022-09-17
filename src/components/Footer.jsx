@@ -3,12 +3,12 @@ import logo from "../assets/images/logo-black-red.svg";
 
 const Footer = () => {
   return (
-    <div className="flex grid-cols-12 max-w-screen-xl mx-auto px-4 pt-6 pb-10 font-jakarta text-sm">
-      <div className="w-[34%] pt-6">
+    <div className="flex grid-cols-12 max-w-screen-xl mx-auto px-4 pt-6 pb-10 font-jakarta text-sm flex-wrap">
+      <div className="w-full md:w-[34%] pt-6">
         <Link to="/">
           <img src={logo} className="w-60 mb-4" alt="logo" />
         </Link>
-        <p>
+        <p className="hidden md:block">
           © 2022 All Rights Reserved · “This independent{" "}
           <span className="text-main-3 font-jakartaBold">TEDx</span> event is
           operated under license from{" "}
@@ -16,7 +16,7 @@ const Footer = () => {
           .”
         </p>
       </div>
-      <div className="w-[12%] pt-6">
+      <div className="w-1/3 md:w-[12%] pt-6 px-1">
         <h4 className="font-jakartaBold mb-4">About</h4>
         <ul className="space-y-1">
           <li>
@@ -41,7 +41,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="w-[12%] pt-6">
+      <div className="w-1/3 md:w-[12%] pt-6 px-1">
         <h4 className="font-jakartaBold mb-4">Contact</h4>{" "}
         <ul className="space-y-1">
           <li>
@@ -61,7 +61,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="w-[12%] pt-6">
+      <div className="w-1/3 md:w-[12%] pt-6 px-1">
         <h4 className="font-jakartaBold mb-4">Previous Events</h4>
         <ul className="space-y-1">
           <li>
@@ -93,9 +93,9 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="w-[30%] pl-6 flex">
-        <div className="bg-main-1 w-[3px] h-full mx-8"></div>
-        <div className="py-6">
+      <div className="w-full md:w-[30%] md:pl-6 flex flex-col md:flex-row pt-8 md:pt-0">
+        <div className="bg-main-1 w-full md:w-[1px] h-[1px] md:h-full md:mx-8"></div>
+        <div className="py-6 text-center md:text-left">
           <h4 className="font-jakartaBold mb-4">See You On The Stage</h4>
           <p className="mb-6">
             Graha Widyaloka Universitas Brawijaya, Malang Minggu, 2 Oktober 2022
@@ -105,6 +105,13 @@ const Footer = () => {
               Buy Ticket
             </button>
           </Link>
+          <p className="md:hidden mt-6">
+            © 2022 All Rights Reserved · “This independent{" "}
+            <span className="text-main-3 font-jakartaBold">TEDx</span> event is
+            operated under license from{" "}
+            <span className="text-main-3 font-jakartaBold">TED</span>
+            .”
+          </p>
         </div>
       </div>
     </div>

@@ -102,12 +102,10 @@ const Home = () => {
           <motion.button
             className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"
             onClick={() => {
-              document
-                .getElementById("video-container")
-                .scrollIntoView({
-                  behavior: "smooth",
-                  block: "nearest",
-                });
+              document.getElementById("video-container").scrollIntoView({
+                behavior: "smooth",
+                block: "end",
+              });
             }}
             initial={{ bottom: "2.5rem" }}
             animate={{

@@ -44,7 +44,7 @@ const MeetTheTeam = () => {
     >
       <div className="m-auto z-10">
         <div className="heading text-center py-12 relative m-auto overflow-hidden">
-          <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">
+          <h1 className="font-sedgwick text-8xl text-main-3 opacity-75">
             Meet The Team
           </h1>
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
@@ -77,7 +77,7 @@ const MeetTheTeam = () => {
           </AnimatePresence>
         </div>
         <div className="container m-auto lg:px-10">
-          <h2 className="text-left font-akira text-4xl text-white max-w-6xl m-auto drop-shadow-lg">
+          <h2 className="text-center lg:text-left font-akira text-4xl text-white max-w-6xl m-auto drop-shadow-lg">
             CORE TEAM
           </h2>
           <CoreTeamLists
@@ -146,7 +146,7 @@ const MeetTheTeam = () => {
           </div>
 
           <div className="max-w-6xl m-auto py-40 flex flex-col flex-wrap gap-10">
-            <h2 className="font-akira text-main-3 text-4xl mb-10 px-10 drop-shadow-lg">
+            <h2 className="text-center lg:text-left font-akira text-main-3 text-4xl mb-10 px-10 drop-shadow-lg">
               VOLUNTEER
             </h2>
             <VolunteerLists

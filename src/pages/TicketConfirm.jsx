@@ -81,7 +81,7 @@ const TicketConfirm = () => {
         </div>
 
         <div className="max-w-6xl m-auto px-10 mb-2">
-          <h2 className="font-jakartaBold text-main-3 text-2xl md:text-3xl">Buyer Information</h2>
+          <h2 className="font-jakartaBold text-main-3 text-2xl md:text-3xl">Buyers Information</h2>
         </div>
 
         <div className="flex flex-col mb-10 relative h-full">
@@ -134,7 +134,7 @@ const TicketConfirm = () => {
               })}
             </Slider>
             <div className="text-white flex gap-5 justify-center">
-              { state.buyer.length > 1 && state?.buyer.map((buy, idx) => {
+              { state?.buyer.length > 1 && state?.buyer.map((buy, idx) => {
                 return (
                   <Dot slide={idx} key={idx}>
                     o
@@ -146,7 +146,7 @@ const TicketConfirm = () => {
         </div>
 
         <div className="flex flex-col max-w-6xl m-auto gap-2 px-10">
-          <h2 className="font-jakartaBold text-main-3 text-2xl md:text-3xl">Buyer Information</h2>
+          <h2 className="font-jakartaBold text-main-3 text-2xl md:text-3xl">Transaction Detail</h2>
           <div className="bg-main-2 w-full rounded-xl flex flex-col">
             <div className="flex flex-row justify-between text-main-1 text-center p-5 font-jakarta border-gray-500 border-b-[1px]">
               <p>{state?.ticketType}</p>

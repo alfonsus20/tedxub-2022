@@ -3,11 +3,11 @@
     overflow: hidden;
   }
   .carousel__slider {
-    padding-left: 20%;
-    padding-right: 20%;
+    // padding-left: 10rem;
+    // padding-right: 10rem;
     @media screen and (max-width: 768px){
-      padding-left: 15%;
-      padding-right: 15%;
+      // padding-left: 15%;
+      // padding-right: 15%;
     }
   }
   
@@ -26,6 +26,7 @@
     border-radius: 50%;
     border: 2px solid white;
     color: transparent;
+    outline: none !important;
   }
 
   .carousel__dot--selected{
@@ -34,13 +35,20 @@
   
   .carousel__slider-tray{
     display: flex;
-    gap: 4rem !important;
+    gap: 2rem !important;
     min-height: 275px;
     max-height: 275px;
     @media screen and (max-width: 768px){
       min-height: 300px;
       max-height: 300px;
     }
+  }
+
+  .carousel__slider-tray-wrapper{
+    max-width: 72rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin: auto;
   }
 
   .carousel__slider {

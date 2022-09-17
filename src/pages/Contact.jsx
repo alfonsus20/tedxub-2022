@@ -59,17 +59,17 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-row flex-wrap justify-center items-center gap-5 mt-14">
-          <a className="px-5 py-2 rounded-full bg-main-3 flex flex-row w-fit items-center justify-center gap-1 hover:scale-105 duration-200" target="_blank" href="https://instagram.com/tedxuniversitasbrawijaya">
-            <Icon icon="akar-icons:instagram-fill" className="text-lg text-white" />
-            <p className="font-jakarta text-white">tedxuniversitasbrawijaya</p>
+          <a className="px-5 py-2 rounded-full bg-main-3 text-main-2 flex flex-row w-fit items-center justify-center gap-1 hover:bg-main-2 hover:text-main-3 duration-200" target="_blank" href="https://instagram.com/tedxuniversitasbrawijaya">
+            <Icon icon="akar-icons:instagram-fill" className="text-lg" />
+            <p className="font-jakarta">tedxuniversitasbrawijaya</p>
           </a>
-          <a className="px-5 py-2 rounded-full bg-main-3 flex flex-row w-fit items-center justify-center gap-1 hover:scale-105 duration-200" target="_blank" href="https://twitter.com/TEDxBrawijaya">
-            <Icon icon="akar-icons:twitter-fill" className="text-lg text-white" />
-            <p className="font-jakarta text-white">TEDxBrawijaya</p>
+          <a className="px-5 py-2 rounded-full bg-main-3 text-main-2 flex flex-row w-fit items-center justify-center gap-1 hover:bg-main-2 hover:text-main-3 duration-200" target="_blank" href="https://twitter.com/TEDxBrawijaya">
+            <Icon icon="akar-icons:twitter-fill" className="text-lg" />
+            <p className="font-jakarta">TEDxBrawijaya</p>
           </a>
-          <a className="px-5 py-2 rounded-full bg-main-3 flex flex-row w-fit items-center justify-center gap-1 hover:scale-105 duration-200" href="mailto:tedxbrawijaya@gmail.com">
-            <Icon icon="akar-icons:envelope" className="text-lg text-white" />
-            <p className="font-jakarta text-white">tedxbrawijaya@gmail.com</p>
+          <a className="px-5 py-2 rounded-full bg-main-3 text-main-2 flex flex-row w-fit items-center justify-center gap-1 hover:bg-main-2 hover:text-main-3 duration-200" href="mailto:tedxbrawijaya@gmail.com">
+            <Icon icon="akar-icons:envelope" className="text-lg" />
+            <p className="font-jakarta">tedxbrawijaya@gmail.com</p>
           </a>
         </div>
       </div>

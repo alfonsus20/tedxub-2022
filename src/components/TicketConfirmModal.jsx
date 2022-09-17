@@ -39,7 +39,7 @@ const TicketConfirmModal = ({ onClose, isOpen }) => {
             <p className="font-jakarta text-sm text-left">By clicking ‘Yes, I’m Sure’, it means that you are sure that the data you have entered is correct</p>
             <div className="flex flex-row gap-5">
               <button onClick={onClose} className="bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back</button>
-              <button onClick={handleRedirect} className="bg-main-3 hover:bg-sec-5 hover:text-main-2 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Yes, I'm Sure</button>
+              <button onClick={handleRedirect} className="bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Yes, I'm Sure</button>
             </div>
           </div>
         </motion.div>

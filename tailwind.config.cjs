@@ -19,7 +19,6 @@ module.exports = {
         "sec-2": "#109D72",
         "sec-3": "#2156B0",
         "sec-4": "#7631D0",
-        "sec-5": "#882F26",
       },
       backgroundSize: {
         "300%": "300%",

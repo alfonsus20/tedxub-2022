@@ -43,7 +43,7 @@ const TicketConfirm = () => {
     <div className="confirm relative ticket-container min-h-screen bg-[#1D1B21] shrink-0" style={{backgroundImage: `url(${ticketBackground})`}}>
       <TicketConfirmModal isOpen={isOpen} onClose={handleCloseModal} />
       <div className="m-auto z-10">
-        <div className="heading text-center py-12 relative m-auto">
+        <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Tickets</h1>
         </div>
@@ -165,7 +165,7 @@ const TicketConfirm = () => {
 
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
           <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button>
-          <button onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 hover:bg-sec-5 hover:text-main-2 duration-200 rounded-full">Pay Now</button>
+          <button onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 hover:bg-main-2 hover:text-main-3 duration-200 rounded-full">Pay Now</button>
         </div>
 
       </div>

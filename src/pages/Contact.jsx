@@ -9,7 +9,7 @@ const Contact = () => {
       <img src={contactPhone} className="hidden lg:block absolute top-1/2 left-20 w-56 z-0" alt="Phone" />
       <img src={contactPhone} className="hidden lg:block absolute top-48 right-32 w-32 rotate-12 z-0" alt="Phone" />
       <div className="container m-auto z-10">
-        <div className="heading text-center py-12 relative m-auto">
+        <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Contact</h1>
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Contact</h1>
         </div>

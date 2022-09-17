@@ -77,7 +77,7 @@ const Ticket = () => {
   return (
     <div className="ticket-container bg-cover bg-no-repeat min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
       <div className="m-auto z-10">
-        <div className="heading text-center py-12 relative m-auto">
+        <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Tickets</h1>
         </div>
@@ -95,9 +95,9 @@ const Ticket = () => {
               {quantity}
               <button className="px-2" disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
-            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 font-jakartaBold text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-sec-5 hover:text-main-2 duration-200" : "bg-gray-500"} `}>Checkout</button>
+            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 font-jakartaBold text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500"} `}>Checkout</button>
           </div>
-          { quantity > 0 && <p className="mt-5">{quantity} x Rp {selectedTicket?.price} = Rp {quantity * selectedTicket?.price}</p>}
+          { quantity > 0 && <p className="mt-5">{quantity} {quantity > 1 ? "pcs" : "pc"} {selectedTicket?.type} <span className="ml-5 font-jakartaBold">{quantity * selectedTicket?.price}</span></p>}
         </div>
         <Alert alertStatus={alertStatus} isOpenAlert={isOpen} onCloseAlert={handleCloseAlert} />
       </div>

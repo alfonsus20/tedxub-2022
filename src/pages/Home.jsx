@@ -117,7 +117,7 @@ const Home = () => {
         </div>
         <VideoContainer />
       </section>
-      {/* <section className="text-center flex justify-center items-center flex-col">
+      <section className="text-center flex justify-center items-center flex-col">
         <div
           className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:py-40 flex items-center justify-center relative z-20"
           style={{ backgroundImage: `url("${background2}")` }}
@@ -206,7 +206,7 @@ const Home = () => {
             </motion.p>
           </div>
         </div>
-      </section> */}
+      </section>
       <section
         className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}

@@ -138,14 +138,14 @@ const MeetTheTeam = () => {
         >
           <div className="flex flex-row justify-between items-center w-full max-w-6xl absolute -top-44 left-1/2 transform -translate-x-1/2 px-10">
             <img
-              className="w-32 h-32 mt-20 drop-shadow-lg"
+              className="w-24 h-24 sm:w-32 sm:h-32 mt-28 sm:mt-20 drop-shadow-lg"
               src={circleSticker}
               alt="Circle"
             />
-            <img className="w-64 h-64 drop-shadow-lg" src={xSticker} alt="X" />
+            <img className="w-40 h-40 sm:w-64 sm:h-64 mt-20 sm:mt-0 drop-shadow-lg" src={xSticker} alt="X" />
           </div>
 
-          <div className="max-w-6xl m-auto py-40">
+          <div className="max-w-6xl m-auto py-40 flex flex-col flex-wrap gap-10">
             <h2 className="font-akira text-main-3 text-4xl mb-10 px-10 drop-shadow-lg">
               VOLUNTEER
             </h2>

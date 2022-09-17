@@ -42,16 +42,16 @@ const Home = () => {
         className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
-        <div className="py-32 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
+        <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
           <img
             src={xAtas}
             alt="top"
-            className="absolute top-[-8%] left-[5%] w-[15%]"
+            className="absolute top-[-8%] left-0 sm:left-12 w-40 xs:w-48"
           />
           <img
             src={xBawah}
             alt="bottom"
-            className="absolute bottom-[-20%] right-[10%] w-[18%] z-10"
+            className="absolute bottom-[-20%] right-0 sm:right-16 w-48 xs:w-56 z-10"
           />
           <div className="text-center flex flex-col items-center">
             <div className="text-white font-akira mb-6 relative">
@@ -95,12 +95,12 @@ const Home = () => {
                 }}
                 src={eventTime}
                 alt="time"
-                className="w-64 xs:w-[23rem]"
+                className="w-64 xs:w-[23rem] relative z-10"
               />
             </div>
           </div>
           <motion.button
-            className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4"
+            className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"
             onClick={() => {
               document
                 .getElementById("video-container")

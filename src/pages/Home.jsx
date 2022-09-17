@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import Navbar from "../components/Navbar";
 
 import background from "../assets/images/home/background.png";
-import background2 from "../assets/images/home/background-2.jpg";
+import background2 from "../assets/images/home/background-2.webp";
 import backgroundSpeaker from "../assets/images/home/background-speaker.png";
 import line from "../assets/images/home/line.png";
 
@@ -119,7 +119,7 @@ const Home = () => {
       </section>
       <section className="text-center flex justify-center items-center flex-col">
         <div
-          className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:py-40 flex items-center justify-center relative z-20"
+          className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:   flex items-center justify-center relative z-20"
           style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[50%] md:w-[67%]">
@@ -208,7 +208,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4 overflow-hidden"
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div

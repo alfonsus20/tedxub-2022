@@ -35,7 +35,6 @@ const speakerContainerVariants = {
 };
 
 const Home = () => {
-  const refTheme = useRef(null);
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
 
   return (
@@ -121,11 +120,10 @@ const Home = () => {
         <VideoContainer />
       </section>
       <section
-        ref={refTheme}
-        className="text-center relative z-20 flex justify-center items-center flex-col"
+        className="text-center flex justify-center items-center flex-col"
       >
         <div
-          className="rounded-b-[50%] bg-cover bg-blue-400 w-[150%] py-32 md:py-40 flex items-center justify-center"
+          className="rounded-b-[50%] bg-cover bg-blue-400 w-[150%] py-32 md:py-40 flex items-center justify-center relative z-20"
           style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[67%]">

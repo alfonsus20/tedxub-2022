@@ -117,7 +117,7 @@ const Home = () => {
         </div>
         <VideoContainer />
       </section>
-      <section className="text-center flex justify-center items-center flex-col">
+      {/* <section className="text-center flex justify-center items-center flex-col">
         <div
           className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:py-40 flex items-center justify-center relative z-20"
           style={{ backgroundImage: `url("${background2}")` }}
@@ -264,7 +264,7 @@ const Home = () => {
         isOpen={!!selectedSpeaker}
         data={selectedSpeaker}
         onClose={() => setSelectedSpeaker(null)}
-      />
+      /> */}
     </div>
   );
 };

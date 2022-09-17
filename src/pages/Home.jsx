@@ -125,7 +125,7 @@ const Home = () => {
         className="text-center relative z-20 flex justify-center items-center flex-col"
       >
         <div
-          className="rounded-b-[50%] bg-cover bg-blue-400 w-[150%]  py-40 flex items-center justify-center"
+          className="rounded-b-[50%] bg-cover bg-blue-400 w-[150%] py-32 md:py-40 flex items-center justify-center"
           style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[67%]">
@@ -133,16 +133,16 @@ const Home = () => {
               <motion.img
                 src={leftHand}
                 alt="left"
-                className="absolute w-[40rem]"
+                className="absolute w-[60%] sm:w-[30rem] lg:w-[40rem]"
                 initial={{
                   rotate: -20,
-                  top: "-6rem",
+                  top: "-8rem",
                   left: "-20rem",
                   opacity: 0,
                 }}
                 whileInView={{
                   rotate: 0,
-                  top: "-8rem",
+                  top: "-6rem",
                   left: "-14rem",
                   opacity: 1,
                   transition: { stiffness: 0, duration: 1 },
@@ -156,17 +156,17 @@ const Home = () => {
                   transition: { stiffness: 0, duration: 1 },
                 }}
               >
-                <div className="font-sedgwick">
-                  <h2 className="text-8xl text-main-3">
+                <div className="font-sedgwick relative">
+                  <h2 className="text-7xl sm:text-8xl text-main-3">
                     <span className="text-white">Me</span>rayakan
                   </h2>
-                  <h3 className="text-8xl mt-6">kembali</h3>
+                  <h3 className="text-7xl sm:text-8xl mt-6">kembali</h3>
                 </div>
                 <div
                   className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
                   style={{ backgroundImage: `url("${banner}")` }}
                 >
-                  <p className="text-xl font-semibold text-white">
+                  <p className="text-lg sm:text-xl font-semibold text-white">
                     Menggeledah Arus, Menilik Ruang
                   </p>
                 </div>
@@ -174,7 +174,7 @@ const Home = () => {
               <motion.img
                 src={rightHand}
                 alt="left"
-                className="absolute w-[40rem]"
+                className="absolute w-[60%] sm:w-[30rem] lg:w-[40rem]"
                 initial={{
                   rotate: -20,
                   top: "-6rem",

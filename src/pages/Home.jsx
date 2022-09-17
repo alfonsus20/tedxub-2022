@@ -119,8 +119,8 @@ const Home = () => {
       </section>
       <section className="text-center flex justify-center items-center flex-col">
         <div
-          className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:   flex items-center justify-center relative z-20"
-          // style={{ backgroundImage: `url("${background2}")` }}
+          className="rounded-b-[50%] bg-cover bg-white w-[200%] md:w-[150%] pt-32 pb-24 md:   flex items-center justify-center relative z-20"
+          style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[50%] md:w-[67%]">
             <div className="flex flex-col items-center mb-8 relative">

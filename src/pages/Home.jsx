@@ -102,10 +102,17 @@ const Home = () => {
           <motion.button
             className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"
             onClick={() => {
-              document.getElementById("video-container").scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-              });
+              var el = document.getElementById("video-container");
+
+              // { block: "top" } behavior:
+              let newScrollY =
+                window.pageYOffset + el.getBoundingClientRect().top;
+
+              // adjust to behave like { block: "center" }
+              newScrollY =
+                newScrollY - document.documentElement.clientHeight / 2;
+
+              window.scrollTo({ top: newScrollY, behavior: "smooth" });
             }}
             initial={{ bottom: "2.5rem" }}
             animate={{

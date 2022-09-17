@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       <motion.div
-        initial={{ top: "-100%" }}
+        initial={{ top: "-200%" }}
         animate={{
           top: isNavbarMobileVisible ? "0" : "-100%",
           transition: { duration: 0.75 },

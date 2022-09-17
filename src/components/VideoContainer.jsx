@@ -39,12 +39,12 @@ const VideoContainer = () => {
       className="relative overflow-hidden aspect-video max-h-screen"
       ref={containerRef}
       style={{
-        height: `${containerHeight}%`,
+        // height: `${containerHeight}%`,
       }}
     >
       <div
         className="w-[160%] h-full absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center"
-        style={{ borderRadius: `${borderRadius}%` }}
+        // style={{ borderRadius: `${borderRadius}%` }}
       >
         <video
           className="w-[67%] h-full mx-auto object-cover object-center"

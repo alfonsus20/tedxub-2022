@@ -102,14 +102,9 @@ const Home = () => {
           <motion.button
             className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"
             onClick={() => {
-              var el = document.getElementById("video-container");
-
-              // { block: "top" } behavior:
-              let newScrollY =
-                window.pageYOffset + el.getBoundingClientRect().top;
-
-
-              window.scrollTo({ top: newScrollY, behavior: "smooth" });
+              document
+                .getElementById("video-container")
+                .scrollIntoView({ behavior: "smooth" });
             }}
             initial={{ bottom: "2.5rem" }}
             animate={{

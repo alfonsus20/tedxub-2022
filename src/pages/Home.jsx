@@ -40,10 +40,9 @@ const Home = () => {
   return (
     <div id="home" className="overflow-x-hidden">
       <section
-        className="bg-[#353535] pt-6 min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
+        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
-        <Navbar />
         <div className="pt-8 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
           <img
             src={xAtas}
@@ -119,9 +118,7 @@ const Home = () => {
         </div>
         <VideoContainer />
       </section>
-      <section
-        className="text-center flex justify-center items-center flex-col"
-      >
+      <section className="text-center flex justify-center items-center flex-col">
         <div
           className="rounded-b-[50%] bg-cover bg-blue-400 w-[200%] md:w-[150%] pt-32 pb-24 md:py-40 flex items-center justify-center relative z-20"
           style={{ backgroundImage: `url("${background2}")` }}

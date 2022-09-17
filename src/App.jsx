@@ -35,9 +35,9 @@ function App() {
   return (
     <div className="relative">
       <ScrollToTop />
-      <div className={pathname === "/" ? "hidden" : ""}>
+      {/* <div className={pathname === "/" ? "hidden" : ""}> */}
         <Navbar />
-      </div>
+      {/* </div> */}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

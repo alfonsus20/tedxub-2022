@@ -107,7 +107,6 @@ const Home = () => {
                 .scrollIntoView({
                   behavior: "smooth",
                   block: "nearest",
-                  inline: "start",
                 });
             }}
             initial={{ bottom: "2.5rem" }}

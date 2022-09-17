@@ -208,7 +208,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4 overflow-hidden"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div

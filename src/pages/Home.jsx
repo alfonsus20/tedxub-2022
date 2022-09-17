@@ -206,7 +206,7 @@ const Home = () => {
             </motion.p>
           </div>
         </div>
-      </section>
+      </section> */}
       <section
         className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
@@ -239,7 +239,7 @@ const Home = () => {
         <p className="text-white text-center text-4xl md:text-5xl font-bold">
           Speakers
         </p>
-      </section> */}
+      </section>
       <section
         className="bg-cover flex flex-col-reverse md:flex-row overflow-x-hidden relative items-center pt-24 md:pt-0"
         style={{ backgroundImage: `url("${bgSectionTicket}")` }}

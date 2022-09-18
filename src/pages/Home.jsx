@@ -24,6 +24,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import "../style/home.scss";
+import { useRef } from "react";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -37,14 +38,29 @@ const speakerContainerVariants = {
 
 const Home = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const xBawahRef = useRef(null);
+  const xAtasRef = useRef(null);
+  const [xBawahPosition, setXBawahPosition] = useState(0);
+  const [xAtasPosition, setXAtasPosition] = useState(0);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+
+    const offsetTopXBawah = xBawahRef.current?.offsetTop;
+    const percentageXBawah = (scrollPosition / offsetTopXBawah) * 100;
+    setXBawahPosition(percentageXBawah);
+
+    const offsetTopXAtas = xAtasRef.current?.offsetTop;
+    const percentageXAtas = (scrollPosition / offsetTopXAtas) * 100;
+    setXAtasPosition(percentageXAtas);
+  };
 
   useEffect(() => {
-    const imagesPreload = [background, backgroundSpeaker];
-    imagesPreload.forEach((image) => {
-      const newImage = new Image();
-      newImage.src = image;
-      window[image] = newImage;
-    });
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -56,10 +72,14 @@ const Home = () => {
         <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
           <img
             src={xAtas}
+            ref={xAtasRef}
+            style={{transform : `translateX(${xAtasPosition}%)`}}
             alt="top"
             className="absolute top-[-8%] left-0 sm:left-12 w-40 xs:w-48"
           />
           <img
+            ref={xBawahRef}
+            style={{transform : `translateX(${xBawahPosition}%)`}}
             src={xBawah}
             alt="bottom"
             className="absolute bottom-[-20%] right-0 sm:right-16 w-48 xs:w-56 z-10"
@@ -131,7 +151,7 @@ const Home = () => {
       <section className="text-center flex justify-center items-center flex-col">
         <div
           id="theme"
-          className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-32 pb-24 flex items-center justify-center relative z-20"
+          className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-40 pb-36 flex items-center justify-center relative z-20"
         >
           <div className="w-[50%] md:w-[67%]">
             <div className="flex flex-col items-center mb-8 relative">
@@ -162,7 +182,11 @@ const Home = () => {
                 }}
               >
                 <div className="text-6xl xs:text-7xl sm:text-8xl font-sedgwick relative">
-                  <img src={merangkaiTitle} className='absolute rounded-full w-24 xs:w-28 sm:w-32 lg:w-36 aspect-square -top-6 sm:-top-5 lg:-top-8 left-8 xs:left-2 sm:-left-4 lg:-left-6 object-cover' alt="" />
+                  <img
+                    src={merangkaiTitle}
+                    className="absolute rounded-full w-24 xs:w-28 sm:w-32 lg:w-36 aspect-square -top-6 sm:-top-5 lg:-top-8 left-8 xs:left-2 sm:-left-4 lg:-left-6 object-cover"
+                    alt=""
+                  />
                   <h2 className="text-main-3 relative z-10">
                     <span className="text-white">Me</span>rayakan
                   </h2>

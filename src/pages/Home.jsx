@@ -66,7 +66,7 @@ const Home = () => {
   return (
     <div id="home" className="overflow-x-hidden">
       <section
-        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-y-hidden bg-cover bg-fixed bg-center flex flex-col"
+        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
         <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">

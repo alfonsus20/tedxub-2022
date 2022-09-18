@@ -1,8 +1,8 @@
 import { Icon } from "@iconify/react";
-import Navbar from "../components/Navbar";
 
 import background from "../assets/images/home/background.png";
-import background2 from "../assets/images/home/background-2.webp";
+// import background2 from "../assets/images/home/background-2.webp";
+import background2 from "../assets/images/home/topography.svg";
 import backgroundSpeaker from "../assets/images/home/background-speaker.png";
 import line from "../assets/images/home/line.png";
 
@@ -23,6 +23,8 @@ import { Link } from "react-router-dom";
 import ModalSpeaker from "../components/ModalSpeaker";
 import { useState } from "react";
 import { useEffect } from "react";
+
+import "../style/home.scss"
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -129,8 +131,9 @@ const Home = () => {
       </section>
       <section className="text-center flex justify-center items-center flex-col">
         <div
-          className="rounded-b-[50%] bg-cover bg-[#E8E8E8] w-[200%] md:w-[150%] pt-32 pb-24 flex items-center justify-center relative z-20"
-          style={{ backgroundImage: `url("${background2}")` }}
+          id="theme"
+          className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-32 pb-24 flex items-center justify-center relative z-20"
+          // style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[50%] md:w-[67%]">
             <div className="flex flex-col items-center mb-8 relative">

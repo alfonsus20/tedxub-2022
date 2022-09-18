@@ -1,9 +1,8 @@
 import { Icon } from "@iconify/react";
 
 import background from "../assets/images/home/background.png";
-// import background2 from "../assets/images/home/background-2.webp";
-import background2 from "../assets/images/home/topography.svg";
 import backgroundSpeaker from "../assets/images/home/background-speaker.png";
+import merangkaiTitle from "../assets/images/home/merangkai.jpg";
 import line from "../assets/images/home/line.png";
 
 import leftHand from "../assets/images/home/left.png";
@@ -24,7 +23,7 @@ import ModalSpeaker from "../components/ModalSpeaker";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import "../style/home.scss"
+import "../style/home.scss";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -40,7 +39,7 @@ const Home = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
 
   useEffect(() => {
-    const imagesPreload = [background, background2, backgroundSpeaker];
+    const imagesPreload = [background, backgroundSpeaker];
     imagesPreload.forEach((image) => {
       const newImage = new Image();
       newImage.src = image;
@@ -163,7 +162,8 @@ const Home = () => {
                 }}
               >
                 <div className="text-6xl xs:text-7xl sm:text-8xl font-sedgwick relative">
-                  <h2 className="text-main-3">
+                  <img src={merangkaiTitle} className='absolute rounded-full w-24 xs:w-28 sm:w-32 lg:w-36 aspect-square -top-6 sm:-top-5 lg:-top-8 left-8 xs:left-2 sm:-left-4 lg:-left-6 object-cover' alt="" />
+                  <h2 className="text-main-3 relative z-10">
                     <span className="text-white">Me</span>rayakan
                   </h2>
                   <h3 className="mt-6">kembali</h3>
@@ -203,7 +203,7 @@ const Home = () => {
                 opacity: 1,
                 transition: { stiffness: 0, duration: 1 },
               }}
-              className="max-w-[90%] xs:max-w-[70%] mx-auto font-medium"
+              className="w-[80%] xs:max-w-screen-lg mx-auto font-medium"
             >
               TEDxUniversitasBrawijaya 2022 kali ini akan membawa penonton
               melalui perjalanan istirahat dari kejenuhan dan kompleksitas yang

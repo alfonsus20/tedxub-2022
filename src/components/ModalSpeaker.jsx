@@ -23,26 +23,31 @@ const ModalSpeaker = ({ onClose, isOpen = true, data = {} }) => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className="z-30 w-full min-h-[12rem] rounded-md max-h-[90%] sm:max-h-[80%] overflow-y-auto p-2 sm:p-6 relative transition-modal ease-out transform duration-500 mx-8 modal max-w-5xl"
+            className="z-30 w-full min-h-[12rem] max-h-[95%] sm:max-h-[80%] overflow-y-auto sm:p-6 relative transition-modal ease-out transform duration-500 mx-8 modal max-w-md sm:max-w-4xl"
           >
-            <div className="bg-white flex rounded-[3rem] font-jakarta relative">
+            <div className="bg-white flex flex-col sm:flex-row font-jakarta relative pt-6 pb-8 sm:py-0 rounded-2xl sm:rounded-[3rem]">
               <Icon
                 icon="ep:circle-close"
                 className="absolute top-4 text-4xl right-6 cursor-pointer"
                 onClick={onClose}
               />
-              <div className="w-[40%] overflow-hidden items-center justify-center flex rounded-l-[3rem]">
-                <div className="w-[150%] h-[120%] overflow-hidden rounded-r-[50%] items-center justify-center flex">
+              <div className="w-full sm:w-[40%] overflow-hidden items-center justify-center flex mb-2 sm:mb-0 sm:rounded-l-[3rem] rounded-none">
+                <div className="hidden sm:flex w-[150%] h-[120%] overflow-hidden rounded-r-[50%] items-center justify-center">
                   <img
                     src={data.image}
                     alt="speaker"
                     className="w-full h-[84%] object-cover object-center"
                   />
                 </div>
+                <img
+                  src={data.image}
+                  alt="speaker"
+                  className="w-72 aspect-square max-w-[85%] object-cover object-center rounded-full sm:hidden"
+                />
               </div>
-              <div className="w-[60%] pl-10 pr-16 py-12">
-                <h3 className="font-bold text-3xl mb">{data.nama}</h3>
-                <h4 className="mb-2 text-lg">Seni Dalam City Branding</h4>
+              <div className="w-full sm:w-[60%] px-6 sm:pl-10 sm:pr-16 sm:py-12 flex flex-col justify-center">
+                <h3 className="font-bold text-2xl sm:text-3xl text-center sm:text-left">{data.nama}</h3>
+                <h4 className="mb-2 text-lg text-center sm:text-left">Seni Dalam City Branding</h4>
                 <p className="text-justify text-sm">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
                   scelerisque porta turpis non blandit. Dui non, sed semper eu
@@ -51,13 +56,6 @@ const ModalSpeaker = ({ onClose, isOpen = true, data = {} }) => {
                   faucibus. Quisque cras habitant aliquam vivamus faucibus eget.
                   At at nunc aliquet ultrices pellentesque suspendisse egestas
                   risus. Eget convallis amet, leo, proin condimentum mauris.
-                  Dolor in nullam orci, faucibus interdum sit sagittis nunc
-                  felis. Luctus lectus amet magna eleifend turpis. Cursus sapien
-                  ut tortor, pretium tellus eget. Lectus amet non sollicitudin
-                  ultricies. Pharetra tempor, ut donec lectus. Diam turpis
-                  nullam vel nisl et aliquam et. Imperdiet venenatis dolor est
-                  ac vel quam. Risus sem quis ac sed velit viverra ipsum vitae.
-                  Amet facilisi lectus aenean et felis,
                 </p>
               </div>
             </div>

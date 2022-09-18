@@ -133,7 +133,6 @@ const Home = () => {
         <div
           id="theme"
           className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-32 pb-24 flex items-center justify-center relative z-20"
-          // style={{ backgroundImage: `url("${background2}")` }}
         >
           <div className="w-[50%] md:w-[67%]">
             <div className="flex flex-col items-center mb-8 relative">
@@ -221,7 +220,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-cover bg-fixed bg-no-repeat bg-center z-10 px-4"
+        className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div

@@ -5,25 +5,54 @@ import TicketCarousel from "../components/TicketCarousel";
 import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
 import useDisclosure from "../hooks/useDisclosure";
+import TicketEarlyBird from "../assets/images/ticket-early-bird.png";
+import TicketPresale1 from "../assets/images/ticket-presale-1.png";
+import TicketPresale2 from "../assets/images/ticket-presale-2.png";
 
 const Ticket = () => {
   let navigate = useNavigate();
   
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // Panggil API untuk initiate default ticket yang active
-  const [selectedTicket, setSelectedTicket] = useState(
+  const TicketLists = [
+    {
+      type: "Early Bird + TED Kit",
+      price: 105000,
+      quota: 0,
+      photo: TicketEarlyBird,
+    },
     {
       type: "Presale 1",
       price: 120000,
-      quota: 2
+      quota: 3,
+      photo: TicketPresale1,
+    },
+    {
+      type: "Presale 2",
+      price: 130000,
+      quota: 100,
+      photo: TicketPresale2,
+    },
+  ]
+  
+  const [quantity, setQuantity] = useState(0);
+  const [alertStatus, setAlertStatus] = useState('');
+  // Panggil API untuk initiate default ticket yang active
+  const [activeTicket, setactiveTicket] = useState(
+    {
+      type: "Presale 1",
+      price: 120000,
+      quota: 3,
     }
   );
-  const [quantity, setQuantity] = useState(0);
-  
-  // Panggil API untuk initiate default ticket yang active
-  const [activeTicket, setactiveTicket] = useState('Presale 1')
-  const [alertStatus, setAlertStatus] = useState('');
+
+  const [selectedTicket, setSelectedTicket] = useState(
+    {
+      type: activeTicket.type,
+      price: activeTicket.price,
+      quota: activeTicket.quota,
+    }
+  );
 
   const handleOpenAlert = () => {
     onOpen();
@@ -82,7 +111,7 @@ const Ticket = () => {
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Tickets</h1>
         </div>
         <div className="w-full">
-        <TicketCarousel activeTicket={activeTicket} setSelectedTicket={setSelectedTicket} />
+        <TicketCarousel activeTicket={activeTicket.type} setSelectedTicket={setSelectedTicket} ticketLists={TicketLists} />
         </div>
 
         <div className="flex flex-col font-jakarta text-center text-main-2 gap-2 mt-10">
@@ -91,13 +120,13 @@ const Ticket = () => {
           <p className="text-sm">*max 5 tickets for once transaction</p>
           <div className="flex flex-row flex-wrap justify-center items-center mt-5 gap-5">
             <div className="flex flex-row items-center justify-between w-40 bg-main-2 rounded-full px-5 py-2 text-main-1 font-jakartaBold">
-              <button className="px-2" disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
+              <button className="px-2" disabled={selectedTicket.type == activeTicket.type && selectedTicket.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
               {quantity}
-              <button className="px-2" disabled={selectedTicket.type == activeTicket && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
+              <button className="px-2" disabled={selectedTicket.type == activeTicket.type && selectedTicket.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
-            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 font-jakartaBold text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500"} `}>Checkout</button>
+            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 font-jakartaBold text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500 cursor-not-allowed"} `}>Checkout</button>
           </div>
-          { quantity > 0 && <p className="mt-5">{quantity} {quantity > 1 ? "pcs" : "pc"} {selectedTicket?.type} <span className="ml-5 font-jakartaBold">{quantity * selectedTicket?.price}</span></p>}
+          { quantity > 0 && <p className="mt-5">{quantity} {quantity > 1 ? "pcs" : "pc"} {selectedTicket?.type} <span className="ml-5 font-jakartaBold">Rp {quantity * selectedTicket?.price}</span></p>}
         </div>
         <Alert alertStatus={alertStatus} isOpenAlert={isOpen} onCloseAlert={handleCloseAlert} />
       </div>

@@ -131,6 +131,7 @@ const TicketForm = () => {
                           name="buyer.0.nomorTelp"
                           type="text"
                           className="p-2 bg-main-2 rounded-lg w-full text-main-1"
+                          placeholder="Example: +62812345678"
                         />
                         <ErrorMessage className="text-main-3" component="div" name="buyer.0.nomorTelp" />
                       </div>
@@ -242,6 +243,7 @@ const TicketForm = () => {
                                   name={`buyer.${i+1}.nomorTelp`}
                                   type="text"
                                   className="p-2 bg-main-2 rounded-lg w-full text-main-1"
+                                  placeholder="Example: +62812345678"
                                 />
                                 <ErrorMessage className="text-main-3" component="div" name={`buyer.${i+1}.nomorTelp`} />
                               </div>

@@ -1,58 +1,15 @@
 import {
   CarouselProvider,
-  CarouselContext,
   Slider,
   Slide,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "../style/components/ticket-carousel.scss";
-import TicketEarlyBird from "../assets/images/ticket-early-bird.png";
-import TicketPresale1 from "../assets/images/ticket-presale-1.png";
-import TicketPresale2 from "../assets/images/ticket-presale-2.png";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const TicketLists = [
-  {
-    type: "Early Bird + TED Kit",
-    price: 105000,
-    quota: 0,
-    photo: TicketEarlyBird,
-  },
-  {
-    type: "Presale 1",
-    price: 120000,
-    quota: 2,
-    photo: TicketPresale1,
-  },
-  {
-    type: "Presale 2",
-    price: 130000,
-    quota: 100,
-    photo: TicketPresale2,
-  },
-]
-
-const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
+const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
   
   const [currentSlide, setCurrentSlide] = useState(1); 
-  
-  // function CarouselWithContext() {
-  //   const carouselContext = useContext(CarouselContext);
-
-  //   // const [currentSlideContext, setCurrentSlideContext] = useState(
-  //   //   carouselContext.state.currentSlide
-  //   // );
-
-  //   useEffect(() => {
-  //     function onChange() {
-  //       // setCurrentSlideContext(carouselContext.state.currentSlide);
-  //       setCurrentSlide(carouselContext.state.currentSlide)
-  //     }
-  
-  //     carouselContext.subscribe(onChange);
-  //     return () => carouselContext.unsubscribe(onChange);
-  //   }, [carouselContext]);
-  // }
 
   const handleSlide = (index, type, price, quota) => {
     setCurrentSlide(index);
@@ -79,39 +36,6 @@ const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
         break;
     };
   }, []);
-
-  // useEffect(() => {
-  //   switch (currentSlide) {
-  //     case 0:
-  //       setSelectedTicket({
-  //         type: "Early Bird + TED Kit",
-  //         price: 105000,
-  //         quota: 0,
-  //       });
-  //       break;
-  //     case 1:
-  //       setSelectedTicket({
-  //         type: "Presale 1",
-  //         price: 120000,
-  //         quota: 100,
-  //       });
-  //       break;
-  //     case 2:
-  //       setSelectedTicket({
-  //         type: "Presale 2",
-  //         price: 130000,
-  //         quota: 100,
-  //       });
-  //       break;
-  //     default:
-  //       setSelectedTicket({
-  //         type: "Presale 1",
-  //         price: 120000,
-  //         quota: 100,
-  //       });
-  //       break;
-  //   };
-  // }, [currentSlide])
   
 
   return (
@@ -127,7 +51,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
         currentSlide={currentSlide}
       >
         <Slider>
-          {TicketLists.map((ticket, idx) => {
+          {ticketLists.map((ticket, idx) => {
             return (
               <Slide key={idx} index={idx} onClick={() => handleSlide(idx, ticket.type, ticket.price, ticket.quota)} className={`cursor-pointer ${activeTicket == ticket.type && ticket.quota > 0 ? "active" : "not-active"}`}>
                 <img src={ticket.photo} alt={ticket.type} />
@@ -138,7 +62,6 @@ const TicketCarousel = ({activeTicket, setSelectedTicket}) => {
             );
           })}
         </Slider>
-        {/* <CarouselWithContext /> */}
       </CarouselProvider>
     </div>
   );

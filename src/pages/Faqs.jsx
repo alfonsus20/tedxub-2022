@@ -1,4 +1,4 @@
-import FaqBackground from "../assets/images/faq-background.png"
+import FaqBackground from "../assets/images/faq-background.jpg"
 import Accordion from "../components/Accordion";
 import { AnimatePresence, motion } from "framer-motion";
 

@@ -44,30 +44,15 @@ const Home = () => {
   const waveBawahRef = useRef(null);
   const waveAtasRef = useRef(null);
 
-  const [xBawahPosition, setXBawahPosition] = useState(0);
-  const [xAtasPosition, setXAtasPosition] = useState(0);
-  const [waveAtasPosition, setWaveAtasPosition] = useState(0);
-  const [waveBawahPosition, setWaveBawahPosition] = useState(0);
+  const [ornamentPosition, setOrnamentPosition] = useState(0);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
-    const offsetTopXBawah = xBawahRef.current?.offsetTop;
-    const percentageXBawah = (scrollPosition / offsetTopXBawah) * 100;
-    setXBawahPosition(percentageXBawah);
+    const offsetTop = document.getElementById("video-container").offsetTop;
+    const percentage = (scrollPosition / offsetTop) * 100;
 
-    const offsetTopXAtas = xAtasRef.current?.offsetTop;
-    const percentageXAtas = (scrollPosition / offsetTopXAtas) * 100;
-    setXAtasPosition(percentageXAtas);
-
-    const offsetTopWaveAtas = Math.abs(waveAtasRef.current?.offsetTop);
-    // console.log({offsetTopWaveAtas, scrollPosition})
-    const percentageWaveAtas = (scrollPosition / offsetTopWaveAtas) * 100;
-    setWaveAtasPosition(percentageWaveAtas);
-
-    const offsetTopWaveBawah = waveBawahRef.current?.offsetTop;
-    const percentageWaveBawah = (scrollPosition / offsetTopWaveBawah) * 100;
-    setWaveBawahPosition(percentageWaveBawah);
+    setOrnamentPosition(percentage)
   };
 
   useEffect(() => {
@@ -88,27 +73,31 @@ const Home = () => {
           <img
             src={xAtas}
             ref={xAtasRef}
-            style={{ transform: `translateX(${xAtasPosition}%)` }}
+            style={{ transform: `translateX(-${ornamentPosition}%)` }}
             alt="top"
             className="absolute top-[-8%] left-0 sm:left-12 w-40 xs:w-48 z-10"
           />
           <img
             ref={xBawahRef}
-            style={{ transform: `translateX(${xBawahPosition}%)` }}
+            style={{ transform: `translateX(${ornamentPosition}%)` }}
             src={xBawah}
             alt="bottom"
             className="absolute bottom-[-20%] right-0 sm:right-16 w-48 xs:w-56 z-10"
           />
           <img
             ref={waveBawahRef}
-            style={{ transform: `translateX(-${waveBawahPosition}%) rotate(-40deg)` }}
+            style={{
+              transform: `translateX(-${ornamentPosition}%) rotate(-40deg)`,
+            }}
             src={wave}
             alt="wave-bawah"
             className="absolute -left-40 -bottom-40 w-56 sm:w-64 md:w-72"
           />
           <img
             ref={waveAtasRef}
-            style={{ transform: `translateX(${waveAtasPosition}%) rotate(130deg)` }}
+            style={{
+              transform: `translateX(${ornamentPosition}%) rotate(130deg)`,
+            }}
             src={wave}
             alt="wave-atas"
             className="absolute -right-40 -top-40 w-56 sm:w-64 md:w-72"

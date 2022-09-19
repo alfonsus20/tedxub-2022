@@ -274,7 +274,7 @@ const Navbar = () => {
             Buy Ticket Now
           </Link>
           <button className="block lg:hidden" onClick={() => setIsNavbarMobileVisible(true)}>
-            <Icon icon="charm:menu-hamburger" className="text-3xl" />
+            <Icon icon="charm:menu-hamburger" className="text-4xl" />
           </button>
         </div>
       </nav>

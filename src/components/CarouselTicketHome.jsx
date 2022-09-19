@@ -22,7 +22,7 @@ const CarouselTicketHome = () => {
     prevArrow: <></>,
     vertical: true,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 1500,
     pauseOnHover: false,
     draggable: false,
     beforeChange: (_, next) => {

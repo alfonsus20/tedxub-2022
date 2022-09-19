@@ -11,14 +11,16 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "../style/ticket-confirm.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import TicketConfirmModal from "../components/TicketConfirmModal";
 import useDisclosure from "../hooks/useDisclosure";
+import { createPayment } from "../models/payment";
 
 const TicketConfirm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
+  const [isLoading, setisLoading] = useState(false)
   const { onOpen, isOpen, onClose } = useDisclosure();
 
   const handlePrevPage = () => {
@@ -31,6 +33,27 @@ const TicketConfirm = () => {
 
   const handleCloseModal = () => {
     onClose();
+  };
+
+  const handleCreatePayment = async () => {
+    try {
+      setisLoading(true);
+      await createPayment(
+        {
+          sender_name: state?.buyer[0].nama,
+          email: state?.buyer[0].email,
+          phoneNumber: state?.buyer[0].nomorTelp,
+          quantity: state?.quantity,
+          visitor_detail: state?.buyer
+        }
+      )
+      console.log("berhasil");
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setisLoading(false)
+      console.log("test")
+    }
   };
 
   useEffect(() => {
@@ -165,7 +188,7 @@ const TicketConfirm = () => {
 
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
           <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button>
-          <button onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 hover:bg-main-2 hover:text-main-3 duration-200 rounded-full">Pay Now</button>
+          <button onClick={handleCreatePayment} className="px-10 py-2 bg-main-3 text-main-2 hover:bg-main-2 hover:text-main-3 duration-200 rounded-full">Pay Now</button>
         </div>
 
       </div>

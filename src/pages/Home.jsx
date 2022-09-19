@@ -308,7 +308,7 @@ const Home = () => {
               grab your tickets now!
             </h3>
             <Link to="/ticket">
-              <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full">
+              <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
                 Buy Ticket
               </button>
             </Link>

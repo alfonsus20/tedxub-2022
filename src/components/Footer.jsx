@@ -3,10 +3,10 @@ import logo from "../assets/images/logo-black-red.svg";
 
 const Footer = () => {
   return (
-    <div className="flex grid-cols-12 max-w-screen-xl mx-auto px-4 pt-6 pb-10 font-jakarta text-sm flex-wrap">
+    <div className="flex grid-cols-12 max-w-screen-2xl mx-auto px-4 sm:px-16 pt-6 pb-10 font-jakarta text-sm flex-wrap">
       <div className="w-full md:w-[34%] pt-6">
-        <Link to="/">
-          <img src={logo} className="w-60 mb-4" alt="logo" />
+        <Link to="/" className="w-fit flex mx-auto md:mx-0">
+          <img src={logo} className="w-48 sm:w-60 mb-4" alt="logo" />
         </Link>
         <p className="hidden md:block">
           © 2022 All Rights Reserved · “This independent{" "}
@@ -101,7 +101,7 @@ const Footer = () => {
             Graha Widyaloka Universitas Brawijaya, Malang Minggu, 2 Oktober 2022
           </p>
           <Link to="/ticket">
-            <button className="bg-main-3 py-2 px-8 rounded-md text-white">
+            <button className="bg-main-3 py-2 px-8 rounded-md text-white hover:bg-[#c34132] transition-colors duration-200">
               Buy Ticket
             </button>
           </Link>

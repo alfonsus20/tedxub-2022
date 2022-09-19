@@ -116,7 +116,7 @@ const Navbar = () => {
           <Link
             to="/ticket"
             onClick={closeNavbarMobile}
-            className="bg-main-3 px-6 py-2 rounded-lg text-white"
+            className="bg-main-3 px-6 py-2 rounded-lg text-white duration-200 hover:text-main-3 hover:bg-white"
           >
             Buy Ticket Now
           </Link>
@@ -269,7 +269,7 @@ const Navbar = () => {
           </ul>
           <Link
             to="/ticket"
-            className="bg-main-3 px-6 py-1 rounded-lg hidden lg:block"
+            className="bg-main-3 px-6 py-1 rounded-lg hidden lg:block  duration-200 hover:text-main-3 hover:bg-white"
           >
             Buy Ticket Now
           </Link>

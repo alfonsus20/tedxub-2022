@@ -76,17 +76,6 @@ const Navbar = () => {
               className="text-main-3 font-bold text-base"
             />
           </div>
-          <ul className="space-y-3">
-            <li>
-              <Link to="/about"onClick={closeNavbarMobile}>Email</Link>
-            </li>
-            <li>
-              <Link to="/meet-the-team"onClick={closeNavbarMobile}>Instagram</Link>
-            </li>
-            <li>
-              <Link to="/faq"onClick={closeNavbarMobile}>Twitter</Link>
-            </li>
-          </ul>
         </div>
         <div>
           <div className="flex items-center justify-center gap-x-2 font-bold text-lg mb-4">

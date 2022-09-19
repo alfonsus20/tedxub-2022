@@ -3,11 +3,12 @@ import cn from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const TicketConfirmModal = ({ onClose, isOpen }) => {
+const TicketConfirmModal = ({ onClose, isOpen, handleCreatePayment }) => {
 
   let navigate = useNavigate();
 
   const handleRedirect = () => {
+    handleCreatePayment();
     return window.location.replace('https://dev.xen.to/sp-vjoXD');
   }
 

@@ -30,7 +30,7 @@ const TicketForm = () => {
   }, []);
   
   return (
-    <div className="relative ticket-container min-h-screen bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+    <div className="relative ticket-container bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>

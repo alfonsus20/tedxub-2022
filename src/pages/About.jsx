@@ -5,10 +5,10 @@ import CarouselAbout from "../components/CarouselAbout";
 const About = () => {
   return (
     <div
-      className="bg-[#353535] px-4 text-white bg-cover bg-no-repeat overflow-x-hidden"
+      className="bg-[#353535] text-white bg-cover bg-no-repeat overflow-x-hidden"
       style={{ backgroundImage: `url("${background}")` }}
     >
-      <div className="max-w-screen-xl mx-auto space-y-12">
+      <div className="max-w-screen-2xl mx-auto space-y-12 px-4 md:px-12">
         <section>
           <h1 className="text-2xl font-sedgwick mb-8">
             About <span className="text-main-3">TEDxUniversitasBrawijaya</span>

@@ -16,7 +16,7 @@ import VideoContainer from "../components/VideoContainer";
 import speaker from "../assets/images/home/speaker.jpg";
 import xAtas from "../assets/images/home/x_atas.png";
 import xBawah from "../assets/images/home/x_bawah.png";
-import wave from '../assets/images/home/wave.png'
+import wave from "../assets/images/home/wave.png";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -41,8 +41,13 @@ const Home = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
   const xBawahRef = useRef(null);
   const xAtasRef = useRef(null);
+  const waveBawahRef = useRef(null);
+  const waveAtasRef = useRef(null);
+
   const [xBawahPosition, setXBawahPosition] = useState(0);
   const [xAtasPosition, setXAtasPosition] = useState(0);
+  const [waveAtasPosition, setWaveAtasPosition] = useState(0);
+  const [waveBawahPosition, setWaveBawahPosition] = useState(0);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -54,6 +59,15 @@ const Home = () => {
     const offsetTopXAtas = xAtasRef.current?.offsetTop;
     const percentageXAtas = (scrollPosition / offsetTopXAtas) * 100;
     setXAtasPosition(percentageXAtas);
+
+    const offsetTopWaveAtas = Math.abs(waveAtasRef.current?.offsetTop);
+    // console.log({offsetTopWaveAtas, scrollPosition})
+    const percentageWaveAtas = (scrollPosition / offsetTopWaveAtas) * 100;
+    setWaveAtasPosition(percentageWaveAtas);
+
+    const offsetTopWaveBawah = waveBawahRef.current?.offsetTop;
+    const percentageWaveBawah = (scrollPosition / offsetTopWaveBawah) * 100;
+    setWaveBawahPosition(percentageWaveBawah);
   };
 
   useEffect(() => {
@@ -74,19 +88,31 @@ const Home = () => {
           <img
             src={xAtas}
             ref={xAtasRef}
-            style={{transform : `translateX(${xAtasPosition}%)`}}
+            style={{ transform: `translateX(${xAtasPosition}%)` }}
             alt="top"
             className="absolute top-[-8%] left-0 sm:left-12 w-40 xs:w-48 z-10"
           />
           <img
             ref={xBawahRef}
-            style={{transform : `translateX(${xBawahPosition}%)`}}
+            style={{ transform: `translateX(${xBawahPosition}%)` }}
             src={xBawah}
             alt="bottom"
             className="absolute bottom-[-20%] right-0 sm:right-16 w-48 xs:w-56 z-10"
           />
-          <img src={wave} alt='wave-bawah' className="absolute -left-40 -bottom-40 w-56 sm:w-64 md:w-72 rotate-[-40deg]" />
-          <img src={wave} alt='wave-atas' className="absolute -right-40 -top-40 w-56 sm:w-64 md:w-72 rotate-[130deg]" />
+          <img
+            ref={waveBawahRef}
+            style={{ transform: `translateX(-${waveBawahPosition}%) rotate(-40deg)` }}
+            src={wave}
+            alt="wave-bawah"
+            className="absolute -left-40 -bottom-40 w-56 sm:w-64 md:w-72"
+          />
+          <img
+            ref={waveAtasRef}
+            style={{ transform: `translateX(${waveAtasPosition}%) rotate(130deg)` }}
+            src={wave}
+            alt="wave-atas"
+            className="absolute -right-40 -top-40 w-56 sm:w-64 md:w-72"
+          />
           <div className="text-center flex flex-col items-center">
             <div className="text-white font-akira mb-6 relative">
               <div className="z-10 relative overflow-y-hidden">
@@ -107,7 +133,7 @@ const Home = () => {
                       y: 0,
                       transition: { stiffness: 0, duration: 1, delay: 1 },
                     }}
-                    className='font-sedgwick text-xl xs:text-2xl md:text-3xl'
+                    className="font-sedgwick text-xl xs:text-2xl md:text-3xl"
                   >
                     Menggeledah arus, menilik ruang
                   </motion.h2>
@@ -115,7 +141,10 @@ const Home = () => {
               </div>
               <motion.h1
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.75, transition: { duration: 1, delay: 3 } }}
+                animate={{
+                  opacity: 0.75,
+                  transition: { duration: 1, delay: 3 },
+                }}
                 className="font-sedgwick text-5xl xs:text-7xl sm:text-8xl text-main-3 absolute -translate-x-1/2 left-1/2 lg:whitespace-nowrap -rotate-[2deg] top-0 xs:-top-2 sm:-top-4"
               >
                 Merayakan Kembali

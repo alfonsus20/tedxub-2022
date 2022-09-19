@@ -6,11 +6,12 @@ import { useNavigate } from "react-router-dom";
 import Alert from "../components/Alert";
 import useDisclosure from "../hooks/useDisclosure";
 import { getAllTicket } from "../models/ticket";
+import Spinner from "../components/Spinner";
 
 const Ticket = () => {
   let navigate = useNavigate();
   
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, isOpenSpinner, onOpen, onOpenSpinner, onClose, onCloseSpinner } = useDisclosure();
   
   const [quantity, setQuantity] = useState(0);
   const [alertStatus, setAlertStatus] = useState('');
@@ -30,6 +31,14 @@ const Ticket = () => {
 
   const handleCloseAlert = () => {
     onClose();
+  };
+
+  const handleOpenSpinner = () => {
+    onOpenSpinner();
+  };
+
+  const handleCloseSpinner = () => {
+    onCloseSpinner();
   };
 
   const handleIncrementQuantity = () => {
@@ -56,7 +65,10 @@ const Ticket = () => {
 
   const handletFetchAllTicket = async() => {
     try {
+      handleOpenSpinner();
+
       const { data } = await getAllTicket();
+      
       setAllTicket(data.data);
 
       for (let item of data.data) {
@@ -67,6 +79,8 @@ const Ticket = () => {
       }
     } catch (error) {
       console.log(error)
+    } finally {
+      handleCloseSpinner();
     }
   }
 
@@ -88,6 +102,7 @@ const Ticket = () => {
   
   return (
     <div className="ticket-container bg-cover bg-no-repeat bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+      <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>

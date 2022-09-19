@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import background from "../assets/images/about/background.jpg";
 import hand from "../assets/images/sponsor-hand.svg";
+import Spinner from "../components/Spinner";
+import useDisclosure from "../hooks/useDisclosure";
 import { getAllSponsor } from "../models/sponsor";
 
 const SponsorPartner = () => {
+
+  const { isOpenSpinner, onOpenSpinner, onCloseSpinner } = useDisclosure();
 
   const [allData, setAllData] = useState({
     sponsors: [],
@@ -11,34 +15,46 @@ const SponsorPartner = () => {
     communityPartners: [],
   });
 
+  const handleOpenSpinner = () => {
+    onOpenSpinner();
+  };
+
+  const handleCloseSpinner = () => {
+    onCloseSpinner();
+  };
+
   const handleFetchSponsor = async () => {
-    const {
-      data: { data },
-    } = await getAllSponsor();
+    try {
+      handleOpenSpinner();
 
-    console.log(data)
-
-    const sponsors = [];
-    const mediaPartners = [];
-    const communityPartners = [];
-
-    for (let item of data) {
-      switch (item.kategori_sponsor) {
-        case "Sponsor":
-          sponsors.push(item);
-          break;
-        case "Media Partner":
-          mediaPartners.push(item);
-          break;
-        case "Community Partner":
-          communityPartners.push(item);
-          break;
-        default:
-          continue;
+      const {
+        data: { data },
+      } = await getAllSponsor();
+  
+      const sponsors = [];
+      const mediaPartners = [];
+      const communityPartners = [];
+  
+      for (let item of data) {
+        switch (item.kategori_sponsor) {
+          case "Sponsor":
+            sponsors.push(item);
+            break;
+          case "Media Partner":
+            mediaPartners.push(item);
+            break;
+          case "Community Partner":
+            communityPartners.push(item);
+            break;
+          default:
+            continue;
+        }
       }
+  
+      setAllData({ mediaPartners, communityPartners, sponsors });
+    } finally {
+      handleCloseSpinner();
     }
-
-    setAllData({ mediaPartners, communityPartners, sponsors });
   };
 
   useEffect(() => {
@@ -47,6 +63,7 @@ const SponsorPartner = () => {
   
   return (
     <div className="min-h-screen w-full bg-cover bg-no-repeat" style={{ backgroundImage: `url("${background}")` }}>
+      <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <img className="absolute -z-0 left-0 h-96" src={hand} alt="Hand" />
       <div className="container m-auto z-10">
 

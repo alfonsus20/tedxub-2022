@@ -9,12 +9,13 @@ import { fakultas } from "../utils/data";
 import "../style/ticket-form.scss";
 import { getAllTicket } from "../models/ticket";
 import Alert from "../components/Alert";
+import Spinner from "../components/Spinner";
 
 const TicketForm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, isOpenSpinner, onOpen, onOpenSpinner, onClose, onCloseSpinner } = useDisclosure();
 
   const [alertStatus, setAlertStatus] = useState('');
 
@@ -42,9 +43,20 @@ const TicketForm = () => {
     onClose();
   };
 
+  const handleOpenSpinner = () => {
+    onOpenSpinner();
+  };
+
+  const handleCloseSpinner = () => {
+    onCloseSpinner();
+  };
+
   const handleCheckQuota = async(values) => {
     try {
+      handleOpenSpinner();
+
       const { data } = await getAllTicket();
+      
       for (let item of data.data) {
         if (item.jenis_tiket == state?.type && item.quota < state?.quantity ){
           setAlertStatus(`Maaf, tiket tersisa ${item.quota} lagi.`);
@@ -59,6 +71,8 @@ const TicketForm = () => {
       console.log(data.data)
     } catch (error) {
       console.log(error)
+    } finally {
+      handleCloseSpinner();
     }
   }
 
@@ -70,6 +84,7 @@ const TicketForm = () => {
   
   return (
     <div className="relative ticket-container bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+      <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>

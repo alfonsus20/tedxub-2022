@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function useDisclosure() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenCashier, setIsOpenCashier] = useState(false);
+  const [isOpenSpinner, setIsOpenSpinner] = useState(false);
 
   const onOpen = () => {
     setIsOpen(true);
@@ -10,6 +11,10 @@ export default function useDisclosure() {
 
   const onOpenCashier = () => {
     setIsOpenCashier(true);
+  };
+
+  const onOpenSpinner = () => {
+    setIsOpenSpinner(true);
   };
 
   const onClose = () => {
@@ -20,12 +25,19 @@ export default function useDisclosure() {
     setIsOpenCashier(false);
   };
 
+  const onCloseSpinner = () => {
+    setIsOpenSpinner(false);
+  };
+
   return {
     isOpen,
     isOpenCashier,
+    isOpenSpinner,
     onOpen,
     onOpenCashier,
+    onOpenSpinner,
     onClose,
     onCloseCashier,
+    onCloseSpinner,
   };
 }

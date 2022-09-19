@@ -15,13 +15,14 @@ import { useEffect, useState } from "react";
 import TicketConfirmModal from "../components/TicketConfirmModal";
 import useDisclosure from "../hooks/useDisclosure";
 import { createPayment } from "../models/payment";
+import Spinner from "../components/Spinner";
 
 const TicketConfirm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
   const [isLoading, setisLoading] = useState(false);
-  const { onOpen, isOpen, onClose } = useDisclosure();
+  const { onOpen, onOpenSpinner, isOpen, isOpenSpinner, onClose, onCloseSpinner } = useDisclosure();
 
   const handlePrevPage = () => {
     return navigate(-1);
@@ -31,13 +32,22 @@ const TicketConfirm = () => {
     onOpen();
   };
 
+  const handleOpenSpinner = () => {
+    onOpenSpinner();
+  };
+
   const handleCloseModal = () => {
     onClose();
   };
 
+  const handleCloseSpinner = () => {
+    onCloseSpinner();
+  };
+
   const handleCreatePayment = async () => {
     try {
-      setisLoading(true);
+      handleOpenSpinner();
+
       const { data } = await createPayment(
         {
           buyer: state?.buyer,
@@ -46,13 +56,14 @@ const TicketConfirm = () => {
           quantity: state?.quantity,
         }
       )
+      
       if( data.message == "Success create invoice" ){
         return window.location.replace(data.data.invoice_url);
       }
     } catch (error) {
       console.log(error)
     } finally {
-      setisLoading(false)
+      handleCloseSpinner();
     }
   };
 
@@ -65,6 +76,7 @@ const TicketConfirm = () => {
   return (
     <div className="confirm relative ticket-container min-h-screen bg-[#1D1B21] shrink-0" style={{backgroundImage: `url(${ticketBackground})`}}>
       <TicketConfirmModal isOpen={isOpen} onClose={handleCloseModal} handleCreatePayment={handleCreatePayment} />
+      <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-24">Tickets</h1>

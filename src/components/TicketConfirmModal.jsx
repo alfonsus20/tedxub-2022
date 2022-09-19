@@ -9,7 +9,7 @@ const TicketConfirmModal = ({ onClose, isOpen, handleCreatePayment }) => {
 
   const handleRedirect = () => {
     handleCreatePayment();
-    return window.location.replace('https://dev.xen.to/sp-vjoXD');
+    // return window.location.replace(invoiceURL);
   }
 
   return createPortal(

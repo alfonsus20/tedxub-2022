@@ -20,7 +20,7 @@ const TicketConfirm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
-  const [isLoading, setisLoading] = useState(false)
+  const [isLoading, setisLoading] = useState(false);
   const { onOpen, isOpen, onClose } = useDisclosure();
 
   const handlePrevPage = () => {
@@ -38,21 +38,21 @@ const TicketConfirm = () => {
   const handleCreatePayment = async () => {
     try {
       setisLoading(true);
-      await createPayment(
+      const { data } = await createPayment(
         {
-          sender_name: state?.buyer[0].nama,
-          email: state?.buyer[0].email,
-          phoneNumber: state?.buyer[0].nomorTelp,
+          buyer: state?.buyer,
+          ticketType: state?.ticketType,
+          amount: state?.amount,
           quantity: state?.quantity,
-          visitor_detail: state?.buyer
         }
       )
-      console.log("berhasil");
+      if( data.message == "Success create invoice" ){
+        return window.location.replace(data.data.invoice_url);
+      }
     } catch (error) {
       console.log(error)
     } finally {
       setisLoading(false)
-      console.log("test")
     }
   };
 

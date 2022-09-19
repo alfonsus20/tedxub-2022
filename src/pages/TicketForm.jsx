@@ -1,17 +1,22 @@
 import { ErrorMessage, Field, Form, Formik, useFormikContext } from "formik";
 import { nanoid } from "nanoid";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ticketBackground from "../assets/images/ticket-background.jpg";
 import useDisclosure from "../hooks/useDisclosure";
 import * as Yup from 'yup';
 import { fakultas } from "../utils/data";
 import "../style/ticket-form.scss";
+import { getAllTicket } from "../models/ticket";
+import Alert from "../components/Alert";
 
 const TicketForm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [alertStatus, setAlertStatus] = useState('');
 
   const SetInitialFormik = () =>{
     const { values } = useFormikContext();
@@ -22,6 +27,40 @@ const TicketForm = () => {
       }
     }, [])
   };
+
+  const handleOpenAlert = () => {
+    onOpen();
+    const timeoutAlert = setTimeout(() => {
+      onClose();
+    }, 3000);
+    return () => {
+      clearTimeout(timeoutAlert)
+    }
+  };
+
+  const handleCloseAlert = () => {
+    onClose();
+  };
+
+  const handleCheckQuota = async(values) => {
+    try {
+      const { data } = await getAllTicket();
+      for (let item of data.data) {
+        if (item.jenis_tiket == state?.type && item.quota < state?.quantity ){
+          setAlertStatus(`Maaf, tiket tersisa ${item.quota} lagi.`);
+          handleOpenAlert();
+        } else if (item.jenis_tiket == state?.type && item.quota == 0 ) {
+          setAlertStatus(`Maaf, tiket sudah habis.`);
+          handleOpenAlert();
+        } else {
+          return navigate("/ticket-confirm", { state: { buyer: values.buyer, ticketType: values.ticketType, amount: values.amount, quantity: values.quantity } });
+        }
+      }
+      console.log(data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
     if(!state){
@@ -87,7 +126,8 @@ const TicketForm = () => {
             })
             // window.location.replace('https://dev.xen.to/sp-vjoXD');
             // alert(JSON.stringify(values, null, 2));
-            return navigate("/ticket-confirm", { state: { buyer: values.buyer, ticketType: values.ticketType, amount: values.amount, quantity: values.quantity } });
+            // return navigate("/ticket-confirm", { state: { buyer: values.buyer, ticketType: values.ticketType, amount: values.amount, quantity: values.quantity } });
+            handleCheckQuota(values);
             // console.log(JSON.stringify(values, null, 2))
             }}
           >
@@ -338,7 +378,7 @@ const TicketForm = () => {
           )}
         </Formik>
       </div>
-      
+      <Alert alertStatus={alertStatus} isOpenAlert={isOpen} onCloseAlert={handleCloseAlert} />
     </div>
   );
 }

@@ -6,6 +6,9 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "../style/components/ticket-carousel.scss";
 import { useEffect, useState } from "react";
+import TicketEarlyBird from "../assets/images/ticket-early-bird.png";
+import TicketPresale1 from "../assets/images/ticket-presale-1.png";
+import TicketPresale2 from "../assets/images/ticket-presale-2.png";
 
 const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
   
@@ -14,7 +17,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
   const handleSlide = (index, type, price, quota) => {
     setCurrentSlide(index);
     setSelectedTicket({
-      type: type,
+      jenis_tiket: type,
       price: price,
       quota: quota,
     });
@@ -22,7 +25,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
 
   useEffect(() => {
     switch (activeTicket) {
-      case "Early Bird + TED Kit":
+      case "Early Bird":
         setCurrentSlide(0);
         break;
       case "Presale 1":
@@ -53,10 +56,10 @@ const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
         <Slider>
           {ticketLists.map((ticket, idx) => {
             return (
-              <Slide key={idx} index={idx} onClick={() => handleSlide(idx, ticket.type, ticket.price, ticket.quota)} className={`cursor-pointer ${activeTicket == ticket.type && ticket.quota > 0 ? "active" : "not-active"}`}>
-                <img src={ticket.photo} alt={ticket.type} />
+              <Slide key={idx} index={idx} onClick={() => handleSlide(idx, ticket.jenis_tiket, ticket.price, ticket.quota)} className={`cursor-pointer ${activeTicket == ticket.jenis_tiket && ticket.quota > 0 ? "active" : "not-active"}`}>
+                <img src={ticket.jenis_tiket == "Early Bird" ? TicketEarlyBird : ticket.jenis_tiket == "Presale 1" ? TicketPresale1 : TicketPresale2} alt={ticket.type} />
                 <div className="heading-container z-50 absolute w-full h-full flex justify-center items-center text-center">
-                  <h1 className="font-akira text-base lg:text-4xl text-main-2">{ticket.quota <= 0 ? "SOLD OUT" : activeTicket != ticket.type ? "Coming Soon" : ""}</h1>
+                  <h1 className="font-akira text-base lg:text-4xl text-main-2">{ticket.quota <= 0 ? "SOLD OUT" : activeTicket != ticket.jenis_tiket ? "Coming Soon" : ""}</h1>
                 </div>
               </Slide>
             );

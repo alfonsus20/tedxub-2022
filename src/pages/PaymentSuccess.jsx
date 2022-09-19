@@ -21,7 +21,7 @@ const PaymentSuccess = () => {
         </div>
         <img className="w-128" src={location} alt="Location" />
         <div className="flex justify-center mt-5">
-          <button onClick={handleRedirect} className="bg-main-3 text-main-2 w-52 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back To Home</button>
+          <button onClick={handleRedirect} className="bg-main-3 text-main-2 hover:bg-main-2 hover:text-main-3 duration-200 w-52 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back To Home</button>
         </div>
       </div>
       <div className="px-0 md:px-10 flex justify-end items-end">

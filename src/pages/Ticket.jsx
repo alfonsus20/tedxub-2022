@@ -138,7 +138,7 @@ const Ticket = () => {
               {quantity}
               <button className="px-2" disabled={selectedTicket?.jenis_tiket == activeTicket?.jenis_tiket && selectedTicket?.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
-            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 font-jakartaBold text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500 cursor-not-allowed"} `}>Checkout</button>
+            <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 font-jakartaBold text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500 cursor-not-allowed"} `}>Buy</button>
           </div>
           { quantity > 0 && <p className="mt-5">{quantity} {quantity > 1 ? "pcs" : "pc"} {selectedTicket?.jenis_tiket} <span className="ml-5 font-jakartaBold">Rp {quantity * selectedTicket?.price}</span></p>}
         </div>

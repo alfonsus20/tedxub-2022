@@ -39,7 +39,7 @@ const MeetTheTeam = () => {
 
   return (
     <div
-      className="meettheteam min-h-screen w-full bg-center px-0"
+      className="meettheteam bg-main-1 min-h-screen w-full bg-center px-0"
       style={{ backgroundImage: `url("${background}")` }}
     >
       <div className="m-auto z-10">

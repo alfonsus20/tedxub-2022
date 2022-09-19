@@ -62,7 +62,7 @@ const SponsorPartner = () => {
   }, []);
   
   return (
-    <div className="min-h-screen w-full bg-cover bg-no-repeat" style={{ backgroundImage: `url("${background}")` }}>
+    <div className="min-h-screen bg-main-1 w-full bg-cover bg-no-repeat" style={{ backgroundImage: `url("${background}")` }}>
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <img className="absolute -z-0 left-0 h-96" src={hand} alt="Hand" />
       <div className="container m-auto z-10">

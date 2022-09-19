@@ -55,11 +55,27 @@ const Ticket = () => {
     setQuantity(quantity-1);
   };  
 
-  const handleCheckout = () => {
-    if(quantity <= selectedTicket?.quota){
-      return navigate("/ticket-form", { state: { type: selectedTicket?.jenis_tiket, price: selectedTicket?.price, quota: selectedTicket?.quota, quantity: quantity } });
-    } else {
-      handleOpenAlert();
+  const handleCheckout = async() => {
+    try {
+      handleOpenSpinner();
+
+      const { data } = await getAllTicket();
+
+      for (let item of data.data) {
+        if (item.jenis_tiket == selectedTicket?.jenis_tiket && item.quota < quantity){
+          setAlertStatus(`Maaf, tiket tersisa ${item.quota} lagi.`);
+          handleOpenAlert();
+        } else if (item.jenis_tiket == selectedTicket?.jenis_tiket && item.quota == 0 ) {
+          setAlertStatus(`Maaf, tiket sudah habis.`);
+          handleOpenAlert();
+        } else {
+          return navigate("/ticket-form", { state: { type: selectedTicket?.jenis_tiket, price: selectedTicket?.price, quota: selectedTicket?.quota, quantity: quantity } });
+        }
+      }
+    } catch (error) {
+      console.log(error)
+    } finally {
+      handleCloseSpinner();
     }
   };
 
@@ -92,13 +108,13 @@ const Ticket = () => {
     setQuantity(0);
   }, [selectedTicket]);
 
-  useEffect(() => {
-    if(selectedTicket?.quota > 0 && quantity > selectedTicket?.quota){
-      setAlertStatus(`Maaf, tiket tersisa ${selectedTicket?.quota} lagi.`);
-    } else if (selectedTicket?.quota <= 0){
-      setAlertStatus('Maaf, tiket sudah habis.');
-    }
-  }, [quantity])
+  // useEffect(() => {
+  //   if(selectedTicket?.quota > 0 && quantity > selectedTicket?.quota){
+  //     setAlertStatus(`Maaf, tiket tersisa ${selectedTicket?.quota} lagi.`);
+  //   } else if (selectedTicket?.quota <= 0){
+  //     setAlertStatus('Maaf, tiket sudah habis.');
+  //   }
+  // }, [quantity])
   
   return (
     <div className="ticket-container bg-cover bg-no-repeat bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>

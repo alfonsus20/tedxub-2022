@@ -16,12 +16,14 @@ import TicketConfirmModal from "../components/TicketConfirmModal";
 import useDisclosure from "../hooks/useDisclosure";
 import { createPayment } from "../models/payment";
 import Spinner from "../components/Spinner";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const TicketConfirm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
   const [isLoading, setisLoading] = useState(false);
+  const [authenticated, setAuthenticated] = useState("");
   const { onOpen, onOpenSpinner, isOpen, isOpenSpinner, onClose, onCloseSpinner } = useDisclosure();
 
   const handlePrevPage = () => {
@@ -42,6 +44,10 @@ const TicketConfirm = () => {
 
   const handleCloseSpinner = () => {
     onCloseSpinner();
+  };
+  
+  const onChange = (value) => {
+    setAuthenticated(value);
   };
 
   const handleCreatePayment = async () => {
@@ -197,10 +203,15 @@ const TicketConfirm = () => {
             </div>
           </div>
         </div>
-
+        <div className="flex justify-center items-center mt-10">
+          <ReCAPTCHA
+            sitekey="6Ldx3BEiAAAAAFuTAzqoXEAwrXH4pwCjMF8t-mWl"
+            onChange={onChange}
+          />,
+        </div>
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
           <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button>
-          <button onClick={handleOpenModal} className="px-10 py-2 bg-main-3 text-main-2 hover:bg-main-2 hover:text-main-3 duration-200 rounded-full">Pay Now</button>
+          <button disabled={authenticated == "" ? true : false} onClick={handleOpenModal} className={`px-10 py-2 bg-main-3 text-main-2 duration-200 rounded-full ${authenticated == "" ? "bg-gray-500 cursor-not-allowed" : "hover:bg-main-2 hover:text-main-3"}`}>Pay Now</button>
         </div>
 
       </div>

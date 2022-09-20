@@ -9,7 +9,7 @@ import leftHand from "../assets/images/home/left.png";
 import rightHand from "../assets/images/home/right.png";
 import banner from "../assets/images/home/banner.png";
 import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
-import eventTime from "../assets/images/home/event_time.png";
+import eventTime from "../assets/images/home/event_time_new.png";
 import CardSpeaker from "../components/CardSpeaker";
 import CarouselTicketHome from "../components/CarouselTicketHome";
 import VideoContainer from "../components/VideoContainer";
@@ -148,7 +148,7 @@ const Home = () => {
                 }}
                 src={eventTime}
                 alt="time"
-                className="w-64 xs:w-[23rem] relative z-10"
+                className="w-80 xs:w-[24rem] relative z-10"
               />
             </div>
           </div>

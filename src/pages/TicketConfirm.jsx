@@ -207,7 +207,7 @@ const TicketConfirm = () => {
           <ReCAPTCHA
             sitekey="6Ldx3BEiAAAAAFuTAzqoXEAwrXH4pwCjMF8t-mWl"
             onChange={onChange}
-          />,
+          />
         </div>
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
           <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button>

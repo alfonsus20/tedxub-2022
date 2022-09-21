@@ -3,7 +3,7 @@ import logo from "../assets/images/logo-black-red.svg";
 
 const Footer = () => {
   return (
-    <div className="flex grid-cols-12 max-w-screen-2xl mx-auto px-4 sm:px-16 pt-6 pb-10 font-jakarta text-sm flex-wrap">
+    <div className="flex grid-cols-12 max-w-screen-2xl mx-auto px-4 md:px-12 pt-6 pb-10 font-jakarta text-sm flex-wrap">
       <div className="w-full md:w-[34%] pt-6">
         <Link to="/" className="w-fit flex mx-auto md:mx-0">
           <img src={logo} className="w-48 sm:w-60 mb-4" alt="logo" />

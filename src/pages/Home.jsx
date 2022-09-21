@@ -52,7 +52,7 @@ const Home = () => {
     const offsetTop = document.getElementById("video-container").offsetTop;
     const percentage = (scrollPosition / offsetTop) * 100;
 
-    setOrnamentPosition(percentage)
+    setOrnamentPosition(percentage);
   };
 
   useEffect(() => {
@@ -302,8 +302,25 @@ const Home = () => {
         className="bg-cover flex flex-col-reverse md:flex-row overflow-x-hidden relative items-center pt-24 md:pt-0"
         style={{ backgroundImage: `url("${bgSectionTicket}")` }}
       >
+        <div className="absolute h-full w-full items-center max-w-screen-2xl left-1/2 -translate-x-1/2 px-4 md:px-12 hidden md:flex">
+          <div className="w-full md:w-[40%] flex pt-20 pb-20 md:py-20">
+            <div className="text-center md:text-left">
+              <h3 className="text-white uppercase font-akira text-4xl md:text-5xl mb-6 md:mb-12">
+                grab
+                <br /> your
+                <br /> tickets
+                <br /> now!
+              </h3>
+              <Link to="/ticket">
+                <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
+                  Buy Ticket
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
         <div className="w-full md:w-[40%] flex justify-center pt-20 pb-20 md:py-20 px-4">
-          <div className="md:max-w-xs text-center md:text-left">
+          <div className="md:max-w-xs text-center md:text-left md:hidden">
             <h3 className="text-white uppercase font-akira text-4xl md:text-5xl mb-6 md:mb-12">
               grab your tickets now!
             </h3>

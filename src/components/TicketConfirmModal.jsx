@@ -1,16 +1,17 @@
 import { createPortal } from "react-dom";
 import cn from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
-const TicketConfirmModal = ({ onClose, isOpen, handleCreatePayment }) => {
+const TicketConfirmModal = ({ onClose, isOpen, handleCreatePayment, resetCaptcha }) => {
 
-  let navigate = useNavigate();
+  const handleClose = () => {
+    resetCaptcha();
+    onClose();
+  };
 
   const handleRedirect = () => {
     handleCreatePayment();
-    // return window.location.replace(invoiceURL);
-  }
+  };
 
   return createPortal(
     <AnimatePresence>
@@ -24,7 +25,7 @@ const TicketConfirmModal = ({ onClose, isOpen, handleCreatePayment }) => {
       >
         <motion.div
           className="absolute bg-black bg-opacity-50 w-full h-full"
-          onClick={onClose}
+          onClick={handleClose}
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
         ></motion.div>
         <motion.div 
@@ -39,7 +40,7 @@ const TicketConfirmModal = ({ onClose, isOpen, handleCreatePayment }) => {
             </div>
             <p className="font-jakarta text-sm text-left">By clicking ‘Yes, I’m Sure’, it means that you are sure that the data you have entered is correct</p>
             <div className="flex flex-row gap-5">
-              <button onClick={onClose} className="bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back</button>
+              <button onClick={handleClose} className="bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Back</button>
               <button onClick={handleRedirect} className="bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200 drop-shadow-lg px-10 py-2 font-jakartaBold rounded-full">Yes, I'm Sure</button>
             </div>
           </div>

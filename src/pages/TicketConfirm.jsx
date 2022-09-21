@@ -11,7 +11,7 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "../style/ticket-confirm.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TicketConfirmModal from "../components/TicketConfirmModal";
 import useDisclosure from "../hooks/useDisclosure";
 import { createPayment } from "../models/payment";
@@ -22,6 +22,8 @@ const TicketConfirm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
+  const reCAPTCHARef = useRef();
+
   const [isLoading, setisLoading] = useState(false);
   const [authenticated, setAuthenticated] = useState("");
   const { onOpen, onOpenSpinner, isOpen, isOpenSpinner, onClose, onCloseSpinner } = useDisclosure();
@@ -48,6 +50,15 @@ const TicketConfirm = () => {
   
   const onChange = (value) => {
     setAuthenticated(value);
+  };
+
+  const onFailed = () => {
+    setAuthenticated("");
+  };
+
+  const resetCaptcha = () => {
+    reCAPTCHARef.current?.reset();
+    setAuthenticated("");
   };
 
   const handleCreatePayment = async () => {
@@ -81,7 +92,7 @@ const TicketConfirm = () => {
 
   return (
     <div className="confirm relative ticket-container min-h-screen bg-[#1D1B21] shrink-0" style={{backgroundImage: `url(${ticketBackground})`}}>
-      <TicketConfirmModal isOpen={isOpen} onClose={handleCloseModal} handleCreatePayment={handleCreatePayment} />
+      <TicketConfirmModal isOpen={isOpen} onClose={handleCloseModal} handleCreatePayment={handleCreatePayment} resetCaptcha={resetCaptcha} />
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">
@@ -205,8 +216,11 @@ const TicketConfirm = () => {
         </div>
         <div className="flex justify-center items-center mt-10">
           <ReCAPTCHA
+            ref={reCAPTCHARef}
             sitekey="6Ldx3BEiAAAAAFuTAzqoXEAwrXH4pwCjMF8t-mWl"
             onChange={onChange}
+            onExpired={onFailed}
+            onError={onFailed}
           />
         </div>
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">

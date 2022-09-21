@@ -59,7 +59,7 @@ export const coreTeam = {
       linkedin: "rafly-mahdy",
       instagram: "@102rafly",
       divisi: "Curator",
-      foto: "InskyJohanaSherenRottie.jpeg",
+      foto: "RaflyAlMahdy.jpg",
     },
   ],
   budgetManager: [

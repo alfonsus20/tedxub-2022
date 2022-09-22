@@ -74,7 +74,7 @@ const TicketConfirm = () => {
         }
       )
       
-      if( data.message == "Success create invoice" ){
+      if( data.message == "Success create invoice" || data.message == "There is still pending transaction"){
         return window.location.replace(data.data.invoice_url);
       }
     } catch (error) {

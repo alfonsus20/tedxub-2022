@@ -111,7 +111,7 @@ const Home = () => {
                     y: 0,
                     transition: { stiffness: 0, duration: 1 },
                   }}
-                  className="text-4xl xs:text-5xl sm:text-6xl"
+                  className="text-4xl xs:text-5xl sm:text-6xl 3xl:text-7xl"
                 >
                   Merayakan Kembali
                 </motion.h1>
@@ -122,7 +122,7 @@ const Home = () => {
                       y: 0,
                       transition: { stiffness: 0, duration: 1, delay: 1 },
                     }}
-                    className="font-sedgwick text-xl xs:text-2xl md:text-3xl"
+                    className="font-sedgwick text-xl xs:text-2xl md:text-3xl 3xl:text-4xl"
                   >
                     Menggeledah arus, menilik ruang
                   </motion.h2>
@@ -134,7 +134,7 @@ const Home = () => {
                   opacity: 0.75,
                   transition: { duration: 1, delay: 3 },
                 }}
-                className="font-sedgwick text-5xl xs:text-7xl sm:text-8xl text-main-3 absolute -translate-x-1/2 left-1/2 lg:whitespace-nowrap -rotate-[2deg] top-0 xs:-top-2 sm:-top-4"
+                className="font-sedgwick text-5xl xs:text-7xl sm:text-8xl 3xl:text-9xl text-main-3 absolute -translate-x-1/2 left-1/2 lg:whitespace-nowrap -rotate-[2deg] top-0 xs:-top-2 sm:-top-4 3xl:-top-6"
               >
                 Merayakan Kembali
               </motion.h1>
@@ -148,7 +148,7 @@ const Home = () => {
                 }}
                 src={eventTime}
                 alt="time"
-                className="w-80 xs:w-[24rem] relative z-10"
+                className="w-80 xs:w-[24rem] 3xl:w-[28rem] relative z-10"
               />
             </div>
           </div>

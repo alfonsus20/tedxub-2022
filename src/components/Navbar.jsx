@@ -150,7 +150,7 @@ const Navbar = () => {
                 }
               >
                 <span>About</span>
-                <Icon icon="bi:chevron-down" className="text-sm text-main-3" />
+                <Icon icon="bi:chevron-down" className={`text-sm text-main-3 transition-all duration-500 ${isAboutDropdownVisible ? 'rotate-180' : 'rotate-0'}` }/>
               </button>
               <AnimatePresence>
                 {isAboutDropdownVisible && (
@@ -211,7 +211,7 @@ const Navbar = () => {
                 }
               >
                 <span>Previous Events</span>
-                <Icon icon="bi:chevron-down" className="text-sm text-main-3" />
+                <Icon icon="bi:chevron-down" className={`text-sm text-main-3 transition-all duration-500 ${isPrevEventsDropdownVisible ? 'rotate-180' : 'rotate-0'}` }/>
               </button>
               <AnimatePresence>
                 {isPrevEventsDropdownVisible && (

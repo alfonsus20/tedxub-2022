@@ -45,19 +45,31 @@ const Footer = () => {
         <h4 className="font-jakartaBold mb-4">Contact</h4>{" "}
         <ul className="space-y-1">
           <li>
-            <Link to="/about" className="hover:text-main-3">
+            <a
+              href="mailto:webtedxub@gmail.com"
+              target="_blank"
+              className="hover:text-main-3"
+            >
               Email
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/meet-the-team" className="hover:text-main-3">
+            <a
+              href="https://instagram.com/tedxuniversitasbrawijaya"
+              target="_blank"
+              className="hover:text-main-3"
+            >
               Instagram
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/faq" className="hover:text-main-3">
+            <a
+              href="https://twitter.com/TEDxBrawijaya"
+              target="_blank"
+              className="hover:text-main-3"
+            >
               Twitter
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

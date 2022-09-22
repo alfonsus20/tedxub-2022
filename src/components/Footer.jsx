@@ -46,7 +46,7 @@ const Footer = () => {
         <ul className="space-y-1">
           <li>
             <a
-              href="mailto:webtedxub@gmail.com"
+              href="mailto:tedxbrawijaya@gmail.com"
               target="_blank"
               className="hover:text-main-3"
             >
@@ -110,7 +110,7 @@ const Footer = () => {
         <div className="py-6 text-center md:text-left">
           <h4 className="font-jakartaBold mb-4">See You On The Stage</h4>
           <p className="mb-6">
-            Graha Widyaloka Universitas Brawijaya, Malang Minggu, 2 Oktober 2022
+            Graha Widyaloka Universitas Brawijaya, Malang<br/>Kamis, 29 September 2022
           </p>
           <Link to="/ticket">
             <button className="bg-main-3 py-2 px-8 rounded-md text-white hover:bg-[#c34132] transition-colors duration-200">

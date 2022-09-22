@@ -125,7 +125,7 @@ const Ticket = () => {
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Tickets</h1>
         </div>
         <div className="w-full">
-        { activeTicket && allTicket && <TicketCarousel activeTicket={activeTicket?.jenis_tiket} setSelectedTicket={setSelectedTicket} ticketLists={allTicket} />}
+        { activeTicket && allTicket && <TicketCarousel activeTicket={activeTicket} setSelectedTicket={setSelectedTicket} ticketLists={allTicket} />}
         </div>
 
         <div className="flex flex-col font-jakarta text-center text-main-2 gap-2 mt-10">

@@ -2,10 +2,11 @@ import {
   CarouselProvider,
   Slider,
   Slide,
+  CarouselContext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "../style/components/ticket-carousel.scss";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TicketEarlyBird from "../assets/images/ticket-early-bird.png";
 import TicketPresale1 from "../assets/images/ticket-presale-1.png";
 import TicketPresale2 from "../assets/images/ticket-presale-2.png";
@@ -13,18 +14,40 @@ import TicketPresale2 from "../assets/images/ticket-presale-2.png";
 const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
   
   const [currentSlide, setCurrentSlide] = useState(1); 
+  
+  function CarouselWithContext() {
+    const carouselContext = useContext(CarouselContext);
+
+    useEffect(() => {
+      function onChange() {
+        // setCurrentSlideContext(carouselContext.state.currentSlide);
+        setCurrentSlide(carouselContext.state.currentSlide)
+        // setSelectedTicket({
+        //   jenis_tiket: type,
+        //   price: price,
+        //   quota: quota,
+        // });
+      }
+  
+      carouselContext.subscribe(onChange);
+      return () => carouselContext.unsubscribe(onChange);
+    }, [carouselContext]);
+  }
+
 
   const handleSlide = (index, type, price, quota) => {
-    setCurrentSlide(index);
-    setSelectedTicket({
-      jenis_tiket: type,
-      price: price,
-      quota: quota,
-    });
+    if(window.innerWidth >= 640) {
+      setCurrentSlide(index);
+      setSelectedTicket({
+        jenis_tiket: type,
+        price: price,
+        quota: quota,
+      });
+    }
   }
 
   useEffect(() => {
-    switch (activeTicket) {
+    switch (activeTicket.jenis_tiket) {
       case "Early Bird":
         setCurrentSlide(0);
         break;
@@ -40,12 +63,46 @@ const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
     };
   }, []);
   
+  useEffect(() => {
+    if (window.innerWidth < 640) {
+      switch (currentSlide) {
+        case 0:
+          setSelectedTicket({
+            jenis_tiket: "Early Bird",
+            price: ticketLists[0].price,
+            quota: ticketLists[0].quota,
+          });
+          break;
+        case 1:
+          setSelectedTicket({
+            jenis_tiket: "Presale 1",
+            price: ticketLists[1].price,
+            quota: ticketLists[1].quota,
+          });
+          break;
+        case 2:
+          setSelectedTicket({
+            jenis_tiket: "Presale 2",
+            price: ticketLists[2].price,
+            quota: ticketLists[2].quota,
+          });
+          break;
+        default:
+          setSelectedTicket({
+            jenis_tiket: activeTicket.jenis_tiket,
+            price: activeTicket.price,
+            quota: activeTicket.quota,
+          });
+          break;
+      };
+    }
+  }, [currentSlide])
 
   return (
     <div className="text-main-2 carousel-wrapper">
       <CarouselProvider
-        touchEnabled={false}
-        dragEnabled={false}
+        touchEnabled={window.innerWidth < 640 ? true : false}
+        dragEnabled={window.innerWidth < 640 ? true : false}
         naturalSlideWidth={100}
         naturalSlideHeight={35}
         totalSlides={3}
@@ -56,15 +113,16 @@ const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
         <Slider>
           {ticketLists.map((ticket, idx) => {
             return (
-              <Slide key={idx} index={idx} onClick={() => handleSlide(idx, ticket.jenis_tiket, ticket.price, ticket.quota)} className={`cursor-pointer ${activeTicket == ticket.jenis_tiket && ticket.quota > 0 ? "active" : "not-active"}`}>
+              <Slide key={idx} index={idx} onClick={() => handleSlide(idx, ticket.jenis_tiket, ticket.price, ticket.quota)} className={`cursor-pointer ${activeTicket.jenis_tiket == ticket.jenis_tiket && ticket.quota > 0 ? "active" : "not-active"}`}>
                 <img src={ticket.jenis_tiket == "Early Bird" ? TicketEarlyBird : ticket.jenis_tiket == "Presale 1" ? TicketPresale1 : TicketPresale2} alt={ticket.type} />
                 <div className="heading-container z-50 absolute w-full h-full flex justify-center items-center text-center">
-                  <h1 className="font-akira text-base lg:text-4xl text-main-2">{ticket.quota <= 0 ? "SOLD OUT" : activeTicket != ticket.jenis_tiket ? "Coming Soon" : ""}</h1>
+                  <h1 className="font-akira text-base lg:text-4xl text-main-2">{ticket.quota <= 0 ? "SOLD OUT" : activeTicket.jenis_tiket != ticket.jenis_tiket ? "Coming Soon" : ""}</h1>
                 </div>
               </Slide>
             );
           })}
         </Slider>
+        { window.innerWidth < 640 ? <CarouselWithContext /> : <></>}
       </CarouselProvider>
     </div>
   );

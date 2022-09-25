@@ -51,24 +51,23 @@ const TicketForm = () => {
     onCloseSpinner();
   };
 
-  const handleCheckQuota = async(values) => {
+  const handleCheckRemainingTicket = async(values) => {
     try {
       handleOpenSpinner();
 
       const { data } = await getAllTicket();
       
       for (let item of data.data) {
-        if (item.jenis_tiket == state?.type && item.quota < state?.quantity ){
-          setAlertStatus(`Maaf, tiket tersisa ${item.quota} lagi.`);
+        if (item.jenis_tiket == state?.type && item.remaining_ticket < state?.quantity ){
+          setAlertStatus(`Maaf, tiket tersisa ${item.remaining_ticket} lagi.`);
           handleOpenAlert();
-        } else if (item.jenis_tiket == state?.type && item.quota == 0 ) {
+        } else if (item.jenis_tiket == state?.type && item.remaining_ticket == 0 ) {
           setAlertStatus(`Maaf, tiket sudah habis.`);
           handleOpenAlert();
-        } else {
+        } else if (item.jenis_tiket == state?.type && item.remaining_ticket >= state?.quantity ) {
           return navigate("/ticket-confirm", { state: { buyer: values.buyer, ticketType: values.ticketType, amount: values.amount, quantity: values.quantity } });
         }
       }
-      console.log(data.data)
     } catch (error) {
       console.log(error)
     } finally {
@@ -142,7 +141,7 @@ const TicketForm = () => {
             // window.location.replace('https://dev.xen.to/sp-vjoXD');
             // alert(JSON.stringify(values, null, 2));
             // return navigate("/ticket-confirm", { state: { buyer: values.buyer, ticketType: values.ticketType, amount: values.amount, quantity: values.quantity } });
-            handleCheckQuota(values);
+            handleCheckRemainingTicket(values);
             // console.log(JSON.stringify(values, null, 2))
             }}
           >

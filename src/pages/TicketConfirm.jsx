@@ -17,6 +17,7 @@ import useDisclosure from "../hooks/useDisclosure";
 import { createPayment } from "../models/payment";
 import Spinner from "../components/Spinner";
 import ReCAPTCHA from "react-google-recaptcha";
+import Alert from "../components/Alert";
 
 const TicketConfirm = () => {
 
@@ -24,9 +25,10 @@ const TicketConfirm = () => {
   let navigate = useNavigate();
   const reCAPTCHARef = useRef();
 
-  const [isLoading, setisLoading] = useState(false);
+  const [alertStatus, setAlertStatus] = useState('');
+  const [isPending, setIsPending] = useState(false)
   const [authenticated, setAuthenticated] = useState("");
-  const { onOpen, onOpenSpinner, isOpen, isOpenSpinner, onClose, onCloseSpinner } = useDisclosure();
+  const { onOpen, onOpenSpinner, onOpenAlert, isOpen, isOpenSpinner, isOpenAlert, onClose, onCloseSpinner, onCloseAlert } = useDisclosure();
 
   const handlePrevPage = () => {
     return navigate(-1);
@@ -46,6 +48,21 @@ const TicketConfirm = () => {
 
   const handleCloseSpinner = () => {
     onCloseSpinner();
+  };
+
+  const handleOpenAlert = (data) => {
+    onOpenAlert();
+    const timeoutAlert = setTimeout(() => {
+      onCloseAlert();
+      return window.location.replace(data);
+    }, 3000);
+    return () => {
+      clearTimeout(timeoutAlert)
+    }
+  };
+
+  const handleCloseAlert = () => {
+    onCloseAlert();
   };
   
   const onChange = (value) => {
@@ -73,9 +90,14 @@ const TicketConfirm = () => {
           quantity: state?.quantity,
         }
       )
-      
-      if( data.message == "Success create invoice" || data.message == "There is still pending transaction"){
+
+      if( data.message == "Success create invoice"){
         return window.location.replace(data.data.invoice_url);
+      } else if (data.message == "There is still pending transaction"){
+        setIsPending(true);
+        handleCloseModal();
+        setAlertStatus(`Selesaikan transaksi yang masih pending, Redirect beberapa saat lagi..`);
+        handleOpenAlert(data.data.invoice_url);
       }
     } catch (error) {
       console.log(error)
@@ -224,10 +246,10 @@ const TicketConfirm = () => {
           />
         </div>
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
-          <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button>
-          <button disabled={authenticated == "" ? true : false} onClick={handleOpenModal} className={`px-10 py-2 bg-main-3 text-main-2 duration-200 rounded-full ${authenticated == "" ? "bg-gray-500 cursor-not-allowed" : "hover:bg-main-2 hover:text-main-3"}`}>Pay Now</button>
+          <button disabled={isPending ? true : false} onClick={handlePrevPage} type="button" className={`px-10 py-2 bg-main-2  hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full ${isPending ? "bg-gray-500 text-main-2 cursor-not-allowed" : "text-main-1"}`}>Cancel</button>
+          <button disabled={authenticated == "" || isPending ? true : false} onClick={handleOpenModal} className={`px-10 py-2 bg-main-3 text-main-2 duration-200 rounded-full ${authenticated == "" || isPending ? "bg-gray-500 cursor-not-allowed" : "hover:bg-main-2 hover:text-main-3"}`}>Pay Now</button>
         </div>
-
+        <Alert alertStatus={alertStatus} isOpenAlert={isOpenAlert} onCloseAlert={handleCloseAlert} />
       </div>
     </div>
   );

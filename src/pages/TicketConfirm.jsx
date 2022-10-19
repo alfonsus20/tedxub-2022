@@ -134,7 +134,7 @@ const TicketConfirm = () => {
                   icon="akar-icons:calendar"
                   className="text-lg shrink-0"
                 />
-                <p>2 Oct 2022</p>
+                <p>27 Nov 2022</p>
               </div>
               <div className="flex flex-row gap-2 items-center">
                 <Icon 
@@ -148,7 +148,7 @@ const TicketConfirm = () => {
                   icon="akar-icons:pin"
                   className="text-lg shrink-0"
                 />
-                <p>Graha Widyaloka, Universitas Brawijaya, Malang</p>
+                <p>Gedung Widyaloka, Universitas Brawijaya, Malang</p>
               </div>
             </div>
           </div>

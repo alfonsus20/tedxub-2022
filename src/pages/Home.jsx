@@ -189,7 +189,7 @@ const Home = () => {
             <img
               src={hand}
               alt="right-hand"
-              className="absolute -right-32 -bottom-60 xl:-bottom-72 w-[20rem] xl:w-[30rem] -rotate-[20deg] hidden md:block -z-10"
+              className="absolute -right-32 -bottom-60 xl:-bottom-72 w-[20rem] xl:w-[28rem] -rotate-[20deg] hidden md:block -z-10"
             />
             <img
               src={coretX}

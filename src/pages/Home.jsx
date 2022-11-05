@@ -2,12 +2,7 @@ import { Icon } from "@iconify/react";
 
 import background from "../assets/images/home/background.png";
 import backgroundSpeaker from "../assets/images/home/background-speaker.png";
-import merangkaiTitle from "../assets/images/home/merangkai.jpg";
 import line from "../assets/images/home/line.png";
-
-import leftHand from "../assets/images/home/left.png";
-import rightHand from "../assets/images/home/right.png";
-import banner from "../assets/images/home/banner.png";
 import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
 import eventTime from "../assets/images/home/event_time_new.png";
 import CardSpeaker from "../components/CardSpeaker";
@@ -17,6 +12,10 @@ import speaker from "../assets/images/home/speaker.jpg";
 import xAtas from "../assets/images/home/x_atas.png";
 import xBawah from "../assets/images/home/x_bawah.png";
 import wave from "../assets/images/home/wave.png";
+
+import hand from "../assets/images/home/hand.png";
+import coret from "../assets/images/home/coret.svg";
+import coretX from "../assets/images/home/coret-x.svg";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -173,28 +172,31 @@ const Home = () => {
       <section className="text-center flex justify-center items-center flex-col">
         <div
           id="theme"
-          className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-40 pb-36 flex items-center justify-center relative z-20"
+          className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-28 pb-40 flex items-center justify-center relative z-20 overflow-hidden"
         >
-          <div className="w-[50%] md:w-[67%]">
+          <div className="w-[50%] md:w-[67%] relative">
+            <img
+              src={coret}
+              alt="coret"
+              className="absolute left-4 -bottom-24 w-32 xl:w-40 hidden md:block"
+            />
+            <img
+              src={hand}
+              alt="left-hand"
+              className="absolute -left-32 -top-52 w-80 xl:w-[25rem] hidden md:block"
+              style={{transform :'rotateY(180deg) rotateZ(-60deg)'}}
+            />
+            <img
+              src={hand}
+              alt="right-hand"
+              className="absolute -right-32 -bottom-60 xl:-bottom-72 w-[20rem] xl:w-[30rem] -rotate-[20deg] hidden md:block -z-10"
+            />
+            <img
+              src={coretX}
+              alt="coretX"
+              className="absolute right-0 -top-28 w-[18rem] xl:w-[23rem] hidden md:block"
+            />
             <div className="flex flex-col items-center mb-8 relative">
-              <motion.img
-                src={leftHand}
-                alt="left"
-                className="absolute w-[70%] xs:w-[60%] sm:w-[30rem] lg:w-[40rem]"
-                initial={{
-                  rotate: -20,
-                  top: "-8rem",
-                  left: "-16rem",
-                  opacity: 0,
-                }}
-                whileInView={{
-                  rotate: 0,
-                  top: "-6rem",
-                  left: "-14rem",
-                  opacity: 1,
-                  transition: { stiffness: 0, duration: 1 },
-                }}
-              />
               <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 whileInView={{
@@ -204,43 +206,15 @@ const Home = () => {
                 }}
               >
                 <div className="text-6xl xs:text-7xl sm:text-8xl font-sedgwick relative">
-                  <img
-                    src={merangkaiTitle}
-                    className="absolute rounded-full w-24 xs:w-28 sm:w-32 lg:w-36 aspect-square -top-6 sm:-top-5 lg:-top-8 left-8 xs:left-2 sm:-left-4 lg:-left-6 object-cover"
-                    alt=""
-                  />
-                  <h2 className="text-main-3 relative z-10">
-                    <span className="text-white">Me</span>rayakan
-                  </h2>
+                  <h2 className="text-main-3 relative z-10">Merayakan</h2>
                   <h3 className="mt-6">kembali</h3>
                 </div>
-                <div
-                  className="px-12 py-10 bg-[length:110%_125%] bg-top bg-no-repeat"
-                  style={{ backgroundImage: `url("${banner}")` }}
-                >
-                  <p className="text-lg sm:text-xl font-semibold text-white">
+                <div className="px-12 pt-8 bg-[length:110%_125%] bg-top bg-no-repeat">
+                  <p className="text-xl sm:text-2xl font-semibold">
                     Menggeledah Arus, Menilik Ruang
                   </p>
                 </div>
               </motion.div>
-              <motion.img
-                src={rightHand}
-                alt="left"
-                className="absolute w-[70%] xs:w-[60%] sm:w-[30rem] lg:w-[40rem]"
-                initial={{
-                  rotate: -20,
-                  top: "-6rem",
-                  right: "-16rem",
-                  opacity: 0,
-                }}
-                whileInView={{
-                  rotate: 0,
-                  top: "-8rem",
-                  right: "-14rem",
-                  opacity: 1,
-                  transition: { stiffness: 0, duration: 1 },
-                }}
-              />
             </div>
             <motion.p
               initial={{ y: 100, opacity: 0 }}
@@ -249,7 +223,7 @@ const Home = () => {
                 opacity: 1,
                 transition: { stiffness: 0, duration: 1 },
               }}
-              className="w-[80%] xs:max-w-screen-lg mx-auto font-medium"
+              className="w-[80%] xs:max-w-screen-md mx-auto font-medium"
             >
               TEDxUniversitasBrawijaya 2022 kali ini akan membawa penonton
               melalui perjalanan istirahat dari kejenuhan dan kompleksitas yang

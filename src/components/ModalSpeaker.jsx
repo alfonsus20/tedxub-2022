@@ -46,17 +46,11 @@ const ModalSpeaker = ({ onClose, isOpen = true, data = {} }) => {
                 />
               </div>
               <div className="w-full sm:w-[60%] px-6 sm:pl-10 sm:pr-16 sm:py-12 flex flex-col justify-center">
-                <h3 className="font-bold text-2xl sm:text-3xl text-center sm:text-left">{data.nama}</h3>
-                <h4 className="mb-2 text-lg text-center sm:text-left">Seni Dalam City Branding</h4>
-                <p className="text-justify text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
-                  scelerisque porta turpis non blandit. Dui non, sed semper eu
-                  nisi rhoncus. Sed pulvinar scelerisque integer in eget rutrum
-                  faucibus at. Duis potenti id curabitur sollicitudin lacus
-                  faucibus. Quisque cras habitant aliquam vivamus faucibus eget.
-                  At at nunc aliquet ultrices pellentesque suspendisse egestas
-                  risus. Eget convallis amet, leo, proin condimentum mauris.
-                </p>
+                <h3 className="font-bold text-2xl sm:text-3xl text-center sm:text-left">{data.name}</h3>
+                <h4 className="mb-2 text-lg text-center sm:text-left">{data.title}</h4>
+                <div className="text-justify text-sm space-y-2">
+                  {data.desc}
+                </div>
               </div>
             </div>
           </motion.div>

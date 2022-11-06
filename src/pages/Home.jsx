@@ -8,7 +8,6 @@ import eventTime from "../assets/images/home/event_time_new.png";
 import CardSpeaker from "../components/CardSpeaker";
 import CarouselTicketHome from "../components/CarouselTicketHome";
 import VideoContainer from "../components/VideoContainer";
-import speaker from "../assets/images/home/speaker.jpg";
 import xAtas from "../assets/images/home/x_atas.png";
 import xBawah from "../assets/images/home/x_bawah.png";
 import wave from "../assets/images/home/wave.png";
@@ -26,6 +25,13 @@ import { useEffect } from "react";
 import "../style/home.scss";
 import { useRef } from "react";
 
+import speakerDiah from "../assets/images/speakers/speaker-diah.jpg";
+import speakerEko from "../assets/images/speakers/speaker-eko.jpg";
+import speakerFluxcup from "../assets/images/speakers/speaker-fluxcup.jpg";
+import speakerIndriana from "../assets/images/speakers/speaker-indri.jpg";
+import speakerTsany from "../assets/images/speakers/speaker-tsany.jpg";
+import speakerKandi from "../assets/images/speakers/speaker-kandi.jpg";
+
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -35,6 +41,136 @@ const speakerContainerVariants = {
     },
   },
 };
+
+const speakerData = [
+  {
+    name: "Kandi Windoe",
+    title: "Indonesia Multikultural Unggul di Era Global",
+    desc: (
+      <>
+        <p>
+          Hari ini ada karena masa lalu. Era global kini penuh dengan tuntutan
+          untuk bersaing secara kompetitif. Melalui kapasitas bangsa Indonesia
+          untuk berkarya dan menciptakan gagasan yang mengakar pada nilai-nilai
+          serta kebudayaan Indonesia, akhirnya mampu membawa manfaat bagi dunia.
+        </p>
+        <p>
+          Pada Talks kali ini, Kandi Windoe sebagai praktisi city branding akan
+          mengajak penonton memahami seni dari mencermati sebagai salah satu
+          nilai kearifan lokal melalui pengalaman proses kreatif dilalui dari
+          persepektif seorang praktisi city branding.
+        </p>
+      </>
+    ),
+    image: speakerKandi,
+  },
+  {
+    name: "Diah Priharsari",
+    title: "Secercah Rukun dalam Riuhnya Digitalisasi",
+    desc: (
+      <>
+        <p>
+          Hari ini ada karena masa lalu. Era global kini penuh dengan tuntutan
+          untuk bersaing secara kompetitif. Melalui kapasitas bangsa Indonesia
+          untuk berkarya dan menciptakan gagasan yang mengakar pada nilai-nilai
+          serta kebudayaan Indonesia, akhirnya mampu membawa manfaat bagi dunia.
+        </p>
+        <p>
+          Pada Talks kali ini, Kandi Windoe sebagai praktisi city branding akan
+          mengajak penonton memahami seni dari mencermati sebagai salah satu
+          nilai kearifan lokal melalui pengalaman proses kreatif dilalui dari
+          persepektif seorang praktisi city branding.
+        </p>
+      </>
+    ),
+    image: speakerDiah,
+  },
+  {
+    name: "Tsany Abyandary",
+    title: "Sebuah Seni Mengayuh Keberanian",
+    desc: (
+      <>
+        <p>
+          Pernahkah kamu merasa bahwa sekadar makan saja selalu ingin ditemani
+          orang lain. Pernahkah kamu juga merasa ingin ke suatu tempat tapi
+          takut karena tidak ada orang yang dikenalnya. Padahal tidak semuanya
+          harus dilakukan bersama orang lain dan tidak semuanya harus pasti.
+          Kadang kita tidak perlu menunggu orang lain dan kepastian untuk
+          melakukan sesuatu. Kita tidak harus menggunakan rute yang sudah banyak
+          digunakan orang lain, kita bebas untuk pergi kemanapun yang kita
+          inginkan. Cukup berani dan lihat akan banyak hal baru yang ditemukan.
+        </p>
+        <p>
+          Pada talk kali ini Aby akan mencoba menyampaikan ide tentang
+          keberanian mengeksplor hal baru yang didapat dari pengalaman
+          bersepeda.
+        </p>
+      </>
+    ),
+    image: speakerTsany,
+  },
+  {
+    name: "Indriana Listia Rahmawati",
+    title: "Memaknai Dunia Melalui Lampu Lalu Lintas",
+    desc: (
+      <>
+        <p>
+          Terkadang standar sosial yang ada memaksa manusia untuk selalu
+          menggapai hal tanpa mengetahui pasti nilai dibaliknya. Manusia dan
+          jiwa nya sebagai kesatuan dengan simbiosis mutualisme. Sejatinya,
+          manusia harus lebih cemas akan ruang di dalam jiwa daripada menangkap
+          hal-hal semu.
+        </p>
+        <p>
+          Pada talks kali ini, Indriana Listia akan mengajak kita untuk
+          berkoneksi dengan diri sebagai upaya berkesadaran total sebagai
+          individu untuk menjalani aktivitas keseharian.
+        </p>
+      </>
+    ),
+    image: speakerIndriana,
+  },
+  {
+    name: "Eko Widianto",
+    title: "Antara Persepsi dan Justifikasi",
+    desc: (
+      <>
+        <p>
+          Di tengah era modernitas, masyarakat seringkali memandang sesuatu yang
+          buruk di depan mata sudah pasti buruk di dalamnya, begitupun
+          sebaliknya. Namun, bagaimana proses dalam memaknai sisi lain yang
+          belum diketahui kevaliditasannya mengenai apa yang ada dalam intuisi?.
+        </p>
+        <p>
+          Pada talks kali ini, Eko Widianto akan mengeksplorasi tentang
+          bagaimana kita dapat melihat perbedaan antara dua kutub bukan sebagai
+          hal yang berlawanan, melainkan hal yang dapat dipersatukan melalui
+          kacamata seorang jurnalis.
+        </p>
+      </>
+    ),
+    image: speakerEko,
+  },
+  {
+    name: "Fluxcup",
+    title: "Antara Persepsi dan Justifikasi",
+    desc: (
+      <>
+        <p>Semangkuk Kelucuan Untuk Menjadi Waras</p>
+        <p>
+          Makna keberdayaan indra yang diambil dari nilai kebijaksanaan lokal
+          mendorong kami untuk menawarkan perspektif segar dalam melihat koneksi
+          individu untuk menjadi terhubung dengan diri sendiri. Pada talks kali
+          ini, Fluxcup akan bercerita mengenai pengalamannya sebagai visual
+          artist dalam memaknai karya sebagai kebebasan berekspresi natural
+          untuk menghasilkan karya yang akan dieksplorasi menjadi simbolisasi
+          ekspresi sebagai manusia.
+        </p>
+      </>
+    ),
+    image: speakerFluxcup,
+  },
+];
 
 const Home = () => {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
@@ -184,7 +320,7 @@ const Home = () => {
               src={hand}
               alt="left-hand"
               className="absolute -left-32 -top-52 w-80 xl:w-[25rem] hidden md:block"
-              style={{transform :'rotateY(180deg) rotateZ(-60deg)'}}
+              style={{ transform: "rotateY(180deg) rotateZ(-60deg)" }}
             />
             <img
               src={hand}
@@ -240,20 +376,21 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[22rem] pb-20 md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
+        className="bg-main-1 relative -mt-48 pt-[20rem] pb-20 md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         <motion.div
           initial="hidden"
           whileInView="show"
           variants={speakerContainerVariants}
-          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-y-[4rem] sm:gap-x-6 mb-12"
+          className="grid grid-cols-12 max-w-screen-xl mx-auto gap-y-[4rem] gap-x-4 mb-12"
         >
-          {["Najwa Shihab", "Coki Pardede", "Jerome Polin"].map((data, idx) => (
+          {speakerData.map((data, idx) => (
             <CardSpeaker
               key={idx}
               index={idx}
-              onClick={() => setSelectedSpeaker({ nama: data, image: speaker })}
+              onClick={() => setSelectedSpeaker(data)}
+              {...data}
             />
           ))}
         </motion.div>

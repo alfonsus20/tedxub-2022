@@ -153,10 +153,9 @@ const speakerData = [
   },
   {
     name: "Fluxcup",
-    title: "Antara Persepsi dan Justifikasi",
+    title: "Semangkuk Kelucuan Untuk Menjadi Waras",
     desc: (
       <>
-        <p>Semangkuk Kelucuan Untuk Menjadi Waras</p>
         <p>
           Makna keberdayaan indra yang diambil dari nilai kebijaksanaan lokal
           mendorong kami untuk menawarkan perspektif segar dalam melihat koneksi
@@ -165,6 +164,12 @@ const speakerData = [
           artist dalam memaknai karya sebagai kebebasan berekspresi natural
           untuk menghasilkan karya yang akan dieksplorasi menjadi simbolisasi
           ekspresi sebagai manusia.
+        </p>
+        <p>
+          Pada talks kali ini, Fluxcup akan bercerita mengenai pengalamannya
+          sebagai visual artist dalam memaknai karya sebagai kebebasan
+          berekspresi natural untuk menghasilkan karya yang akan dieksplorasi
+          menjadi simbolisasi ekspresi sebagai manusia.
         </p>
       </>
     ),

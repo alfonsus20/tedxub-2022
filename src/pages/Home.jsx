@@ -70,16 +70,16 @@ const speakerData = [
     desc: (
       <>
         <p>
-          Hari ini ada karena masa lalu. Era global kini penuh dengan tuntutan
-          untuk bersaing secara kompetitif. Melalui kapasitas bangsa Indonesia
-          untuk berkarya dan menciptakan gagasan yang mengakar pada nilai-nilai
-          serta kebudayaan Indonesia, akhirnya mampu membawa manfaat bagi dunia.
+          Mengambil porsi yang cukup besar, netizen bergerak menjadi bagian yang
+          tidak terpisahkan dari masifnya digitalisasi. Layaknya seorang hakim
+          ulung, jemari netizen lebih dari mampu untuk menentukan nasib
+          seseorang. Riuhnya kompleksitas hubungan antar manusia digital
+          sejatinya dapat kembali diredam dengan memaknai konsep rukun yang
+          sederhana.
         </p>
         <p>
-          Pada Talks kali ini, Kandi Windoe sebagai praktisi city branding akan
-          mengajak penonton memahami seni dari mencermati sebagai salah satu
-          nilai kearifan lokal melalui pengalaman proses kreatif dilalui dari
-          persepektif seorang praktisi city branding.
+          Pada talks kali ini, Ibu Diah akan menceritakan tentang makna harmoni
+          sosial kala bersinggungan dengan digitalisasi yang hadir saat ini.
         </p>
       </>
     ),

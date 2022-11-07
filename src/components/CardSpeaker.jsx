@@ -1,8 +1,4 @@
 import { motion } from "framer-motion";
-
-import photoBG from "../assets/images/home/photo-bg.png";
-import speaker1 from "../assets/images/home/speaker-1.png";
-
 import cn from "classnames";
 
 const variant = {
@@ -20,36 +16,22 @@ const variant = {
   },
 };
 
-const CardSpeaker = ({ onClick, index }) => {
+const CardSpeaker = ({ onClick, name, image }) => {
   return (
     <motion.div
       variants={variant}
       className={cn(
-        "col-span-6 sm:col-span-4 max-w-xs mx-auto relative group px-6 sm:px-0",
-        {
-          "col-start-4 col-end-10": index === 2,
-        }
+        "col-span-6 sm:col-span-4 max-w-xs mx-auto relative group w-full p-1 bg-main-3 rounded-xl overflow-hidden cursor-pointer"
       )}
+      onClick={onClick}
     >
-      <div className="w-2 xs:w-4 bg-white absolute left-1/2 h-[600px] -top-[600px] -translate-x-1/2 z-10"></div>
-      <div className="h-3 xs:h-5 w-6 xs:w-10 absolute -top-2 xs:-top-5 left-1/2 -translate-x-1/2 bg-white rounded-t-full"></div>
-      <div
-        className="relative overflow-hidden cursor-pointer rounded-xl bg-white"
-        onClick={onClick}
-      >
-        <img
-          src={speaker1}
-          alt="speaker"
-          className="w-full relative z-10 group-hover:scale-110 transition-transform duration-500"
-        />
-        <img
-          src={photoBG}
-          alt="photo-bg"
-          className="absolute w-[80%] top-8 left-1/2 -translate-x-1/2"
-        />
-        <div className="absolute transition-all duration-500 -bottom-full group-hover:bottom-0 w-full text-center bg-main-3 py-6 z-20 font-semibold text-white text-lg rounded-b-xl">
-          Kandi Windoe
-        </div>
+      <img
+        src={image}
+        alt="speaker"
+        className="w-full relative z-10 group-hover:scale-110 transition-all duration-500 rounded-xl grayscale group-hover:grayscale-0"
+      />
+      <div className="absolute transition-all left-0 right-0 duration-500 -bottom-full group-hover:bottom-0 text-center bg-main-3 py-3 sm:py-6 z-20 font-semibold text-white sm:text-lg">
+        {name}
       </div>
     </motion.div>
   );

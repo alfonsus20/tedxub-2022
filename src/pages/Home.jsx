@@ -288,7 +288,7 @@ const Home = () => {
                 }}
                 src={eventTime}
                 alt="time"
-                className="w-80 xs:w-[24rem] 3xl:w-[28rem] relative z-10"
+                className="w-72 xs:w-[18rem] 3xl:w-[20rem] relative z-10"
               />
             </div>
           </div>

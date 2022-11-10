@@ -19,6 +19,7 @@
     "react-card-flip": "^1.1.5",
     "react-dom": "^18.2.0",
     "react-ga": "^3.3.1",
+    "react-helmet": "^6.1.0",
     "react-hook-screen-orientation": "^1.0.4",
     "react-router-dom": "^6.3.0",
     "react-slick": "^0.29.0",

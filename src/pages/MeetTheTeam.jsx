@@ -15,6 +15,7 @@ import "../style/meet-the-team.scss";
 import { coreTeam, volunteer } from "../utils/data";
 import VolunteerLists from "../components/VolunteerLists";
 import CoreTeamLists from "../components/CoreTeamLists";
+import { Helmet } from "react-helmet";
 
 const filmPhotosLists = [
   meetTheTeamPhoto0,
@@ -42,6 +43,10 @@ const MeetTheTeam = () => {
       className="meettheteam bg-main-1 min-h-screen w-full bg-center px-0"
       style={{ backgroundImage: `url("${background}")` }}
     >
+      <Helmet>
+        <title>Meet The Team</title>
+        <meta name="description" content="TEDxUniversitasBrawijaya 2022 Core Team and Volunteer Lists" />
+      </Helmet>
       <div className="m-auto z-10">
         <div className="heading text-center py-12 relative m-auto overflow-hidden">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75">

@@ -1,10 +1,15 @@
 import FaqBackground from "../assets/images/faq-background.jpg"
 import Accordion from "../components/Accordion";
 import { AnimatePresence, motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const Faqs = () => {
   return (
     <div className="w-full min-h-screen" style={{backgroundImage: `url(${FaqBackground})`}}>
+      <Helmet>
+        <title>FAQ</title>
+        <meta name="description" content="Frequently Asked Questions" />
+      </Helmet>
       <div className="container m-auto">
         <div className="heading text-center mb-5 relative m-auto">
           <h1 className="font-sedgwick text-8xl text-main-3 opacity-75 h-20">FAQ</h1>

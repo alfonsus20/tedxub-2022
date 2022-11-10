@@ -31,6 +31,7 @@ import speakerFluxcup from "../assets/images/speakers/speaker-fluxcup.jpg";
 import speakerIndriana from "../assets/images/speakers/speaker-indri.jpg";
 import speakerTsany from "../assets/images/speakers/speaker-tsany.jpg";
 import speakerKandi from "../assets/images/speakers/speaker-kandi.jpg";
+import { Helmet } from "react-helmet";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -205,6 +206,20 @@ const Home = () => {
 
   return (
     <div id="home" className="overflow-x-hidden">
+      <Helmet>
+        <title>Home</title>
+        <meta name="description" content="Manusia dalam era kompleksitas atas modernitas yang tercipta hingga
+          hari ini sejatinya memiliki sistem pengetahuan yang berangkat dari
+          nilai fundamental kesadaran sosial dan karakteristik dari
+          pencermatan keadaan sekitar yang terbangun melalui ekosistem
+          interaksi antara manusia dan lingkungannya sejak awal. Kebijaksanaan
+          lokal ini sering terkesampingkan atau bahkan hilang di tengah gegap
+          gempita produktivitas dunia yang serba berkecepatan. Alih-alih
+          bertanya pesatnya pembangunan disekitar kita, sudahkah kita bertanya
+          apa yang kita cermati dari lingkungan yang berkembang pesat?
+          Bagaimana kondisi diri kita dalam berpikir atas realitas terhadap
+          kesadaran dan keadaan yang ada di luar?" />
+      </Helmet>
       <section
         className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-fixed bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}

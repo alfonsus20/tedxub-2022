@@ -384,7 +384,7 @@ const Home = () => {
         className="bg-main-1 relative -mt-48 pt-[20rem] pb-20 md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="show"
           variants={speakerContainerVariants}
@@ -398,7 +398,7 @@ const Home = () => {
               {...data}
             />
           ))}
-        </motion.div>
+        </motion.div> */}
         <img
           src={line}
           className="absolute max-w-none w-[110%] h-[12%] md:h-[27%] bottom-[-5%] md:bottom-[-10%] left-[-5%] rotate-1"
@@ -411,7 +411,7 @@ const Home = () => {
           alt="line"
         />
         <p className="text-white text-center text-4xl md:text-5xl font-bold">
-          Speakers
+          COMING SOON
         </p>
       </section>
       <section

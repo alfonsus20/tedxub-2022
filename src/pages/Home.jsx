@@ -251,7 +251,7 @@ const Home = () => {
                     y: 0,
                     transition: { stiffness: 0, duration: 1 },
                   }}
-                  className="text-4xl xs:text-5xl sm:text-6xl 3xl:text-7xl"
+                  className="text-4xl xs:text-5xl sm:text-6xl 3xl:text-7xl drop-shadow-md"
                 >
                   Merayakan Kembali
                 </motion.h1>
@@ -381,7 +381,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[20rem] pb-20 md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
+        className="bg-main-1 relative -mt-48 pt-[20rem] pb-[10rem] md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         {/* <motion.div

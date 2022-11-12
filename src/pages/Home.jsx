@@ -31,6 +31,7 @@ import speakerFluxcup from "../assets/images/speakers/speaker-fluxcup.jpg";
 import speakerIndriana from "../assets/images/speakers/speaker-indri.jpg";
 import speakerTsany from "../assets/images/speakers/speaker-tsany.jpg";
 import speakerKandi from "../assets/images/speakers/speaker-kandi.jpg";
+import { Helmet } from "react-helmet";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -185,6 +186,7 @@ const Home = () => {
   const waveAtasRef = useRef(null);
 
   const [ornamentPosition, setOrnamentPosition] = useState(0);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -203,10 +205,36 @@ const Home = () => {
     };
   }, []);
 
+  const handleWindowResize = () => {
+    setWindowSize(window.innerWidth);
+  };
+  
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <div id="home" className="overflow-x-hidden">
+      <Helmet>
+        <title>Home</title>
+        <meta name="description" content="Manusia dalam era kompleksitas atas modernitas yang tercipta hingga
+          hari ini sejatinya memiliki sistem pengetahuan yang berangkat dari
+          nilai fundamental kesadaran sosial dan karakteristik dari
+          pencermatan keadaan sekitar yang terbangun melalui ekosistem
+          interaksi antara manusia dan lingkungannya sejak awal. Kebijaksanaan
+          lokal ini sering terkesampingkan atau bahkan hilang di tengah gegap
+          gempita produktivitas dunia yang serba berkecepatan. Alih-alih
+          bertanya pesatnya pembangunan disekitar kita, sudahkah kita bertanya
+          apa yang kita cermati dari lingkungan yang berkembang pesat?
+          Bagaimana kondisi diri kita dalam berpikir atas realitas terhadap
+          kesadaran dan keadaan yang ada di luar?" />
+      </Helmet>
       <section
-        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-fixed bg-center flex flex-col"
+        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
         <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
@@ -251,7 +279,7 @@ const Home = () => {
                     y: 0,
                     transition: { stiffness: 0, duration: 1 },
                   }}
-                  className="text-4xl xs:text-5xl sm:text-6xl 3xl:text-7xl"
+                  className="text-4xl xs:text-5xl sm:text-6xl 3xl:text-7xl drop-shadow-md"
                 >
                   Merayakan Kembali
                 </motion.h1>
@@ -292,6 +320,10 @@ const Home = () => {
               />
             </div>
           </div>
+        </div>
+      </section>
+      <section className={`overflow-hidden flex flex-col ${windowSize < 768 ? "-mt-72" : "-mt-60"}`}>
+        <div className="py-14 flex relative w-full h-fit">
           <motion.button
             className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"
             onClick={() => {
@@ -381,7 +413,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[20rem] pb-20 md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
+        className="bg-main-1 relative -mt-48 pt-[20rem] pb-[10rem] md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
         {/* <motion.div
@@ -441,7 +473,7 @@ const Home = () => {
               grab your tickets now!
             </h3>
             <Link to="/ticket">
-              <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
+              <button className="bg-main-3 font-bold px-8 py-1 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
                 Buy Ticket
               </button>
             </Link>

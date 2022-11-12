@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useLayoutEffect, useRef, useState } from "react";
 import useScreenOrientation from "react-hook-screen-orientation";
+import thumbnailVideo from "../assets/images/home/thumbnail_video.png";
 
 const VideoContainer = () => {
   const containerRef = useRef(null);
@@ -53,10 +54,10 @@ const VideoContainer = () => {
     >
       <div
         className="w-[160%] h-full absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center"
-        style={{ borderRadius: `${borderRadius}%` }}
+        style={{ borderRadius: `${borderRadius}%`, backgroundImage: `url("${thumbnailVideo}")` }}
       >
         {screenOrientation === "portrait-primary" ||
-        screenOrientation === "portrait-secondary" ? (
+        screenOrientation === "portrait-secondary" || window.innerWidth <= 640 ? (
           <video
             id="video"
             className="w-[67%] h-full mx-auto object-cover object-center"

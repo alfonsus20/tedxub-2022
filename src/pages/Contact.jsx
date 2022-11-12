@@ -2,6 +2,7 @@ import background from "../assets/images/about/background.jpg";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import contactPhone from "../assets/images/contact-phone.svg";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   return (
@@ -9,6 +10,10 @@ const Contact = () => {
       className="w-full bg-cover bg-no-repeat bg-[#353535] relative"
       style={{ backgroundImage: `url("${background}")` }}
     >
+      <Helmet>
+        <title>Contact</title>
+        <meta name="description" content="Jogo: 081357620230, Davina Alya: 08111683318, Alvin: 081358284470" />
+      </Helmet>
       <div className="pb-24 relative max-w-screen-2xl mx-auto">
         <img
           src={contactPhone}

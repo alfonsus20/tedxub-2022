@@ -7,6 +7,7 @@ import Alert from "../components/Alert";
 import useDisclosure from "../hooks/useDisclosure";
 import { getAllTicket } from "../models/ticket";
 import Spinner from "../components/Spinner";
+import { Helmet } from "react-helmet";
 
 const Ticket = () => {
   let navigate = useNavigate();
@@ -112,6 +113,10 @@ const Ticket = () => {
   
   return (
     <div className="ticket-container bg-cover bg-no-repeat bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+      <Helmet>
+        <title>Buy Ticket</title>
+        <meta name="description" content="Buy Ticket" />
+      </Helmet>
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">

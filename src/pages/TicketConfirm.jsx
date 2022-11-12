@@ -18,6 +18,7 @@ import { createPayment } from "../models/payment";
 import Spinner from "../components/Spinner";
 import ReCAPTCHA from "react-google-recaptcha";
 import Alert from "../components/Alert";
+import { Helmet } from "react-helmet";
 
 const TicketConfirm = () => {
 
@@ -114,6 +115,10 @@ const TicketConfirm = () => {
 
   return (
     <div className="confirm relative ticket-container min-h-screen bg-[#1D1B21] shrink-0" style={{backgroundImage: `url(${ticketBackground})`}}>
+      <Helmet>
+        <title>Confirm Ticket</title>
+        <meta name="description" content="Confirm Ticket" />
+      </Helmet>
       <TicketConfirmModal isOpen={isOpen} onClose={handleCloseModal} handleCreatePayment={handleCreatePayment} resetCaptcha={resetCaptcha} />
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">

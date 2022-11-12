@@ -10,6 +10,7 @@ import "../style/ticket-form.scss";
 import { getAllTicket } from "../models/ticket";
 import Alert from "../components/Alert";
 import Spinner from "../components/Spinner";
+import { Helmet } from "react-helmet";
 
 const TicketForm = () => {
 
@@ -83,6 +84,10 @@ const TicketForm = () => {
   
   return (
     <div className="relative ticket-container bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+      <Helmet>
+        <title>Ticket Form</title>
+        <meta name="description" content="Ticket Form" />
+      </Helmet>
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import background from "../assets/images/about/background.jpg";
 import hand from "../assets/images/sponsor-hand.svg";
 import Spinner from "../components/Spinner";
@@ -63,6 +64,10 @@ const SponsorPartner = () => {
   
   return (
     <div className="min-h-screen bg-main-1 w-full bg-cover bg-no-repeat relative" style={{ backgroundImage: `url("${background}")` }}>
+      <Helmet>
+        <title>Sponsor and Partner</title>
+        <meta name="description" content="Sponsors and Partners of TEDxUniversitasBrawijaya 2022" />
+      </Helmet>
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <img className="absolute -z-0 left-0 h-64 lg:h-96" src={hand} alt="Hand" />
       <img className="absolute -z-0 right-0 bottom-36 h-64 lg:h-96 rotate-180" src={hand} alt="Hand" />

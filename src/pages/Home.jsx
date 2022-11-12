@@ -323,9 +323,11 @@ const Home = () => {
             <Icon icon="akar-icons:arrow-down" className="text-3xl" />
           </motion.button>
         </div>
+      </section>
+      <section className="-mt-44">
         <VideoContainer />
       </section>
-      {/* <section className="text-center flex justify-center items-center flex-col">
+      <section className="text-center flex justify-center items-center flex-col">
         <div
           id="theme"
           className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-28 pb-40 flex items-center justify-center relative z-20 overflow-hidden"
@@ -394,11 +396,7 @@ const Home = () => {
             </motion.p>
           </div>
         </div>
-      </section> */}
-      <div
-        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-center flex flex-col"
-        style={{ backgroundImage: `url("${background}")` }}
-      ></div>
+      </section>
       <section
         className="bg-main-1 relative -mt-48 pt-[20rem] pb-[10rem] md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
@@ -430,7 +428,7 @@ const Home = () => {
           alt="line"
         />
         <p className="text-white text-center text-4xl md:text-5xl font-bold">
-          COMING SOON
+          Coming Soon
         </p>
       </section>
       <section

@@ -186,6 +186,7 @@ const Home = () => {
   const waveAtasRef = useRef(null);
 
   const [ornamentPosition, setOrnamentPosition] = useState(0);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -201,6 +202,18 @@ const Home = () => {
 
     return () => {
       document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleWindowResize = () => {
+    setWindowSize(window.innerWidth);
+  };
+  
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
@@ -307,6 +320,10 @@ const Home = () => {
               />
             </div>
           </div>
+        </div>
+      </section>
+      <section className={`overflow-hidden flex flex-col -mt-60`}>
+        <div className="py-14 flex relative w-full h-fit">
           <motion.button
             className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"
             onClick={() => {
@@ -323,8 +340,6 @@ const Home = () => {
             <Icon icon="akar-icons:arrow-down" className="text-3xl" />
           </motion.button>
         </div>
-      </section>
-      <section className="-mt-44">
         <VideoContainer />
       </section>
       <section className="text-center flex justify-center items-center flex-col">
@@ -428,7 +443,7 @@ const Home = () => {
           alt="line"
         />
         <p className="text-white text-center text-4xl md:text-5xl font-bold">
-          Coming Soon
+          COMING SOON
         </p>
       </section>
       <section
@@ -458,7 +473,7 @@ const Home = () => {
               grab your tickets now!
             </h3>
             <Link to="/ticket">
-              <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
+              <button className="bg-main-3 font-bold px-8 py-1 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
                 Buy Ticket
               </button>
             </Link>

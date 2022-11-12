@@ -323,7 +323,7 @@ const Home = () => {
             <Icon icon="akar-icons:arrow-down" className="text-3xl" />
           </motion.button>
         </div>
-        <VideoContainer />
+        {/* <VideoContainer /> */}
       </section>
       <section className="text-center flex justify-center items-center flex-col">
         <div

@@ -32,12 +32,12 @@ const Navbar = () => {
   return (
     <>
       <motion.div
-        initial={{ top: "-200%" }}
+        initial={{ top: "-110%" }}
         animate={{
-          top: isNavbarMobileVisible ? "0" : "-200%",
+          top: isNavbarMobileVisible ? "0" : "-110%",
           transition: { duration: 0.4 },
         }}
-        className="bg-white fixed top-0 z-[100] w-full rounded-b-3xl text-center pt-4 pb-12 space-y-8 overflow-y-auto max-h-screen lg:hidden"
+        className="bg-white fixed z-[100] w-full rounded-b-3xl text-center pt-5 pb-12 space-y-8 overflow-y-auto lg:hidden"
       >
         <button className="absolute top-12 right-14" onClick={closeNavbarMobile}>
           <Icon icon="carbon:close" className="text-4xl" />

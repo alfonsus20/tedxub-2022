@@ -453,7 +453,7 @@ const Home = () => {
         <div className="absolute h-full w-full items-center max-w-screen-2xl left-1/2 -translate-x-1/2 px-4 md:px-12 hidden md:flex">
           <div className="w-full md:w-[40%] flex pt-20 pb-20 md:py-20">
             <div className="text-center md:text-left">
-              <h3 className="text-white uppercase font-akira text-4xl md:text-5xl mb-6 md:mb-12">
+              <h3 className="text-white uppercase font-akira text-4xl md:text-5xl mb-6">
                 grab
                 <br /> your
                 <br /> tickets
@@ -473,7 +473,7 @@ const Home = () => {
               grab your tickets now!
             </h3>
             <Link to="/ticket">
-              <button className="bg-main-3 font-bold px-8 py-1 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
+              <button className="bg-main-3 font-bold px-8 py-3 text-white rounded-full transition-colors duration-200 hover:text-main-3 hover:bg-white">
                 Buy Ticket
               </button>
             </Link>

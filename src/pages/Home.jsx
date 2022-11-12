@@ -396,6 +396,10 @@ const Home = () => {
         </div>
       </section>
       <section
+        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-fixed bg-center flex flex-col"
+        style={{ backgroundImage: `url("${background}")` }}
+      ></section>
+      <section
         className="bg-main-1 relative -mt-48 pt-[20rem] pb-[10rem] md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >

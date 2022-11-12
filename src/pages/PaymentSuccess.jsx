@@ -3,6 +3,7 @@ import background from "../assets/images/about/background.jpg";
 import location from "../assets/images/payment-success-location.png";
 import Illustration from "../assets/images/payment-success-illustration.png";
 import "../style/payment-success.scss";
+import { Helmet } from "react-helmet";
 
 const PaymentSuccess = () => {
 
@@ -14,6 +15,10 @@ const PaymentSuccess = () => {
   
   return (
     <div className="payment-success min-h-screen w-full bg-cover bg-no-repeat bg-[#353535] flex flex-row flex-wrap gap-10 justify-around items-stretch" style={{ backgroundImage: `url("${background}")` }}>
+      <Helmet>
+        <title>Payment Success</title>
+        <meta name="description" content="Payment Success" />
+      </Helmet>
       <div className="flex flex-col justify-center px-10 gap-5">
         <div className="flex flex-col gap-2">
           <h1 className="font-akira text-main-2 text-4xl">PAYMENT SUCCESSFUL</h1>

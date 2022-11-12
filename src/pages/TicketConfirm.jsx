@@ -11,20 +11,25 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "../style/ticket-confirm.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TicketConfirmModal from "../components/TicketConfirmModal";
 import useDisclosure from "../hooks/useDisclosure";
 import { createPayment } from "../models/payment";
 import Spinner from "../components/Spinner";
 import ReCAPTCHA from "react-google-recaptcha";
+import Alert from "../components/Alert";
+import { Helmet } from "react-helmet";
 
 const TicketConfirm = () => {
 
   const { state } = useLocation();
   let navigate = useNavigate();
-  const [isLoading, setisLoading] = useState(false);
+  const reCAPTCHARef = useRef();
+
+  const [alertStatus, setAlertStatus] = useState('');
+  const [isPending, setIsPending] = useState(false)
   const [authenticated, setAuthenticated] = useState("");
-  const { onOpen, onOpenSpinner, isOpen, isOpenSpinner, onClose, onCloseSpinner } = useDisclosure();
+  const { onOpen, onOpenSpinner, onOpenAlert, isOpen, isOpenSpinner, isOpenAlert, onClose, onCloseSpinner, onCloseAlert } = useDisclosure();
 
   const handlePrevPage = () => {
     return navigate(-1);
@@ -45,9 +50,33 @@ const TicketConfirm = () => {
   const handleCloseSpinner = () => {
     onCloseSpinner();
   };
+
+  const handleOpenAlert = (data) => {
+    onOpenAlert();
+    const timeoutAlert = setTimeout(() => {
+      onCloseAlert();
+      return window.location.replace(data);
+    }, 3000);
+    return () => {
+      clearTimeout(timeoutAlert)
+    }
+  };
+
+  const handleCloseAlert = () => {
+    onCloseAlert();
+  };
   
   const onChange = (value) => {
     setAuthenticated(value);
+  };
+
+  const onFailed = () => {
+    setAuthenticated("");
+  };
+
+  const resetCaptcha = () => {
+    reCAPTCHARef.current?.reset();
+    setAuthenticated("");
   };
 
   const handleCreatePayment = async () => {
@@ -62,9 +91,14 @@ const TicketConfirm = () => {
           quantity: state?.quantity,
         }
       )
-      
-      if( data.message == "Success create invoice" ){
+
+      if( data.message == "Success create invoice"){
         return window.location.replace(data.data.invoice_url);
+      } else if (data.message == "There is still pending transaction"){
+        setIsPending(true);
+        handleCloseModal();
+        setAlertStatus(`Selesaikan transaksi yang masih pending, Redirect beberapa saat lagi..`);
+        handleOpenAlert(data.data.invoice_url);
       }
     } catch (error) {
       console.log(error)
@@ -81,7 +115,11 @@ const TicketConfirm = () => {
 
   return (
     <div className="confirm relative ticket-container min-h-screen bg-[#1D1B21] shrink-0" style={{backgroundImage: `url(${ticketBackground})`}}>
-      <TicketConfirmModal isOpen={isOpen} onClose={handleCloseModal} handleCreatePayment={handleCreatePayment} />
+      <Helmet>
+        <title>Confirm Ticket</title>
+        <meta name="description" content="Confirm Ticket" />
+      </Helmet>
+      <TicketConfirmModal isOpen={isOpen} onClose={handleCloseModal} handleCreatePayment={handleCreatePayment} resetCaptcha={resetCaptcha} />
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">
@@ -101,7 +139,7 @@ const TicketConfirm = () => {
                   icon="akar-icons:calendar"
                   className="text-lg shrink-0"
                 />
-                <p>2 Oct 2022</p>
+                <p>27 Nov 2022</p>
               </div>
               <div className="flex flex-row gap-2 items-center">
                 <Icon 
@@ -115,7 +153,7 @@ const TicketConfirm = () => {
                   icon="akar-icons:pin"
                   className="text-lg shrink-0"
                 />
-                <p>Graha Widyaloka, Universitas Brawijaya, Malang</p>
+                <p>Gedung Widyaloka, Universitas Brawijaya, Malang</p>
               </div>
             </div>
           </div>
@@ -205,15 +243,18 @@ const TicketConfirm = () => {
         </div>
         <div className="flex justify-center items-center mt-10">
           <ReCAPTCHA
+            ref={reCAPTCHARef}
             sitekey="6Ldx3BEiAAAAAFuTAzqoXEAwrXH4pwCjMF8t-mWl"
             onChange={onChange}
-          />,
+            onExpired={onFailed}
+            onError={onFailed}
+          />
         </div>
         <div className="font-jakartaBold flex flex-row flex-wrap justify-center items-center mt-5 gap-3">
-          <button onClick={handlePrevPage} type="button" className="px-10 py-2 bg-main-2 text-main-1 hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full">Cancel</button>
-          <button disabled={authenticated == "" ? true : false} onClick={handleOpenModal} className={`px-10 py-2 bg-main-3 text-main-2 duration-200 rounded-full ${authenticated == "" ? "bg-gray-500 cursor-not-allowed" : "hover:bg-main-2 hover:text-main-3"}`}>Pay Now</button>
+          <button disabled={isPending ? true : false} onClick={handlePrevPage} type="button" className={`px-10 py-2 bg-main-2  hover:bg-gray-500 hover:text-main-2 duration-200 rounded-full ${isPending ? "bg-gray-500 text-main-2 cursor-not-allowed" : "text-main-1"}`}>Cancel</button>
+          <button disabled={authenticated == "" || isPending ? true : false} onClick={handleOpenModal} className={`px-10 py-2 bg-main-3 text-main-2 duration-200 rounded-full ${authenticated == "" || isPending ? "bg-gray-500 cursor-not-allowed" : "hover:bg-main-2 hover:text-main-3"}`}>Pay Now</button>
         </div>
-
+        <Alert alertStatus={alertStatus} isOpenAlert={isOpenAlert} onCloseAlert={handleCloseAlert} />
       </div>
     </div>
   );

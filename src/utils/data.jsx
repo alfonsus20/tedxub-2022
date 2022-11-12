@@ -40,7 +40,7 @@ export const coreTeam = {
     {
       nama: "Siti Huwaena Maulidiah",
       email: "gadisaa29@gmail.com",
-      linkedin: "",
+      linkedin: "siti-huwaena-maulidiah-421a091aa",
       instagram: "@gadisamaulidiah",
       divisi: "Curator",
       foto: "gadisamaulidiah.jpeg",
@@ -59,7 +59,7 @@ export const coreTeam = {
       linkedin: "rafly-mahdy",
       instagram: "@102rafly",
       divisi: "Curator",
-      foto: "InskyJohanaSherenRottie.jpeg",
+      foto: "RaflyAlMahdy.jpg",
     },
   ],
   budgetManager: [
@@ -74,7 +74,7 @@ export const coreTeam = {
     {
       nama: "Sophia Aviana Adiningtyas",
       email: "Sophiaavn@gmail.com",
-      linkedin: "",
+      linkedin: "sophiaavianaa",
       instagram: "@Sophiaaviana",
       divisi: "Budget Manager",
       foto: "SophiaAvianaAdiningtyas.jpeg",
@@ -234,7 +234,6 @@ export const volunteer = {
     "KAYLA KAMILA SUPRAPTO PUTRI",
     "AIRLANGGA PUTRA KUSUMO",
     "SHALHAN HIRZI",
-    "MUHAMMAD SURYA SIDDIQ",
     "MAULANA SHAFARIYANTO",
     "MUHAMMAD ZULKIFLI NAWFAL",
   ],

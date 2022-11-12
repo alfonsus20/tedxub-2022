@@ -7,6 +7,7 @@ import Alert from "../components/Alert";
 import useDisclosure from "../hooks/useDisclosure";
 import { getAllTicket } from "../models/ticket";
 import Spinner from "../components/Spinner";
+import { Helmet } from "react-helmet";
 
 const Ticket = () => {
   let navigate = useNavigate();
@@ -62,14 +63,14 @@ const Ticket = () => {
       const { data } = await getAllTicket();
 
       for (let item of data.data) {
-        if (item.jenis_tiket == selectedTicket?.jenis_tiket && item.quota < quantity){
-          setAlertStatus(`Maaf, tiket tersisa ${item.quota} lagi.`);
+        if (item.jenis_tiket == selectedTicket.jenis_tiket && item.remaining_ticket < quantity){
+          setAlertStatus(`Maaf, tiket tersisa ${item.remaining_ticket} lagi.`);
           handleOpenAlert();
-        } else if (item.jenis_tiket == selectedTicket?.jenis_tiket && item.quota == 0 ) {
+        } else if (item.jenis_tiket == selectedTicket?.jenis_tiket && item.remaining_ticket == 0 ) {
           setAlertStatus(`Maaf, tiket sudah habis.`);
           handleOpenAlert();
-        } else {
-          return navigate("/ticket-form", { state: { type: selectedTicket?.jenis_tiket, price: selectedTicket?.price, quota: selectedTicket?.quota, quantity: quantity } });
+        } else if (item.jenis_tiket == selectedTicket.jenis_tiket && item.remaining_ticket >= quantity) {
+          return navigate("/ticket-form", { state: { type: selectedTicket?.jenis_tiket, price: selectedTicket?.price, remaining_ticket: selectedTicket?.remaining_ticket, quantity: quantity } });
         }
       }
     } catch (error) {
@@ -84,6 +85,8 @@ const Ticket = () => {
       handleOpenSpinner();
 
       const { data } = await getAllTicket();
+
+      console.log(data)
       
       setAllTicket(data.data);
 
@@ -107,17 +110,13 @@ const Ticket = () => {
   useEffect(() => {
     setQuantity(0);
   }, [selectedTicket]);
-
-  // useEffect(() => {
-  //   if(selectedTicket?.quota > 0 && quantity > selectedTicket?.quota){
-  //     setAlertStatus(`Maaf, tiket tersisa ${selectedTicket?.quota} lagi.`);
-  //   } else if (selectedTicket?.quota <= 0){
-  //     setAlertStatus('Maaf, tiket sudah habis.');
-  //   }
-  // }, [quantity])
   
   return (
     <div className="ticket-container bg-cover bg-no-repeat bg-[#1D1B21]" style={{backgroundImage: `url(${ticketBackground})`}}>
+      <Helmet>
+        <title>Buy Ticket</title>
+        <meta name="description" content="Buy Ticket" />
+      </Helmet>
       <Spinner isOpenSpinner={isOpenSpinner} onCloseSpinner={handleCloseSpinner}/>
       <div className="m-auto z-10">
         <div className="heading text-center mb-5 relative m-auto">
@@ -125,7 +124,7 @@ const Ticket = () => {
           <h1 className="font-akira text-white text-4xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">Tickets</h1>
         </div>
         <div className="w-full">
-        { activeTicket && allTicket && <TicketCarousel activeTicket={activeTicket?.jenis_tiket} setSelectedTicket={setSelectedTicket} ticketLists={allTicket} />}
+        { activeTicket && allTicket && <TicketCarousel activeTicket={activeTicket} setSelectedTicket={setSelectedTicket} ticketLists={allTicket} />}
         </div>
 
         <div className="flex flex-col font-jakarta text-center text-main-2 gap-2 mt-10">
@@ -134,9 +133,9 @@ const Ticket = () => {
           <p className="text-sm">*max 5 tickets for once transaction</p>
           <div className="flex flex-row flex-wrap justify-center items-center mt-5 gap-5">
             <div className="flex flex-row items-center justify-between w-40 bg-main-2 rounded-full px-5 py-2 text-main-1 font-jakartaBold">
-              <button className="px-2" disabled={selectedTicket?.jenis_tiket == activeTicket?.jenis_tiket && selectedTicket?.quota > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
+              <button className="px-2" disabled={selectedTicket?.jenis_tiket == activeTicket?.jenis_tiket && selectedTicket?.remaining_ticket > 0 ? false : true} onClick={handleDecrementQuantity}>-</button>
               {quantity}
-              <button className="px-2" disabled={selectedTicket?.jenis_tiket == activeTicket?.jenis_tiket && selectedTicket?.quota > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
+              <button className="px-2" disabled={selectedTicket?.jenis_tiket == activeTicket?.jenis_tiket && selectedTicket?.remaining_ticket > 0 ? false : true} onClick={handleIncrementQuantity}>+</button>
             </div>
             <button onClick={handleCheckout} disabled={quantity > 0 ? false : true} className={`w-40 px-5 py-2 font-jakartaBold text-main-2 rounded-full ${quantity > 0 ? "bg-main-3 hover:bg-main-2 hover:text-main-3 duration-200" : "bg-gray-500 cursor-not-allowed"} `}>Buy</button>
           </div>

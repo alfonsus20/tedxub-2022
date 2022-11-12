@@ -32,14 +32,14 @@ const Navbar = () => {
   return (
     <>
       <motion.div
-        initial={{ top: "-200%" }}
+        initial={{ top: "-110%" }}
         animate={{
-          top: isNavbarMobileVisible ? "0" : "-200%",
-          transition: { duration: 0.75 },
+          top: isNavbarMobileVisible ? "0" : "-110%",
+          transition: { duration: 0.4 },
         }}
-        className="bg-white fixed top-0 z-[100] w-full rounded-b-3xl text-center pt-4 pb-12 space-y-8 overflow-y-auto max-h-screen lg:hidden"
+        className="bg-white fixed z-[100] w-full rounded-b-3xl text-center pt-5 pb-12 space-y-8 overflow-y-auto lg:hidden"
       >
-        <button className="absolute top-4 right-4" onClick={closeNavbarMobile}>
+        <button className="absolute top-12 right-14" onClick={closeNavbarMobile}>
           <Icon icon="carbon:close" className="text-4xl" />
         </button>
         <div className="font-bold text-lg">
@@ -71,10 +71,6 @@ const Navbar = () => {
         <div>
           <div className="flex items-center justify-center gap-x-2 font-bold text-lg mb-4">
             Contact
-            <Icon
-              icon="akar-icons:chevron-down"
-              className="text-main-3 font-bold text-base"
-            />
           </div>
         </div>
         <div>
@@ -130,7 +126,7 @@ const Navbar = () => {
         <div
           className={`mx-2 lg:mx-12 ${
             pathname === "/" ? "mt-0" : "mt-6"
-          } px-12 py-5 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta`}
+          } px-12 py-5 bg-main-1 rounded-full flex justify-between items-center text-white text-lg font-jakarta drop-shadow-2xl`}
         >
           <div>
             <Link to="/">
@@ -150,7 +146,7 @@ const Navbar = () => {
                 }
               >
                 <span>About</span>
-                <Icon icon="bi:chevron-down" className="text-sm text-main-3" />
+                <Icon icon="bi:chevron-down" className={`text-sm text-main-3 transition-all duration-500 ${isAboutDropdownVisible ? 'rotate-180' : 'rotate-0'}` }/>
               </button>
               <AnimatePresence>
                 {isAboutDropdownVisible && (
@@ -211,7 +207,7 @@ const Navbar = () => {
                 }
               >
                 <span>Previous Events</span>
-                <Icon icon="bi:chevron-down" className="text-sm text-main-3" />
+                <Icon icon="bi:chevron-down" className={`text-sm text-main-3 transition-all duration-500 ${isPrevEventsDropdownVisible ? 'rotate-180' : 'rotate-0'}` }/>
               </button>
               <AnimatePresence>
                 {isPrevEventsDropdownVisible && (

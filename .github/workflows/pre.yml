@@ -1,14 +1,14 @@
-name: Deploy Frontend Production
+name: Deploy Frontend Pre Production
 on:
   push:
-    branches: [master]
+    branches: [pre]
 jobs:
   web-deploy:
-    name: 🎉 Deploy Production
+    name: 🎉 Deploy Pre Production
     runs-on: ubuntu-latest
     env:
-      VITE_BASE_URL: https://tedxubdev.my.id/
-      VITE_TRACKING_ID: UA-238469413-1
+      VITE_BASE_URL: https://tedxubproduction.my.id/
+      VITE_TRACKING_ID: UA-238469413-2
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_URL }}
-          username: ${{ secrets.FTP_PROD_USERNAME }}
-          password: ${{ secrets.FTP_PROD_PASSWORD }}
+          username: ${{ secrets.FTP_PRE_USERNAME }}
+          password: ${{ secrets.FTP_PRE_PASSWORD }}
           local-dir: "./dist/"
           server-dir: "./"

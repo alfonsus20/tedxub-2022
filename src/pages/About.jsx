@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import background from "../assets/images/about/background.jpg";
 import CarouselAbout from "../components/CarouselAbout";
 
@@ -8,6 +9,16 @@ const About = () => {
       className="bg-[#353535] text-white bg-cover bg-no-repeat overflow-x-hidden"
       style={{ backgroundImage: `url("${background}")` }}
     >
+      <Helmet>
+        <title>About</title>
+        <meta name="description" content="In the spirit of ideas worth spreading, TEDx is a program of local,
+          self-organized events that bring people together to share a TED-like
+          experience. At a TEDx event, TED Talks video and live speakers
+          combine to spark deep discussion and connection. These local,
+          self-organized events are branded TEDx, where x = independently
+          organized TED event. The TED Conference provides general guidance
+          for the TEDx program, but individual TEDx events are self-organized." />
+      </Helmet>
       <div className="max-w-screen-2xl mx-auto space-y-12 px-4 md:px-12">
         <section>
           <h1 className="text-2xl font-sedgwick mb-8">

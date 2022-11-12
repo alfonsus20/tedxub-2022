@@ -322,7 +322,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className={`overflow-hidden flex flex-col -mt-60`}>
+      <section className={`overflow-hidden flex flex-col ${windowSize < 768 ? "-mt-72" : "-mt-60"}`}>
         <div className="py-14 flex relative w-full h-fit">
           <motion.button
             className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"

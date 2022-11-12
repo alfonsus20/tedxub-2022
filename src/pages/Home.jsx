@@ -221,7 +221,7 @@ const Home = () => {
           kesadaran dan keadaan yang ada di luar?" />
       </Helmet>
       <section
-        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-fixed bg-center flex flex-col"
+        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
         <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">

@@ -279,11 +279,11 @@ const Home = () => {
                     y: 0,
                     transition: { stiffness: 0, duration: 1 },
                   }}
-                  className="text-4xl xs:text-5xl sm:text-6xl 3xl:text-7xl drop-shadow-md"
+                  className="text-[2.5rem] leading-none break-words xs:text-5xl sm:text-6xl 3xl:text-7xl drop-shadow-md"
                 >
                   Merayakan Kembali
                 </motion.h1>
-                <div className="overflow-y-hidden">
+                <div className="overflow-y-hidden mt-4">
                   <motion.h2
                     initial={{ y: -100 }}
                     animate={{
@@ -302,7 +302,7 @@ const Home = () => {
                   opacity: 0.75,
                   transition: { duration: 1, delay: 3 },
                 }}
-                className="font-sedgwick text-5xl xs:text-7xl sm:text-8xl 3xl:text-9xl text-main-3 absolute -translate-x-1/2 left-1/2 lg:whitespace-nowrap -rotate-[2deg] top-0 xs:-top-2 sm:-top-4 3xl:-top-6"
+                className="font-sedgwick text-6xl xs:text-7xl sm:text-8xl 3xl:text-9xl text-main-3 absolute -translate-x-1/2 left-1/2 lg:whitespace-nowrap -rotate-[2deg] -top-4 xs:-top-4 sm:-top-8 md:-top-8 lg:-top-5 3xl:-top-6"
               >
                 Merayakan Kembali
               </motion.h1>

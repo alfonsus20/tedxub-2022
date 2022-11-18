@@ -46,6 +46,7 @@ const speakerContainerVariants = {
 const speakerData = [
   {
     name: "Kandi Windoe",
+    tag: 'Praktisi City Branding',
     title: "Indonesia Multikultural Unggul di Era Global",
     desc: (
       <>
@@ -67,7 +68,8 @@ const speakerData = [
   },
   {
     name: "Diah Priharsari",
-    title: "Secercah Rukun dalam Riuhnya Digitalisasi",
+    tag: 'Peneliti Transformasi Digital',
+    title: "Ruang Rukun dalam Renjana Digitalisasi",
     desc: (
       <>
         <p>
@@ -88,6 +90,7 @@ const speakerData = [
   },
   {
     name: "Tsany Abyandary",
+    tag: 'Student Speaker',
     title: "Sebuah Seni Mengayuh Keberanian",
     desc: (
       <>
@@ -112,7 +115,8 @@ const speakerData = [
   },
   {
     name: "Indriana Listia Rahmawati",
-    title: "Memaknai Dunia Melalui Lampu Lalu Lintas",
+    tag: 'Brand Value Creator',
+    title: "Memaknai Esensi Kehidupan Melalui Lampu Lalu Lintas",
     desc: (
       <>
         <p>
@@ -133,7 +137,8 @@ const speakerData = [
   },
   {
     name: "Eko Widianto",
-    title: "Antara Persepsi dan Justifikasi",
+    tag: 'Jurnalis',
+    title: "Secercah Toleransi Melalui Pandang Diri",
     desc: (
       <>
         <p>
@@ -154,7 +159,8 @@ const speakerData = [
   },
   {
     name: "Fluxcup",
-    title: "Semangkuk Kelucuan Untuk Menjadi Waras",
+    tag: 'Visual Artist',
+    title: "Distraksi Tabungan Memori",
     desc: (
       <>
         <p>
@@ -413,10 +419,10 @@ const Home = () => {
         </div>
       </section>
       <section
-        className="bg-main-1 relative -mt-48 pt-[20rem] pb-[10rem] md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
+        className="bg-main-1 relative -mt-48 pt-[20rem] pb-20 md:pb-48 bg-contain xs:bg-cover bg-center z-10 px-4"
         style={{ backgroundImage: `url("${backgroundSpeaker}")` }}
       >
-        {/* <motion.div
+        <motion.div
           initial="hidden"
           whileInView="show"
           variants={speakerContainerVariants}
@@ -430,7 +436,7 @@ const Home = () => {
               {...data}
             />
           ))}
-        </motion.div> */}
+        </motion.div>
         <img
           src={line}
           className="absolute max-w-none w-[110%] h-[12%] md:h-[27%] bottom-[-5%] md:bottom-[-10%] left-[-5%] rotate-1"
@@ -443,7 +449,7 @@ const Home = () => {
           alt="line"
         />
         <p className="text-white text-center text-4xl md:text-5xl font-bold">
-          COMING SOON
+          Speakers
         </p>
       </section>
       <section

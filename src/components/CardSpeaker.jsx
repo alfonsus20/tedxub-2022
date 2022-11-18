@@ -28,7 +28,7 @@ const CardSpeaker = ({ onClick, name, image }) => {
       <img
         src={image}
         alt="speaker"
-        className="w-full relative z-10 group-hover:scale-110 transition-all duration-500 rounded-xl grayscale group-hover:grayscale-0"
+        className="w-full object-cover h-full relative z-10 group-hover:scale-110 transition-all duration-500 rounded-xl grayscale group-hover:grayscale-0"
       />
       <div className="absolute transition-all left-0 right-0 duration-500 -bottom-full group-hover:bottom-0 text-center bg-main-3 py-3 sm:py-6 z-20 font-semibold text-white sm:text-lg">
         {name}

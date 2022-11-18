@@ -28,7 +28,7 @@ const ModalSpeaker = ({ onClose, isOpen = true, data = {} }) => {
             <div className="bg-white flex flex-col sm:flex-row font-jakarta relative pt-6 pb-8 sm:py-0 rounded-2xl sm:rounded-[3rem]">
               <Icon
                 icon="ep:circle-close"
-                className="absolute top-4 text-4xl right-6 cursor-pointer"
+                className="absolute top-4 text-4xl right-6 cursor-pointer transition-colors duration-200 hover:text-main-3"
                 onClick={onClose}
               />
               <div className="w-full sm:w-[40%] overflow-hidden items-center justify-center flex mb-2 sm:mb-0 sm:rounded-l-[3rem] rounded-none">
@@ -46,8 +46,9 @@ const ModalSpeaker = ({ onClose, isOpen = true, data = {} }) => {
                 />
               </div>
               <div className="w-full sm:w-[60%] px-6 sm:pl-10 sm:pr-16 sm:py-12 flex flex-col justify-center">
-                <h3 className="font-bold text-2xl sm:text-3xl text-center sm:text-left">{data.name}</h3>
-                <h4 className="mb-2 text-lg text-center sm:text-left">{data.title}</h4>
+                <h3 className="font-jakartaBold text-2xl sm:text-3xl text-center sm:text-left">{data.name}</h3>
+                <h3 className="font-jakarta mb-5 text-xl sm:text-2xl text-center sm:text-left">{data.tag}</h3>
+                <h4 className="mb-1 text-lg text-center sm:text-left">{data.title}</h4>
                 <div className="text-justify text-sm space-y-2">
                   {data.desc}
                 </div>

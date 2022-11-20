@@ -86,7 +86,7 @@ const Ticket = () => {
 
       const { data } = await getAllTicket();
 
-      console.log(data)
+      // console.log(data)
       
       setAllTicket(data.data);
 

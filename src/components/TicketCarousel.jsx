@@ -9,7 +9,7 @@ import "../style/components/ticket-carousel.scss";
 import { useContext, useEffect, useState } from "react";
 import TicketEarlyBird from "../assets/images/ticket-early-bird.png";
 import TicketPresale1 from "../assets/images/ticket-presale-1.png";
-import TicketPresale2 from "../assets/images/ticket-presale-2.png";
+import TicketPresale2 from "../assets/images/ticket-special-ticket.png";
 
 const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
   
@@ -48,7 +48,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
       case "Presale 1":
         setCurrentSlide(1);
         break;
-      case "Presale 2":
+      case "Special Ticket":
         setCurrentSlide(2);
         break;
       default:
@@ -76,7 +76,7 @@ const TicketCarousel = ({activeTicket, setSelectedTicket, ticketLists}) => {
           break;
         case 2:
           setSelectedTicket({
-            jenis_tiket: "Presale 2",
+            jenis_tiket: "Special Ticket",
             price: ticketLists[2].price,
             remaining_ticket: ticketLists[2].remaining_ticket,
           });

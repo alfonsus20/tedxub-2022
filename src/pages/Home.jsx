@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 
-import background from "../assets/images/home/background.png";
+import background from "../assets/images/home/background-2_psd.jpg";
 import backgroundSpeaker from "../assets/images/home/background-speaker.png";
 import line from "../assets/images/home/line.png";
 import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";

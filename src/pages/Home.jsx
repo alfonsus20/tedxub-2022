@@ -1,37 +1,34 @@
-import { Icon } from "@iconify/react";
 
 import background from "../assets/images/home/background-2_psd.jpg";
 import backgroundSpeaker from "../assets/images/home/background-speaker.png";
-import line from "../assets/images/home/line.png";
 import bgSectionTicket from "../assets/images/home/bg-section-ticket.jpg";
 import eventTime from "../assets/images/home/event_time_new.png";
-import CardSpeaker from "../components/CardSpeaker";
-import CarouselTicketHome from "../components/CarouselTicketHome";
-import VideoContainer from "../components/VideoContainer";
+import line from "../assets/images/home/line.png";
+import wave from "../assets/images/home/wave.png";
 import xAtas from "../assets/images/home/x_atas.png";
 import xBawah from "../assets/images/home/x_bawah.png";
-import wave from "../assets/images/home/wave.png";
+import CardSpeaker from "../components/CardSpeaker";
+import CarouselTicketHome from "../components/CarouselTicketHome";
 
-import hand from "../assets/images/home/hand.png";
-import coret from "../assets/images/home/coret.svg";
 import coretX from "../assets/images/home/coret-x.svg";
+import coret from "../assets/images/home/coret.svg";
+import hand from "../assets/images/home/hand.png";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ModalSpeaker from "../components/ModalSpeaker";
-import { useState } from "react";
-import { useEffect } from "react";
 
-import "../style/home.scss";
 import { useRef } from "react";
+import "../style/home.scss";
 
+import { Helmet } from "react-helmet";
 import speakerDiah from "../assets/images/speakers/speaker-diah.jpg";
 import speakerEko from "../assets/images/speakers/speaker-eko.jpg";
 import speakerFluxcup from "../assets/images/speakers/speaker-fluxcup.jpg";
 import speakerIndriana from "../assets/images/speakers/speaker-indri.jpg";
-import speakerTsany from "../assets/images/speakers/speaker-tsany.jpg";
 import speakerKandi from "../assets/images/speakers/speaker-kandi.jpg";
-import { Helmet } from "react-helmet";
+import speakerTsany from "../assets/images/speakers/speaker-tsany.jpg";
 
 const speakerContainerVariants = {
   hidden: { opacity: 0 },
@@ -240,10 +237,10 @@ const Home = () => {
           kesadaran dan keadaan yang ada di luar?" />
       </Helmet>
       <section
-        className="bg-[#353535] pt-[calc(10vh+1.5rem)] min-h-screen relative overflow-hidden bg-cover bg-center flex flex-col"
+        className="bg-[#353535] min-h-screen relative overflow-hidden bg-cover bg-center flex flex-col"
         style={{ backgroundImage: `url("${background}")` }}
       >
-        <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-[70vh]">
+        <div className="py-20 px-14 mx-auto flex relative items-center justify-center w-full min-h-screen">
           <img
             src={xAtas}
             ref={xAtasRef}
@@ -328,27 +325,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className={`overflow-hidden flex flex-col ${windowSize < 768 ? "-mt-72" : "-mt-60"}`}>
-        <div className="py-14 flex relative w-full h-fit">
-          <motion.button
-            className="rounded-full p-3 border-2 border-white w-fit text-white absolute left-1/2 -translate-x-1/2 bottom-4 z-10"
-            onClick={() => {
-              document
-                .getElementById("video-container")
-                .scrollIntoView({ behavior: "smooth" });
-            }}
-            initial={{ bottom: "2.5rem" }}
-            animate={{
-              bottom: "1rem",
-              transition: { yoyo: Infinity, duration: 0.7 },
-            }}
-          >
-            <Icon icon="akar-icons:arrow-down" className="text-3xl" />
-          </motion.button>
-        </div>
-        <VideoContainer />
-      </section>
-      <section className="text-center flex justify-center items-center flex-col">
+      <section className="bg-green-400 text-center flex justify-center items-center flex-col">
         <div
           id="theme"
           className="rounded-b-[50%] bg-[#E8E8E8] w-[200%] md:w-[150%] pt-28 pb-40 flex items-center justify-center relative z-20 overflow-hidden"

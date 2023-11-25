@@ -1,5 +1,9 @@
-import api from "../utils/api";
+import ticketMocks from "../mocks/ticket-list.json";
 
 export const getAllTicket = () => {
-  return api.get("/ticket");
-}
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(ticketMocks);
+    }, 1500);
+  });
+};

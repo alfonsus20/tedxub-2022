@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "price": 90000,
+      "jenis_tiket": "Early Bird",
+      "remaining_ticket": 40,
+      "active": 1
+    },
+    {
+      "id": 2,
+      "price": 100000,
+      "jenis_tiket": "Presale 1",
+      "remaining_ticket": 20,
+      "active": 0
+    },
+    {
+      "id": 3,
+      "price": 120000,
+      "jenis_tiket": "Special Ticket",
+      "remaining_ticket": 10,
+      "active": 0
+    }
+  ]
+}

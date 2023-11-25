@@ -15,10 +15,14 @@ Official Website for TedxUniversitasBrawijaya 2022 Event. This website aims to p
 
 ## Screenshots
 ### Home Page
-<img width="425" alt="Screenshot 2023-11-25 200945" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/64954c80-5d95-49fe-ad6c-e971803277e5">
-<img width="425" alt="Screenshot 2023-11-25 203744" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/f2bf2a18-1aaf-470d-8bc6-6a323d5e226a">
-<img width="425" alt="Screenshot 2023-11-25 201303" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/0de57038-cbd0-4442-9172-ff6da4ba2b74">
-<img width="425" alt="Screenshot 2023-11-25 203752" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/8aed3eba-14a0-4d9f-b325-13858baf63a0">
+<div float="left">
+  <img width="425" alt="Screenshot 2023-11-25 200945" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/64954c80-5d95-49fe-ad6c-e971803277e5">
+  <img width="425" alt="Screenshot 2023-11-25 203744" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/f2bf2a18-1aaf-470d-8bc6-6a323d5e226a">
+</div>
+<div float="left">
+  <img width="425" alt="Screenshot 2023-11-25 201303" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/0de57038-cbd0-4442-9172-ff6da4ba2b74">
+  <img width="425" alt="Screenshot 2023-11-25 203752" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/8aed3eba-14a0-4d9f-b325-13858baf63a0">
+</div>
 
 ### About Page
 <img width="425" alt="Screenshot 2023-11-25 201006" src="https://github.com/alfonsus20/tedxub-2022/assets/58034788/19ab1acf-646d-40fd-8b39-2ab0149cda57">
